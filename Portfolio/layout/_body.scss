@@ -23,7 +23,7 @@
             width: 50%;
             height: 3px;
             background-color: $third-color;
-            margin-top: 20px;
+            margin-top: 0px;
             border-radius: 20px;
         }
         & p {
@@ -92,7 +92,7 @@
             width: 35%;
             height: 3px;
             background-color: $second-color;
-            margin-top: 20px;
+            margin-top: 0px;
             border-radius: 20px;
         }
         & h2 {
@@ -100,7 +100,7 @@
             color: $second-color;
         }
         & P {
-            padding-top: 50px;
+            padding-top: 20px;
         }
     }
 }
@@ -124,7 +124,7 @@
         width: 10%;
         height: 3px;
         background-color: $third-color;
-        margin-top: 20px;
+        margin-top: 0px;
         border-radius: 20px;
 }   
 }
@@ -141,6 +141,7 @@
     margin-bottom: 20px;
     padding: 20px 150px;
     background-color: rgba(255, 255, 255, 0.096);
+    border-radius: 10px;
     &:hover {
         border-bottom: 2px solid $second-color;
     }
@@ -160,4 +161,41 @@
         color: $forth-color;
         font-weight: lighter;
     }
+}
+
+.matrix {
+    color: $forth-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & p {
+        margin-bottom: 10px;
+    }
+    & span {
+        font-weight: lighter;
+        font-size: 1rem;
+    }
+}
+
+.table-outer {
+    width: 50%;
+}
+
+.table {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.096);
+    border-radius: 10px;
+}
+
+.table tr {
+    border-bottom: 1px solid $forth-color;
+    
+}
+
+.table th {
+    
 }

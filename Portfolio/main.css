@@ -40,7 +40,7 @@
   width: 50%;
   height: 3px;
   background-color: #FFC069;
-  margin-top: 20px;
+  margin-top: 0px;
   border-radius: 20px;
 }
 
@@ -125,7 +125,7 @@
   width: 35%;
   height: 3px;
   background-color: #A45D5D;
-  margin-top: 20px;
+  margin-top: 0px;
   border-radius: 20px;
 }
 
@@ -134,7 +134,7 @@
 }
 
 .subsection2 .text2 P {
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 .section3 {
@@ -168,7 +168,7 @@
   width: 10%;
   height: 3px;
   background-color: #FFC069;
-  margin-top: 20px;
+  margin-top: 0px;
   border-radius: 20px;
 }
 
@@ -186,6 +186,7 @@
   margin-bottom: 20px;
   padding: 20px 150px;
   background-color: rgba(255, 255, 255, 0.096);
+  border-radius: 10px;
 }
 
 .skill-category:hover {
@@ -217,6 +218,53 @@
   font-weight: lighter;
 }
 
+.matrix {
+  color: #EFEFEF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.matrix p {
+  margin-bottom: 10px;
+}
+
+.matrix span {
+  font-weight: lighter;
+  font-size: 1rem;
+}
+
+.table-outer {
+  width: 50%;
+}
+
+.table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.096);
+  border-radius: 10px;
+}
+
+.table tr {
+  border-bottom: 1px solid #EFEFEF;
+}
+
 header {
   background-color: black;
   color: #A45D5D;
@@ -226,7 +274,7 @@ header {
   width: 100%;
   top: 0;
   left: 0;
-  height: 60px;
+  height: 80px;
 }
 
 .logo {
@@ -375,12 +423,6 @@ nav a:hover {
   }
 }
 
-* {
-  margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 body {
   font-family: "source sans pro";
   overflow-x: hidden;
@@ -396,7 +438,7 @@ h2 {
   font-size: 3rem;
 }
 
-p, li {
+p, li, .table {
   font-family: "source sans pro";
   font-size: 1.2rem;
 }

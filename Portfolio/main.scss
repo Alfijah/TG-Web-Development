@@ -3,10 +3,6 @@
 @import "./layout/body";
 @import "./layout/header";
 
-* {
-    margin: 0;
-    box-sizing: border-box;
-}
 
 body {
     font-family: $second-font-style;
@@ -26,7 +22,7 @@ h2 {
     font-size: $font-size-one;
 }
 
-p, li {
+p, li, .table {
     font-family: $second-font-style;
     font-size: $font-size-two;
 }
