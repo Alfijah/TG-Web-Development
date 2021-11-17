@@ -53,7 +53,7 @@
 }
 
 .section2 {
-    background-color: rgba(255, 255, 255, 0.808);
+    background-color: $sixth-color;
     position: static;
     width: 100%;
 }
@@ -85,6 +85,9 @@
         padding-left: 50px;
         padding-right: 30px;
         margin-bottom: 30px;
+        &:hover span {
+            color: $second-color;
+        }
         & .line2 {
             width: 35%;
             height: 3px;
@@ -128,6 +131,7 @@
 
 .skills {
     padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .skill-category {
@@ -135,17 +139,25 @@
     gap: 40px;
     border-bottom: 1px solid $forth-color;
     margin-bottom: 20px;
-    padding-bottom: 20px;
+    padding: 20px 150px;
+    background-color: rgba(255, 255, 255, 0.096);
+    &:hover {
+        border-bottom: 2px solid $second-color;
+    }
+    &:hover h3{
+        color: $second-color;
+    }
     & h3 {
         color: $forth-color;
         width: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 
+        font-size: $font-size-three;
+        font-weight:light;
     }
     & ul {
         color: $forth-color;
-        
+        font-weight: lighter;
     }
 }

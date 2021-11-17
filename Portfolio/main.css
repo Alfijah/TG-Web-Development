@@ -1,8 +1,8 @@
 .section1 {
   top: 0;
-  padding: 80px 25% 0;
+  padding: 90px 25% 0;
   position: static;
-  height: 600px;
+  height: 700px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,21 +15,47 @@
 }
 
 .section1 .text1 {
-  position: relative;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
 }
 
-.section1 h2 {
+.section1 .text1 h2 {
   color: #FFC069;
-  margin-top: 150px;
+  margin-top: 100px;
 }
 
-.section1 p {
+.section1 .text1 .line1 {
+  width: 50%;
+  height: 3px;
+  background-color: #FFC069;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+
+.section1 .text1 p {
   color: #EFEFEF;
-  margin-top: 100px;
+  margin-top: 190px;
+  cursor: pointer;
+}
+
+.section1 .text1 p a {
+  text-decoration: none;
+}
+
+.section1 .text1 p:hover {
+  color: #A45D5D;
 }
 
 .section-bg {
@@ -45,13 +71,21 @@
 .section2 {
   background-color: rgba(255, 255, 255, 0.808);
   position: static;
+  width: 100%;
 }
 
 .subsection2 {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr auto minmax(600px, 3fr) 1fr;
-      grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  position: relative;
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-left: 18em;
+  gap: 20px;
 }
 
 .subsection2 img {
@@ -80,26 +114,111 @@
           align-items: center;
   padding-left: 50px;
   padding-right: 30px;
+  margin-bottom: 30px;
+}
+
+.subsection2 .text2:hover span {
+  color: #A45D5D;
+}
+
+.subsection2 .text2 .line2 {
+  width: 35%;
+  height: 3px;
+  background-color: #A45D5D;
+  margin-top: 20px;
+  border-radius: 20px;
 }
 
 .subsection2 .text2 h2 {
   color: #A45D5D;
 }
 
+.subsection2 .text2 P {
+  padding-top: 50px;
+}
+
 .section3 {
   background: rgba(0, 0, 0, 0.726);
+  margin-top: 0;
+}
+
+.subsection3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.subsection3 h2 {
+  text-align: center;
+  color: #FFC069;
+  margin-top: 50px;
+}
+
+.subsection3 .line3 {
+  width: 10%;
+  height: 3px;
+  background-color: #FFC069;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+
+.skills {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.skill-category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 40px;
+  border-bottom: 1px solid #EFEFEF;
+  margin-bottom: 20px;
+  padding: 20px 150px;
+  background-color: rgba(255, 255, 255, 0.096);
+}
+
+.skill-category:hover {
+  border-bottom: 2px solid #A45D5D;
+}
+
+.skill-category:hover h3 {
+  color: #A45D5D;
 }
 
 .skill-category h3 {
   color: #EFEFEF;
+  width: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2rem;
+  font-weight: light;
 }
 
 .skill-category ul {
   color: #EFEFEF;
+  font-weight: lighter;
 }
 
 header {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: black;
   color: #A45D5D;
   text-align: center;
   position: fixed;
@@ -107,6 +226,7 @@ header {
   width: 100%;
   top: 0;
   left: 0;
+  height: 60px;
 }
 
 .logo {
@@ -194,7 +314,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #FFC069;
+  color: #A45D5D;
 }
 
 .nav-toggle:checked ~ nav {
@@ -255,10 +375,14 @@ nav a:hover {
   }
 }
 
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
   font-family: "source sans pro";
-  left: 0;
-  right: 0;
   overflow-x: hidden;
   background-image: url("/Portfolio/assets/digital-gef93bd217_1920.jpg");
   background-size: cover;
@@ -272,7 +396,7 @@ h2 {
   font-size: 3rem;
 }
 
-p {
+p, li {
   font-family: "source sans pro";
   font-size: 1.2rem;
 }

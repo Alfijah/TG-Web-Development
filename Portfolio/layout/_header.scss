@@ -10,6 +10,7 @@ header {
     width: 100%;
     top: 0;
     left: 0;
+    height: 60px;
 }
 
 .logo {
@@ -93,7 +94,7 @@ nav a {
     opacity: 0;
     transition: opacity 150ms ease-in-out;
     &:hover {
-        color: $third-color;
+        color: $second-color;
     }
 }
 
