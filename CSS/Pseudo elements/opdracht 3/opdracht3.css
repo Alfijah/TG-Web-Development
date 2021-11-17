@@ -1,0 +1,100 @@
+.container {
+    border: 1px solid black;
+    margin-top: 10px;
+    width: 500px;
+    text-align: center;
+}
+
+.after::after {
+    
+    content: " WHOA!";
+    color: blue;
+}
+
+.before::before {
+    content: "WHOA! ";
+    color: red;
+}
+
+.firstLetter::first-letter {
+    color: white;
+    background-color: green;
+    font-size: 1.5rem;
+}
+
+.firstLine::first-line {
+    color: purple;
+    text-transform: uppercase;
+}
+
+.marker::marker {
+    color: darkcyan;
+}
+
+.selection::selection {
+    color: white;
+    background-color: goldenrod;
+}
+
+dialog::backdrop {
+    background-color: darkcyan;
+    background-image: linear-gradient(
+      130deg,#ff7a18,
+      #af002d 41.07%,
+      #319197 76.05%
+    );
+  }
+
+input[type=file]::file-selector-button {
+    border: 2px solid #6c5ce7;
+    padding: .2em .4em;
+    border-radius: .2em;
+    background-color: #a29bfe;
+    transition: 1s;
+}
+
+input[type=file]::file-selector-button:hover {
+    background-color: #81ecec;
+    border: 2px solid #00cec9;
+}
+
+tabbed-custom-element::part(tab) {
+    color: #0c0dcc;
+    border-bottom: transparent solid 2px;
+  }
+  
+tabbed-custom-element::part(tab):hover {
+    background-color: #0c0d19;
+    border-color: #0c0d33;
+  }
+  
+tabbed-custom-element::part(tab):hover:active {
+    background-color: #0c0d33;
+  }
+  
+tabbed-custom-element::part(tab):focus {
+    box-shadow:
+      0 0 0 1px #0a84ff inset,
+      0 0 0 1px #0a84ff,
+      0 0 0 4px rgba(10, 132, 255, 0.3);
+  }
+  
+tabbed-custom-element::part(active) {
+    color: #0060df;
+    border-color: #0a84ff !important;
+  }
+
+.placeholder::placeholder {
+    color:darkcyan;
+    background-color: black;
+    font-size: 1em;
+}
+
+.spelling::spelling-error  {
+    text-decoration: wavy red;
+  }
+
+.grammar::grammar-error  {
+    text-decoration: underline red;
+    color: red;
+  }

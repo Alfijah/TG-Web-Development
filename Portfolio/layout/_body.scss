@@ -1,0 +1,84 @@
+@import "../assets/colors";
+@import "../assets/typography";
+
+.section1 {
+    top: 0;
+    padding: 80px 25% 0;
+    position: static;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & .text1 {
+        position: relative;
+        display: grid;
+        place-items: center;
+        text-align: center;
+    }
+    & h2 {
+        color: $third-color;
+        margin-top: 150px;
+    }
+    & p {
+        color: $forth-color;
+        margin-top: 100px;
+    }
+}
+
+.section-bg {
+    background: rgba(0, 0, 0, 0.726);
+    margin-top: 0;
+    z-index: 998;
+}
+
+.text1 i {
+    margin-top: 20px;
+}
+
+.section2 {
+    background-color: rgba(255, 255, 255, 0.808);
+    position: static;
+}
+
+.subsection2 {
+    // width: 80%;
+    // position: relative;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    & img {
+        width: 300px;
+        grid-column: 2/ 3;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        border-radius: 5%;
+    }
+    & .text2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 50px;
+        padding-right: 30px;
+        & h2 {
+            color: $second-color;
+        }
+    }
+}
+
+.section3 {
+    background: rgba(0, 0, 0, 0.726);
+}
+
+.skill-category {
+    & h3 {
+        color: $forth-color;
+    }
+    & ul {
+        color: $forth-color;
+    }
+}
+
+

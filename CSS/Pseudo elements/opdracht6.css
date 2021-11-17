@@ -1,0 +1,42 @@
+.circle {
+    position: relative;
+    margin-left: 50px;
+    display: inline-block;
+}
+
+p {
+    height: 100px;
+    width: 100px;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+}
+
+p::before {
+    content: '.';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: black;
+    left: -20px;
+    display: grid;
+    place-items: center;
+    transform: rotate(200deg)
+}
+
+p::after {
+    content: '.';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: black;
+    left: 80px;
+    display: grid;
+    place-items: center;
+    transform: rotate(20deg)
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht 2</title>
+    <style>
+        .container {
+            background: greenyellow;
+            display: flex;
+            flex-direction: row;
+            /*justify-content: center;*/
+            margin-top: 10px;
+        }
+
+        .box {
+            background: turquoise;
+            color: purple;
+            font-weight: bolder;
+            border: 3px solid purple;
+            margin: 10px;
+            text-align: center;
+            border-radius: 50%;
+        }
+
+        .small {
+            padding: 15px 25px;
+        }
+
+        .medium {
+            padding: 30px 25px;
+        }
+
+        .large {
+            padding: 45px 25px;
+        }
+
+        .numOne {
+            align-items: flex-start;
+        }
+
+        .numTwo {
+            align-items: flex-end;
+        }
+       
+        .numThree {
+            align-items: center;
+        }
+
+        .numFour {
+            align-items: stretch;
+        }
+
+        .numFive {
+            align-items: baseline;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container numOne">
+        <div class="box small">1</div>
+        <div class="box medium">2</div>
+        <div class="box large">3</div>
+    </div>
+
+    <div class="container numTwo">
+        <div class="box small">1</div>
+        <div class="box medium">2</div>
+        <div class="box large">3</div>
+    </div>
+
+    <div class="container numThree">
+        <div class="box small">1</div>
+        <div class="box medium">2</div>
+        <div class="box large">3</div>
+    </div>
+
+    <div class="container numFour">
+        <div class="box small">1</div>
+        <div class="box medium">2</div>
+        <div class="box large">3</div>
+    </div>
+
+    <div class="container numFive">
+        <div class="box small">1</div>
+        <div class="box medium">2</div>
+        <div class="box large">3</div>
+    </div>
+</body>
+</html>

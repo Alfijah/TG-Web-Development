@@ -1,0 +1,141 @@
+@import "../assets/colors";
+@import "../assets/typography";
+
+header {
+    background-color: $fifth-color;
+    color: $second-color;
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    font-family: $first-font-style;
+    color: $second-color;
+    font-style: italic;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+%nav-label-span {
+    display: block;
+    background: $forth-color;
+    height: 4px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+%nav-label-span-pseudo {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span {
+    @extend %nav-label-span;
+}
+
+.nav-toggle-label span::before {
+    @extend %nav-label-span;
+    @extend %nav-label-span-pseudo;
+    bottom: 8px;
+}
+
+.nav-toggle-label span::after {
+    @extend %nav-label-span;
+    @extend %nav-label-span-pseudo;
+    top: 8px;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background-color: $first-color;
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav a {
+    color: $forth-color;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: lowercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+    &:hover {
+        color: $third-color;
+    }
+}
+
+.nav-toggle:checked ~ nav {
+    transform: scale(1, 1);
+    & a {
+        opacity: 1;
+        transition: opacity 250ms ease-in-out 250ms;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .nav-toggle-label {
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+
+    .logo {
+        grid-column: 2/ 3;
+    }
+
+    nav {
+        all: unset;
+        grid-column: 3/ 4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        & ul {
+            display: flex;
+            justify-content: flex-end;
+        }
+        & li {
+            margin-left: 3rem;
+            margin-bottom: 0;
+        }
+        & a {
+            opacity: 1;
+        }
+        
+    }
+}

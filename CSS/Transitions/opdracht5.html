@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht 5</title>
+    <style>
+        .container {
+            background-color: whitesmoke;
+            border: 3px solid blue;
+            width: 550px;
+            height: 500px;
+            position: relative;
+        }
+
+        .box {
+            position: absolute;
+        }
+
+        .one {
+            width: 260px;
+            height: 260px;
+            border: 5px solid red;
+            color: red;
+            font-size: 2.5rem;
+            font-weight: bolder;
+            display: flex;
+            justify-content: center;
+            transition-duration: 1.5s;
+        }
+
+        .two {
+            background-image: url('https://cdn.pixabay.com/photo/2016/10/26/07/21/shiba-inu-1770788_960_720.png');
+            width: 200px;
+            height: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .three {
+            background: lightseagreen;
+            width: 47%;
+            height: 52%;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            transition-property: margin-left, margin-top, transform;
+            transition-duration: 2s;
+        }
+
+        .container:hover .three {
+            transform: rotate(30deg);
+            margin-left: 180px;
+            margin-top: 150px;
+            transition: 1.5s linear;
+        }
+
+        .container:hover .one {
+            background: rgba(255, 0, 0, 0.582);
+            transition-delay: 1.3s;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box one">GRRR!</div>
+        <div class="two">
+            <div class="three"></div>
+        </div>
+        
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div></div>
+    <div class="box-1">
+        <label for="gender">Gender:</label>
+        <input type="radio" name="gender">
+        <label for="gender">Male</label>
+        <input type="radio" name="gender">
+        <label for="gender">Female</label>
+        <br>
+        <label for="checkbox">Hobbies:</label>
+        <input type="checkbox" name="checkbox">
+        <label for="checkbox">Running</label>
+        <input type="checkbox" name="checkbox">
+        <label for="checkbox">Swimming</label>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" minlength="8">
+        <br>
+        <input type="reset" value="Reset">
+        <input type="submit" value="Submit">
+        <br>
+        <label for="birthday">Date:</label>
+        <input type="date" name="birthday">
+        <br>
+        <label for="search">Search:</label>
+        <input type="search">
+        <br>
+        <label for="time">Select time:</label>
+        <input type="time" name="time">
+        <br>
+        <input type="hidden" name="yourId" id="yourId">
+        <label for="email">Enter email:</label>
+        <input type="email" name="email">
+    </div>
+    <br><hr><br>
+    <div class="box-2">
+        <form>
+            <fieldset><legend>Persoonsgegevens</legend>
+                <br>
+                <label for="achternaam">Achternaam:</label>
+                <input type="text" name="achternaam" placeholder="achternaam">
+                <br><br>
+                <label for="voornaam">Voornaam:</label>
+                <input type="text" name="voornaam" placeholder="voornaam">
+                <br><br>
+                <label for="birthday">Birthday:</label>
+                <input type="date" name="birthday">
+                <br><br>
+                <label for="gender">M:</label>
+                <input type="radio" name="gender">
+                <label for="gender">V:</label>
+                <input type="radio" name="gender">
+                <br><br>
+                <label for="postcode">Postcode:</label>
+                <input type="text" name="postcode" placeholder="postcode">
+                <br><br>
+                <label for="adres">Adres:</label>
+                <input type="text" name="adres" placeholder="adres">
+                <br><br>
+            </fieldset>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+</body>
+</html>

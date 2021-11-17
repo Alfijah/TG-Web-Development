@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht 3</title>
+    <link rel="stylesheet" href="opdracht3.css">
+</head>
+<body>
+    <h1>Pseudo-elementen voorbeelden</h1>
+    <div class="container">
+        <h3>::after</h3>
+        <p class="after">Dit is een tekst met een ::after element.</p>
+    </div>
+
+    <div class="container">
+        <h3>::before</h3>
+        <p class="before">Dit is een tekst met een ::before element.</p>
+    </div>
+    <div class="container">
+        <h3>::first-letter</h3>
+        <p class="firstLetter">Dit is een tekst met een ::first-letter element.</p>
+    </div>
+    <div class="container">
+        <h3>::first-line</h3>
+        <p class="firstLine">Dit is een tekst. Met een ::first-line element. <br> Tweede regel Tweede regel Tweede regelTweede regel Tweede regel </p>
+    </div>
+    <div class="container">
+        <h3>::marker</h3>
+        <ul>
+            <li class="marker">Dit is een tekst met een ::marker element.</li>
+        </ul>
+    </div>
+    <div class="container">
+        <h3>::selection</h3>
+        <p class="selection">Dit is een tekst. Met een ::selection element. Dubbelklik op een willekeurige tekst om het effect te zien.</p>
+    </div>
+    <div class="container">
+        <h3>::backdrop</h3>
+        <dialog>
+            <h2>Awesome dialog window!</h2>
+            <p>You can close me again now ;)</p>
+            <button onclick="closeDialog()">Close</button>
+        </dialog>
+        <button onclick="openDialog()">Open dialog</button>
+    </div>
+    <div class="container">
+        <h3>::file-selector-button</h3>
+        <form>
+            <label for="fileUpload">Upload file for</label>
+            <input type="file" id="fileUpload">
+        </form>
+    </div>
+
+    <div class="container">
+        <h3>::part()</h3>
+        <p>Dit is een voorbeeld van een ::part element.</p>
+        <template id="tabbed-custom-element">
+            <style type="text/css">
+            *, ::before, ::after {
+              box-sizing: border-box;
+              padding: 1rem;
+            }
+            :host {
+              display: flex;
+            }
+            </style>
+            <div part="tab active">Tab 1</div>
+            <div part="tab">Tab 2</div>
+            <div part="tab">Tab 3</div>
+            </template>
+            
+            <tabbed-custom-element></tabbed-custom-element>
+    </div>
+
+    <div class="container">
+        <h3>::placeholder</h3>
+        <p class="placeholder">Dit is een voorbeeld van een ::placeholder element.</p>
+        <input class="placeholder" placeholder="Type hier...">
+    </div>
+    <div class="container">
+        <h3>::slotted()</h3>
+        <p class="slotted">Dit is voorbeeld van een ::slotted element.</p>
+        <template id="person-template">
+            <div>
+              <h2>Personal ID Card</h2>
+              <slot name="person-name">NAME MISSING</slot>
+              <ul>
+                <li><slot name="person-age">AGE MISSING</slot></li>
+                <li><slot name="person-occupation">OCCUPATION MISSING</slot></li>
+              </ul>
+            </div>
+        </template>
+        <person-details>
+            <p slot="person-name">Alfijah</p>
+            <span slot="person-age">31</span>
+            <span slot="person-occupation">Awesome Coder</span>
+          </person-details>
+    </div>
+
+    <div class="container">
+        <h3>::spelling-error</h3>
+        <p>Dit is voorbeeld van een ::spelling-error element.</p>
+        <p class="spelling" contenteditable spellcheck="true">Dit element checkt splelling foutten.</p>
+
+    </div>
+
+    <div class="container">
+        <h3>::grammar-error</h3>
+        <p>Dit is van een ::grammar-error element.</p>
+        <p class="grammar">Every student are going to succeed!</p>
+    </div>
+
+
+    <script src="opdracht3.js"></script>
+</body>
+</html>

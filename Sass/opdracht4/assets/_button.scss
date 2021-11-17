@@ -1,0 +1,27 @@
+@import "./colors";
+
+
+
+// .button {
+//     font-size: 2rem;
+//     color: $primary-color;
+//     background: $button-color;
+//     &:hover {
+//         color: $secondary-color;
+//         background: $button-hover-color;
+//     }
+// }
+
+@mixin button-info($primary-color, $secondary-color, $button-color, $button-hover-color) {
+    font-size: 2rem;
+    color: $primary-color;
+    background: $button-color;
+    &:hover {
+        color:$secondary-color;
+        background: $button-hover-color;
+    }
+}
+
+.button {
+    @include button-info(aqua, darkgrey, darkgrey, orange);
+}

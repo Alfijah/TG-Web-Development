@@ -1,0 +1,27 @@
+@import "./assets/colors";
+@import "./assets/typography";
+@import "./layout/body";
+@import "./layout/header";
+
+body {
+    font-family: $second-font-style;
+    // width: 100%;
+    left: 0;
+    right: 0;
+    overflow-x: hidden;
+    background-image: url('/Portfolio/assets/digital-gef93bd217_1920.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+h2 {
+    font-family: $first-font-style;
+    font-size: $font-size-one;
+}
+
+p {
+    font-family: $second-font-style;
+    font-size: $font-size-two;
+}

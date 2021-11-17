@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+.box-1 input {
+    margin: 5px 0;
+}
+
+.box-2 {
+    background: lightgray;
+    width: 750px;
+}
+
+form {
+    padding: 5px 5px;
+}

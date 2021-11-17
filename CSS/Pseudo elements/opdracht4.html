@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht 4</title>
+    <style>
+        button {
+            background-color:rgba(36, 202, 202, 0.664);
+            color: white;
+            border: none;
+            width: 700px;
+            font-size: 2em;
+            padding: 10px 0;
+        }
+
+        .left::before {
+            position: absolute;
+            content: '';
+            width: 10px;
+            height: 56px;
+            background-color: orangered;
+            top: 8px;
+        }
+
+        .left::after {
+            position: absolute;
+            content: '';
+            width: 56px;
+            height: 10px;
+            background-color: orangered;
+            top: 8px;
+        }
+        
+        .right::before {
+            position: absolute;
+            content: '';
+            width: 10px;
+            height: 56px;
+            background-color: orangered;
+            top: 8px;
+            right: 63px;
+        } 
+
+        .right::after {
+            position: absolute;
+            content: '';
+            width: 56px;
+            height: 10px;
+            background-color: orangered;
+            top: 54px;
+            right: 63px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <button>Button</button>
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

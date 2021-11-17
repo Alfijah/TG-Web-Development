@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht 8</title>
+    <style>
+        body {
+            width: 70%;
+            margin: 0 auto;
+        }
+
+        #box1,
+        #box2, #box4, #box5 {
+            border: 1px solid black;
+            padding: 10px;
+            width: 500px;
+            background: black;
+            color: white;
+        }
+
+        #box2 {
+            margin-top: 10px;
+        }
+
+        #box3 {
+            border: 1px solid black;
+            padding: 10px;
+            margin-top: 10px;
+            width: 500px;
+            background: lightgrey;
+        }
+
+        #result {
+            color: green;
+        }
+
+        #box5 {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Cascade & Inheritance</h2>
+    <p>Wanneer je met CSS werkt, is het belangrijk om de concepten <em>Cascade</em> en <em>Inheritance</em> te
+        begrijpen. Deze worden nader toegelicht.</p>
+    <div class="cascading">
+        <h2>Cascading</h2>
+        <p><em>Cascading</em> in CSS verwijst naar een cascade van processen of styling regels. Deze regels zijn
+            hiërarchisch van aard waarbij de stijling regels met een hogere prioriteit de regels met een lagere prioriteit
+            overschrijven.
+            Zie het voorbeeld om meer duidelijkheid te krijgen hoe deze regels worden geprioriteerd. <br>
+            Voorbeeld:</p>
+        <div id="box1">
+            p {
+            color: red;
+            } <br><br>
+
+            p {
+            color: black;
+            }
+        </div>
+        <div id="box2">
+            &lthead&gt <br>
+            &#160&#160&#160&#160 &ltlink rel="stylesheet" href="style.css"&gt <br>
+            &#160&#160&#160&#160 &ltstyle&gt <br>
+            &#160&#160&#160&#160&#160&#160&#160&#160&#160 p { <br>
+            &#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160 color: blue; <br>
+            &#160&#160&#160&#160&#160&#160&#160&#160&#160 } <br>
+            &#160&#160&#160&#160 &lt/style&gt <br>
+            &lt/head&gt <br>
+            &ltbody&gt <br>
+            &#160&#160&#160&#160 &ltp style="color: green;">Cascading rules&lt/p&gt <br>
+            &lt/body&gt
+        </div>
+        <div id="box3">
+            <p id="result">Cascading rules</p>
+
+        </div>
+        <p>Zoals afgebeeld in het voorbeeld is te zien dat het element p dezelfde property met elk een ander value is
+            gegeven, namelijk <em>red</em> en <em>black</em>. Het is echter zo dat de tweede selector wordt gekozen namelijk
+            datgene met de value <em>black</em>.
+            Dat komt doordat volgens de styling regels de laatste selector de voorgaande selector(s) overschrijft, wanneer
+            deze identiek zijn aan elkaar. <br><br>
+            Verder is het belangrijk om te weten dat als er styling wordt toegepast in het html bestand, dat die de styling
+            regels van het CSS bestand (met identieke selectors) zullen overschrijven.
+            Zoals te zien in het voorbeeld zal de selector in het <em>head</em> element al de identieke selectors in de CSS
+            overschrijven. De tekst krijgt dan de kleur <em>blue</em>. <br><br>
+            Er is nog een manier om styling toe te voegen namelijk via <em>inline CSS</em>. De styling regel wordt direct
+            toegepast binnen het element zoals te zien is in het voorbeeld, de selector met de value <em>green</em>.
+            Wanneer deze regel wordt toegepast, gaat het alle overige regels ofwel overige identieke selectors
+            overschrijven. De tekst krijgt uiteindelijk de kleur groen.
+        </p>
+    </div>
+    <div class="inheritance">
+        <h2>Inheritance</h2>
+        <p><em>Inheritance</em> wordt geassocieerd met hoe (<em>child</em>) elementen eigenschappen (<em>values</em>) erven
+            van hun <em>parent</em> element. <br> Voorbeeld: <br></p>
+        <div id="box4">
+            body {
+                color: red;
+                } <br><br>
+        
+            div {
+                color: yellow;
+                } <br><br>
+            p {
+                color: blue;
+                }
+        </div>
+        <div id="box5">
+            &ltbody&gt <br>
+            &#160&#160&#160&#160 &ltdiv> <br>
+            &#160&#160&#160&#160&#160&#160&#160&#160 &ltp&gt <br>
+            &#160&#160&#160&#160&#160&#160&#160&#160 Cascading rules <br>
+            &#160&#160&#160&#160&#160&#160&#160&#160 &lt/p&gt <br> 
+            &#160&#160&#160&#160 &lt/div&gt <br>
+            &lt/body&gt
+        </div>
+        <p>
+        Zoals te zien in het voorbeeld staan er drie soorten tags: <em>body</em>, <em>div</em> en <em>p</em> tag. De body tag is hier de <em>parent</em>, de div tag is de <em>child</em> en de p tag de <em>grandchild</em>.
+        Als de <em>body selector</em> als enige styling regel aanwezig was, zou de value/kleur <em>red</em> gelden voor al de tags die binnen de body tag plaatsvinden. Als de <em>div selector</em> ook wel aanwezig was, zou de kleur <em>yellow</em> worden toegepast aan alle tags die binnen die div tag plaatsvinden.
+        Als de <em>p selector</em> ook aanwezig was zou uiteindelijk de kleur/value <em>blue</em> gelden aan alle tags die eventueel nog toegevoegd zou kunnen worden binnen de p tag. 
+        </p>
+    </div>
+</body>
+
+</html>
