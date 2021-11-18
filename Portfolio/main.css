@@ -65,7 +65,6 @@
 
 .section-bg {
   background: rgba(0, 0, 0, 0.726);
-  margin-top: 0;
   z-index: 998;
 }
 
@@ -136,11 +135,12 @@
 }
 
 .subsection2 .text2 h2 {
+  margin-top: -80px;
   color: #A45D5D;
 }
 
 .subsection2 .text2 P {
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 .section3 {
@@ -297,6 +297,7 @@
 
 .section4 h2 {
   color: #A45D5D;
+  margin-top: -20px;
 }
 
 .section4 .subsection4 {
@@ -307,6 +308,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   margin-left: 100px;
+  gap: 100px;
 }
 
 .section4 .subsection4 .text4 {
@@ -322,7 +324,7 @@
 }
 
 .section4 .subsection4 .text4 .line4 {
-  width: 70%;
+  width: 100%;
   height: 3px;
   background-color: #A45D5D;
   margin-top: 20px;
@@ -330,7 +332,7 @@
 }
 
 .section4 .subsection4 .text4 p {
-  padding-top: 20px;
+  padding-top: 30px;
 }
 
 .section4 .contact-form {
@@ -381,18 +383,17 @@
   color: #A45D5D;
 }
 
+.line1, .line2, .line3, .line4 {
+  display: none;
+}
+
 header {
   background-color: rgba(0, 0, 0, 0.836);
   color: #A45D5D;
   text-align: center;
   position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   z-index: 999;
   width: 100%;
-  top: 0;
-  left: 0;
   height: 80px;
 }
 
@@ -400,15 +401,7 @@ header {
   font-family: "source sans pro";
   color: #A45D5D;
   font-style: italic;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  margin-top: 20px;
 }
 
 .nav-toggle {
@@ -527,9 +520,9 @@ nav a:hover {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -548,6 +541,124 @@ nav a:hover {
   }
   nav a {
     opacity: 1;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .logo {
+    margin-top: 20px;
+  }
+  html h2 {
+    font-size: 2.5rem;
+  }
+  html p, html li {
+    font-size: 1rem;
+  }
+  html h3 {
+    font-size: 0.5rem;
+  }
+  html .table tbody {
+    font-size: xx-small;
+  }
+  .section1 {
+    height: 470px;
+  }
+  .text1 {
+    margin-top: -150px;
+    height: 470px;
+  }
+  .text1 h2 {
+    width: 450px;
+  }
+  .text1 p {
+    display: none;
+  }
+  .subsection2 {
+    width: 100%;
+    margin-left: 0px;
+    padding-left: 50px;
+  }
+  .subsection2 img {
+    width: 200px;
+  }
+  .subsection2 .text2 {
+    padding-top: 60px;
+  }
+  .skill-category ul li {
+    padding-left: 40px;
+  }
+  .subsection4 .text4 {
+    margin-left: -80px;
+  }
+  .line1, .line2, .line3, .line4 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html h2 {
+    font-size: 2rem;
+    width: 420px;
+  }
+  .subsection2 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 200px;
+    margin-left: 135px;
+  }
+  .subsection2 img {
+    margin-top: -10px;
+  }
+  .subsection2 .text2 {
+    margin-top: 120px;
+  }
+  .subsection2 .text2 h2 {
+    text-align: center;
+  }
+  .subsection2 .text2 p {
+    width: 410px;
+  }
+  .skill-category {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 600px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-bottom: 30px;
+  }
+  .skill-category h3 {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 1.9rem;
+  }
+  .matrix {
+    width: 410px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  .matrix .table-outer {
+    width: 80%;
+  }
+  .table {
+    font-size: 1rem;
   }
 }
 

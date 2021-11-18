@@ -6,11 +6,8 @@ header {
     color: $second-color;
     text-align: center;
     position: fixed;
-    display: flex;
     z-index: 999;
     width: 100%;
-    top: 0;
-    left: 0;
     height: 80px;
 }
 
@@ -18,10 +15,7 @@ header {
     font-family: $second-font-style;
     color: $second-color;
     font-style: italic;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+    margin-top: 20px;
 }
 
 .nav-toggle {
@@ -116,10 +110,10 @@ nav a {
         display: none;
     }
 
+
     header {
         display: grid;
         grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
-        // place-items: center;
     }
 
     .logo {
@@ -130,7 +124,7 @@ nav a {
         all: unset;
         grid-column: 3/ 4;
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
         & ul {
             display: flex;
@@ -144,5 +138,131 @@ nav a {
             opacity: 1;
         }
         
+    }
+    
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .logo {
+        margin-top: 20px;
+    }
+
+    html {
+        & h2 {
+            font-size: 2.5rem;
+        }
+        & p, & li {
+            font-size: 1rem;
+        }
+        & h3 {
+            font-size: 0.5rem;
+        }
+        & .table {
+            & tbody {
+                font-size: xx-small;
+            }
+        }
+    }
+
+    .section1 {
+        height: 470px;
+    }
+
+    .text1 {
+        margin-top: -150px;
+        height: 470px;
+        & h2 {
+            width: 450px;
+        }
+        & p {
+            display: none;
+        }
+    }
+
+    .subsection2 {
+        width: 100%;
+        margin-left: 0px;
+        padding-left: 50px;
+        & img {
+            width: 200px;
+        }
+        & .text2 {
+            padding-top: 60px;
+        }
+    }
+
+    .skill-category {
+        & ul {
+            & li {
+                padding-left: 40px;
+            }
+        }
+    }
+
+    .subsection4 {
+        & .text4 {
+            margin-left: -80px;
+        }
+        
+    }
+
+    .line1, .line2, .line3, .line4 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    html {
+        h2 {
+            font-size: 2rem;
+            width: 420px;
+        }
+    }
+
+    .subsection2 {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        margin-left: 135px;
+        & img {
+            margin-top: -10px;
+        }
+        & .text2 {
+            margin-top: 120px;
+            // width: 420px;
+            // margin-left: -100px;
+            & h2 {
+                text-align: center;
+            }
+            & p {
+                width: 410px;
+            }
+
+        }
+    }
+
+    .skill-category {
+        flex-direction: column;
+        width: 600px;
+        align-items: center;
+        padding-bottom: 30px;
+        & h3 {
+            align-items: center;
+            font-size: 1.9rem;
+        }
+    }
+
+    .matrix {
+        width: 410px;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        & .table-outer {
+            width: 80%;
+        }
+    }
+    .table {
+        font-size: 1rem;
     }
 }
