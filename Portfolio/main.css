@@ -140,6 +140,7 @@
 .section3 {
   background: rgba(0, 0, 0, 0.726);
   margin-top: 0;
+  padding-bottom: 50px;
 }
 
 .subsection3 {
@@ -244,25 +245,131 @@
   font-size: 1rem;
 }
 
-.table-outer {
-  width: 50%;
+.table {
+  background-color: rgba(255, 255, 255, 0.096);
+  border-radius: 10px;
+  border-collapse: collapse;
+  margin: 25px 0;
+  min-width: 400px;
 }
 
-.table {
+.table thead tr {
+  background-color: #FFC069;
+  text-align: left;
+}
+
+.table th {
+  padding: 12px 35px;
+}
+
+.table td {
+  padding: 10px 15px;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #FFC069;
+  font-size: 1rem;
+}
+
+.table tbody tr span {
+  font-size: 1.2rem;
+}
+
+.table tbody tr td:nth-of-type(2), .table tbody tr td:nth-of-type(3), .table tbody tr td:nth-of-type(4), .table tbody tr td:nth-of-type(5) {
+  text-align: center;
+}
+
+.table tbody tr:nth-of-type(5), .table tbody tr:nth-of-type(7), .table tbody tr:nth-of-type(11) {
+  border-bottom: 3px solid #FFC069;
+}
+
+.section4 {
+  background-color: rgba(255, 255, 255, 0.808);
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.section4 h2 {
+  color: #A45D5D;
+}
+
+.section4 .subsection4 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-color: rgba(255, 255, 255, 0.096);
-  border-radius: 10px;
+  margin-left: 100px;
 }
 
-.table tr {
-  border-bottom: 1px solid #EFEFEF;
+.section4 .subsection4 .text4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-right: 30px;
+}
+
+.section4 .subsection4 .text4 .line4 {
+  width: 70%;
+  height: 3px;
+  background-color: #A45D5D;
+  margin-top: 0px;
+  border-radius: 20px;
+}
+
+.section4 .subsection4 .text4 p {
+  padding-top: 20px;
+}
+
+.section4 .contact {
+  display: block;
+  width: 30%;
+  margin-top: 60px;
+}
+
+.section4 .contact form {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+
+.section4 .contact form input {
+  border-radius: 10px;
+  border: none;
+  height: 25px;
+  padding-left: 20px;
+  color: rgba(0, 0, 0, 0.459);
+}
+
+.section4 .contact form #message {
+  padding-bottom: 100px;
+}
+
+.section4 .contact form button {
+  border-radius: 10px;
+  border: none;
+  height: 30px;
+  cursor: pointer;
+  background-color: #a45d5dbd;
+  color: #EFEFEF;
+  font-size: 1.2rem;
+}
+
+.section4 .contact form button:hover {
+  border: 2px solid #A45D5D;
+  background-color: rgba(0, 0, 0, 0);
+  color: #A45D5D;
 }
 
 header {

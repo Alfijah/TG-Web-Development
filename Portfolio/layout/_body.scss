@@ -108,6 +108,7 @@
 .section3 {
     background: rgba(0, 0, 0, 0.726);
     margin-top: 0;
+    padding-bottom: 50px;
 }
 
 .subsection3 {
@@ -178,24 +179,103 @@
     }
 }
 
-.table-outer {
-    width: 50%;
-}
-
 .table {
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
     background-color: rgba(255, 255, 255, 0.096);
     border-radius: 10px;
+    border-collapse: collapse;
+    margin: 25px 0;
+    min-width: 400px;
+    & thead {
+        & tr {
+            background-color: $third-color;
+            text-align: left;
+        }
+    }
+    & th {
+        padding: 12px 35px;
+    }
+    & td {
+        padding: 10px 15px;
+    }
+    & tbody {
+        & tr {
+            border-bottom: 1px solid $third-color;
+            font-size: 1rem;
+             & span {
+                font-size: 1.2rem;
+             }
+            & td:nth-of-type(2), & td:nth-of-type(3), & td:nth-of-type(4), & td:nth-of-type(5) {
+                text-align: center;
+            }
+        }
+        & tr:nth-of-type(5), & tr:nth-of-type(7), & tr:nth-of-type(11) {
+            border-bottom: 3px solid $third-color;
+        }
+    }
 }
 
-.table tr {
-    border-bottom: 1px solid $forth-color;
-    
-}
+.section4 {
+    background-color: $sixth-color;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    & h2 {
+        color: $second-color;
+    }
+    & .subsection4 {
+        display: flex;
+        justify-content: center;
+        margin-left: 100px;
+        & .text4 {
+            display: flex;
+            flex-direction: column;
+            padding-right: 30px;
+            & .line4 {
+                width: 70%;
+                height: 3px;
+                background-color: $second-color;
+                margin-top: 0px;
+                border-radius: 20px;
+            }
+            & p {
+                padding-top: 20px;
+            }
+        }
+    }
+    & .contact {
+        display: block;
+        width: 30%;
+        margin-top: 60px;
+        & form {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            & input {
+                border-radius: 10px;
+                border: none;
+                height: 25px;
+                padding-left: 20px;
+                color: rgba(0, 0, 0, 0.459);
+            }
+            & #message {
+                padding-bottom: 100px;
+            }
+            & button {
+                border-radius: 10px;
+                border: none;
+                height: 30px;
+                cursor: pointer;
+                background-color: #a45d5dbd;
+                color: $forth-color;
+                font-size: $font-size-two;
+                &:hover {
+                    border: 2px solid $second-color;
+                    background-color: rgba(0, 0, 0, 0);
+                    color: $second-color;
+                }
+            }
+            
+        }
 
-.table th {
-    
+    }
 }
