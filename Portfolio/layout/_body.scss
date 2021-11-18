@@ -23,7 +23,7 @@
             width: 50%;
             height: 3px;
             background-color: $third-color;
-            margin-top: 0px;
+            margin-top: 20px;
             border-radius: 20px;
         }
         & p {
@@ -32,10 +32,14 @@
             cursor: pointer;
             & a {
                 text-decoration: none;
+                color: $forth-color;
             }
             &:hover {
                 color: $second-color;
             }
+        }
+        & span:hover {
+            color: $second-color;
         }
         
     }
@@ -87,12 +91,13 @@
         margin-bottom: 30px;
         &:hover span {
             color: $second-color;
+            font-weight: bold;
         }
         & .line2 {
             width: 35%;
             height: 3px;
             background-color: $second-color;
-            margin-top: 0px;
+            margin-top: 20px;
             border-radius: 20px;
         }
         & h2 {
@@ -125,7 +130,7 @@
         width: 10%;
         height: 3px;
         background-color: $third-color;
-        margin-top: 0px;
+        margin-top: 20px;
         border-radius: 20px;
 }   
 }
@@ -208,7 +213,7 @@
                 text-align: center;
             }
         }
-        & tr:nth-of-type(5), & tr:nth-of-type(7), & tr:nth-of-type(11) {
+        & tr:nth-of-type(5), & tr:nth-of-type(7), & tr:nth-of-type(9), & tr:nth-of-type(13) {
             border-bottom: 3px solid $third-color;
         }
     }
@@ -229,11 +234,12 @@
             display: flex;
             flex-direction: column;
             padding-right: 30px;
+            padding-top: 50px;
             & .line4 {
                 width: 70%;
                 height: 3px;
                 background-color: $second-color;
-                margin-top: 0px;
+                margin-top: 20px;
                 border-radius: 20px;
             }
             & p {
@@ -241,7 +247,7 @@
             }
         }
     }
-    & .contact {
+    & .contact-form {
         display: block;
         width: 30%;
         margin-top: 60px;
@@ -258,16 +264,18 @@
                 color: rgba(0, 0, 0, 0.459);
             }
             & #message {
+                padding-top: 15px;
                 padding-bottom: 100px;
             }
             & button {
                 border-radius: 10px;
                 border: none;
-                height: 30px;
+                height: 35px;
                 cursor: pointer;
                 background-color: #a45d5dbd;
                 color: $forth-color;
                 font-size: $font-size-two;
+                margin-top: 10px;
                 &:hover {
                     border: 2px solid $second-color;
                     background-color: rgba(0, 0, 0, 0);

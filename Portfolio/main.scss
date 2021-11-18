@@ -3,14 +3,16 @@
 @import "./layout/body";
 @import "./layout/header";
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    font-family: $second-font-style;
-    // width: 100%;
-    // left: 0;
-    // right: 0;
+    font-family: $second-font-style;    
     overflow-x: hidden;
-    background-image: url('/Portfolio/assets/digital-gef93bd217_1920.jpg');
+    background-image: url('./assets/digital-gef93bd217_1920.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

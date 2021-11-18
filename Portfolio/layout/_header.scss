@@ -2,10 +2,11 @@
 @import "../assets/typography";
 
 header {
-    background-color: $first-color;
+    background-color: rgba(0, 0, 0, 0.836);
     color: $second-color;
     text-align: center;
     position: fixed;
+    display: flex;
     z-index: 999;
     width: 100%;
     top: 0;
@@ -17,6 +18,10 @@ header {
     font-family: $second-font-style;
     color: $second-color;
     font-style: italic;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .nav-toggle {
@@ -65,7 +70,7 @@ header {
 
 nav {
     position: absolute;
-    text-align: left;
+    text-align: center;
     top: 100%;
     left: 0;
     background-color: $first-color;
@@ -106,7 +111,7 @@ nav a {
     }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
     .nav-toggle-label {
         display: none;
     }
@@ -114,6 +119,7 @@ nav a {
     header {
         display: grid;
         grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+        // place-items: center;
     }
 
     .logo {
@@ -124,11 +130,11 @@ nav a {
         all: unset;
         grid-column: 3/ 4;
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
         & ul {
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
         }
         & li {
             margin-left: 3rem;
