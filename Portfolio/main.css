@@ -1,8 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "urbanist", sans-serif;
+  overflow-x: hidden;
+  background-image: url("./assets/digital-gef93bd217_1920.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+h2 {
+  font-family: "josefin sans", sans-serif;
+  font-size: 3em;
+}
+
+p, li, .table {
+  font-family: "urbanist", sans-serif;
+  font-size: 1.2em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
 .section1 {
   top: 0;
   padding: 90px 25% 0;
   position: static;
   height: 700px;
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -33,7 +66,7 @@
 
 .section1 .text1 h2 {
   color: #FFC069;
-  margin-top: 100px;
+  margin: 100px auto 0 auto;
 }
 
 .section1 .text1 .line1 {
@@ -65,6 +98,7 @@
 
 .section-bg {
   background: rgba(0, 0, 0, 0.726);
+  width: 100vw;
   z-index: 998;
 }
 
@@ -75,12 +109,10 @@
 .section2 {
   background-color: rgba(255, 255, 255, 0.808);
   position: static;
-  width: 100%;
+  width: 100vw;
 }
 
 .subsection2 {
-  position: relative;
-  width: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -93,7 +125,7 @@
 }
 
 .subsection2 img {
-  width: 300px;
+  max-width: 300px;
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/ 3;
@@ -117,8 +149,8 @@
       -ms-flex-align: center;
           align-items: center;
   padding-left: 50px;
-  padding-right: 30px;
   margin-bottom: 30px;
+  width: 50%;
 }
 
 .subsection2 .text2:hover span {
@@ -216,7 +248,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 2rem;
   font-weight: light;
 }
 
@@ -240,6 +271,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  max-width: 100%;
+  height: auto;
 }
 
 .matrix p {
@@ -255,8 +288,8 @@
   background-color: rgba(255, 255, 255, 0.096);
   border-radius: 10px;
   border-collapse: collapse;
-  margin: 25px 0;
-  min-width: 400px;
+  width: 100%;
+  margin: 1rem auto 2rem 0;
 }
 
 .table thead tr {
@@ -373,7 +406,7 @@
   cursor: pointer;
   background-color: #a45d5dbd;
   color: #EFEFEF;
-  font-size: 1.2rem;
+  font-size: 2em;
   margin-top: 10px;
 }
 
@@ -393,12 +426,12 @@ header {
   text-align: center;
   position: fixed;
   z-index: 999;
-  width: 100%;
+  width: 100vw;
   height: 80px;
 }
 
 .logo {
-  font-family: "source sans pro";
+  font-family: "urbanist", sans-serif;
   color: #A45D5D;
   font-style: italic;
   margin-top: 20px;
@@ -595,7 +628,7 @@ nav a:hover {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media (min-width: 319px) and (max-width: 480px) {
   html h2 {
     font-size: 2rem;
     width: 420px;
@@ -611,7 +644,7 @@ nav a:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 200px;
+    width: 100vw;
     margin-left: 135px;
   }
   .subsection2 img {
@@ -660,32 +693,19 @@ nav a:hover {
   .table {
     font-size: 1rem;
   }
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body {
-  font-family: "source sans pro";
-  overflow-x: hidden;
-  background-image: url("./assets/digital-gef93bd217_1920.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-
-h2 {
-  font-family: "playfair display";
-  font-size: 3rem;
-}
-
-p, li, .table {
-  font-family: "source sans pro";
-  font-size: 1.2rem;
+  .subsection4 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 auto;
+  }
+  .subsection4 .contact-form {
+    width: 100%;
+    margin-top: -50px;
+  }
+  .subsection4 .contact-form form {
+    margin-left: -30px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

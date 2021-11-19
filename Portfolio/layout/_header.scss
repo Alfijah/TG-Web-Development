@@ -7,7 +7,7 @@ header {
     text-align: center;
     position: fixed;
     z-index: 999;
-    width: 100%;
+    width: 100vw;
     height: 80px;
 }
 
@@ -211,7 +211,7 @@ nav a {
     }
 }
 
-@media screen and (max-width: 480px) {
+@media (min-width: 319px) and (max-width: 480px) {
     html {
         h2 {
             font-size: 2rem;
@@ -223,10 +223,11 @@ nav a {
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
-        width: 200px;
+        width: 100vw;
         margin-left: 135px;
         & img {
             margin-top: -10px;
+
         }
         & .text2 {
             margin-top: 120px;
@@ -264,5 +265,18 @@ nav a {
     }
     .table {
         font-size: 1rem;
+    }
+
+    .subsection4 {
+        flex-direction: column;
+        margin: 0 auto;
+        & .contact-form {
+            width: 100%;
+            margin-top: -50px;
+            & form {
+                margin-left: -30px;
+                
+            }
+        }
     }
 }

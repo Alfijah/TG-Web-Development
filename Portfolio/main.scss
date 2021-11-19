@@ -3,28 +3,3 @@
 @import "./layout/body";
 @import "./layout/header";
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: $second-font-style;    
-    overflow-x: hidden;
-    background-image: url('./assets/digital-gef93bd217_1920.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-}
-
-h2 {
-    font-family: $first-font-style;
-    font-size: $font-size-one;
-}
-
-p, li, .table {
-    font-family: $second-font-style;
-    font-size: $font-size-two;
-}
