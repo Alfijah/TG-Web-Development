@@ -8,7 +8,7 @@
 body {
   font-family: "urbanist", sans-serif;
   overflow-x: hidden;
-  background-image: url("https://lh3.googleusercontent.com/ORGxQqBboZgshvhe88M-21Y4qkxgIQcVTKVOlyWFtnXE30iELfwg4QuLg3ZIH11IALcbt3U8lU5XBnqdyFJ2Ml52ceIf_xBU21cLPEtFOl4cRRZUnm0-As5ZhddBL9ZgdoRw7X1lMTqNPEJ1HtUMjUuvMM9HFQiuY1II8UYIcX26ARGLa_bdDzhmYVQOciJKmKB4TE8f9fveB03WydOuyGNH5VbmRziYQEscggRdtTtYa4kyZq-sRbZbQ7J2n-NAsGNlQhH_I7xZWruPpH21sJuMEI1kGab0er9CjoIrHZO6X_E_oPFSHdgJdKBVO8QXrIY6A8jc0DXwQ6A-yMHEjidLrtz2ZqFAutoNAsV9DF64Bxa6NI5FvQuAXLlY943bjuAr2IlRv8k6NIGWK340WNvigiue0kGCFJzIjPyYJbBfvz6Jp4RdSrqBF5iVTdIpA5zwhdoV7J4eG-a6-6FyKbuGuU-FKuqGZbW4jyfnEo9H5vK4o12zp7uegF8hWwRgEiadh6A_TdvufjY_ejNSfUEb7QQHkkdzgV6pWF0Bciju7wimFxF7-JXCme_0BKngh3gmcg_BiAsuA_sdIsMcOLVi3LCqi5KZonqTquplLjCTix09Wvg_fMMilt1dyrV8jusYYgc3O7iZLjF2n1xr5yMVDwi_CkBw-rs1dFV3VR9P6rgX0G_2gcJtfME8t7j4jYJgHWnYUHBqY6qomsp0m9dA=w1380-h943-no?authuser=0");
+  background-image: url("https://i.ibb.co/RHnbnkd/digitization-gb7f879ac8-1920.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -66,7 +66,7 @@ h3 {
 
 .section1 .text1 h2 {
   color: #FFC069;
-  margin: 100px auto 0 auto;
+  margin: 150px auto 0 auto;
 }
 
 .section1 .text1 .line1 {
@@ -97,7 +97,7 @@ h3 {
 }
 
 .section-bg {
-  background: rgba(0, 0, 0, 0.726);
+  background: rgba(0, 0, 0, 0.836);
   width: 100vw;
   z-index: 998;
 }
@@ -106,8 +106,13 @@ h3 {
   margin-top: 20px;
 }
 
+#between-space1 {
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.836);
+}
+
 .section2 {
-  background-color: rgba(255, 255, 255, 0.808);
+  background-color: rgba(255, 255, 255, 0.829);
   position: static;
   width: 100vw;
 }
@@ -176,7 +181,7 @@ h3 {
 }
 
 .section3 {
-  background: rgba(0, 0, 0, 0.726);
+  background: rgba(0, 0, 0, 0.836);
   margin-top: 0;
   padding-bottom: 50px;
 }
@@ -200,7 +205,7 @@ h3 {
 .subsection3 h2 {
   text-align: center;
   color: #FFC069;
-  margin-top: 50px;
+  padding-top: 50px;
 }
 
 .subsection3 .line3 {
@@ -289,7 +294,7 @@ h3 {
   border-radius: 10px;
   border-collapse: collapse;
   width: 100%;
-  margin: 1rem auto 2rem 0;
+  margin: 1rem auto 2rem auto;
 }
 
 .table thead tr {
@@ -298,7 +303,12 @@ h3 {
 }
 
 .table th {
-  padding: 12px 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .table td {
@@ -323,7 +333,7 @@ h3 {
 }
 
 .section4 {
-  background-color: rgba(255, 255, 255, 0.808);
+  background-color: rgba(255, 255, 255, 0.829);
   padding-top: 20px;
   padding-bottom: 50px;
 }
@@ -391,7 +401,8 @@ h3 {
   border: none;
   height: 25px;
   padding-left: 20px;
-  color: rgba(0, 0, 0, 0.459);
+  color: rgba(0, 0, 0, 0.774);
+  background-color: rgba(0, 0, 0, 0.212);
 }
 
 .section4 .contact-form form #message {
@@ -406,7 +417,7 @@ h3 {
   cursor: pointer;
   background-color: #a45d5dbd;
   color: #EFEFEF;
-  font-size: 2em;
+  font-size: 1.2em;
   margin-top: 10px;
 }
 
@@ -580,12 +591,15 @@ nav a:hover {
 @media (min-width: 481px) and (max-width: 768px) {
   .logo {
     margin-top: 20px;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1/ 4;
   }
   html h2 {
-    font-size: 2.5rem;
+    font-size: 2em;
   }
   html p, html li {
-    font-size: 1rem;
+    font-size: 3em;
   }
   html h3 {
     font-size: 0.5rem;
@@ -631,7 +645,7 @@ nav a:hover {
 @media (min-width: 319px) and (max-width: 480px) {
   html h2 {
     font-size: 2rem;
-    width: 420px;
+    width: 100%;
   }
   .subsection2 {
     -webkit-box-orient: vertical;
@@ -645,7 +659,6 @@ nav a:hover {
         -ms-flex-align: center;
             align-items: center;
     width: 100vw;
-    margin-left: 135px;
   }
   .subsection2 img {
     margin-top: -10px;
@@ -657,14 +670,13 @@ nav a:hover {
     text-align: center;
   }
   .subsection2 .text2 p {
-    width: 410px;
+    width: 100%;
   }
   .skill-category {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 600px;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -677,7 +689,6 @@ nav a:hover {
     font-size: 1.9rem;
   }
   .matrix {
-    width: 410px;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;

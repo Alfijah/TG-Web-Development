@@ -145,14 +145,15 @@ nav a {
 @media (min-width: 481px) and (max-width: 768px) {
     .logo {
         margin-top: 20px;
+        grid-column: 1/ 4;
     }
 
     html {
         & h2 {
-            font-size: 2.5rem;
+            font-size: 2em;
         }
         & p, & li {
-            font-size: 1rem;
+            font-size: 3em;
         }
         & h3 {
             font-size: 0.5rem;
@@ -215,7 +216,7 @@ nav a {
     html {
         h2 {
             font-size: 2rem;
-            width: 420px;
+            width: 100%;
         }
     }
 
@@ -224,7 +225,7 @@ nav a {
         justify-content: center;
         align-items: center;
         width: 100vw;
-        margin-left: 135px;
+        // margin-left: 135px;
         & img {
             margin-top: -10px;
 
@@ -237,7 +238,7 @@ nav a {
                 text-align: center;
             }
             & p {
-                width: 410px;
+                width: 100%;
             }
 
         }
@@ -245,7 +246,7 @@ nav a {
 
     .skill-category {
         flex-direction: column;
-        width: 600px;
+        // width: 600px;
         align-items: center;
         padding-bottom: 30px;
         & h3 {
@@ -255,7 +256,7 @@ nav a {
     }
 
     .matrix {
-        width: 410px;
+        // width: 410px;
         justify-content: center;
         align-items: center;
         align-content: center;
