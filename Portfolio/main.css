@@ -32,9 +32,9 @@ h3 {
 
 .section1 {
   top: 0;
-  padding: 90px 25% 0;
+  margin: 0 auto;
   position: static;
-  height: 700px;
+  height: 650px;
   width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -52,58 +52,53 @@ h3 {
 }
 
 .section1 .intro-head {
+  text-align: center;
+  width: 45%;
+}
+
+.section1 .intro-head h2 {
+  color: #FFC069;
+  padding-top: 50px;
+}
+
+.intro-text {
+  background-color: rgba(0, 0, 0, 0.726);
+  height: 90px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.intro-text p {
   text-align: center;
-}
-
-.section1 .intro-head h2 {
-  color: #FFC069;
-  margin: 100px auto 0 auto;
-}
-
-.section1 .intro-text {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.section1 .intro-text p {
   color: #EFEFEF;
-  margin-top: 190px;
   cursor: pointer;
 }
 
-.section1 .intro-text p a {
+.intro-text p a {
   text-decoration: none;
   color: #EFEFEF;
 }
 
-.section1 .intro-text p:hover {
+.intro-text p:hover {
   color: #A45D5D;
 }
 
-.section1 .intro-text span:hover {
-  color: #A45D5D;
+.intro-text p .arrow {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  padding-top: 10px;
 }
 
 .section-bg {
   background: rgba(0, 0, 0, 0.726);
-  width: 100vw;
   z-index: 998;
 }
 
@@ -364,13 +359,12 @@ h3 {
 
 .section4 {
   background-color: rgba(255, 255, 255, 0.829);
-  padding-top: 20px;
+  padding-top: 10px;
   padding-bottom: 50px;
 }
 
 .section4 h2 {
   color: #A45D5D;
-  margin-top: -20px;
 }
 
 .section4 .subsection4 {
@@ -380,7 +374,6 @@ h3 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-left: 100px;
   gap: 100px;
 }
 
@@ -392,7 +385,6 @@ h3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-right: 30px;
   padding-top: 50px;
 }
 
@@ -409,7 +401,12 @@ h3 {
 }
 
 .contact-form {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   width: 30%;
   margin-top: 60px;
 }
@@ -637,12 +634,12 @@ nav a:hover {
   html .table tbody {
     font-size: xx-small;
   }
-  .text1 h2 {
-    width: 450px;
-    padding-top: 100px;
+  .section1 {
+    height: 370px;
   }
-  .text1 p {
-    margin-top: -190px;
+  .section1 .intro-head {
+    width: 60%;
+    padding-top: 50px;
   }
   .subsection2 {
     width: 100%;
@@ -654,22 +651,46 @@ nav a:hover {
   }
   .subsection2 .text2 {
     padding-top: 60px;
+    width: 60%;
   }
-  .skill-category ul li {
-    padding-left: 40px;
+  .skill-category {
+    width: 85%;
   }
-  .subsection4 .text4 {
-    margin-left: -80px;
+  .skill-category h3 {
+    font-size: 100%;
   }
-  .line1, .line2, .line3, .line4 {
-    display: none;
+  .matrix {
+    font-size: 70%;
+  }
+  .matrix span {
+    font-size: 70%;
+  }
+  .table {
+    width: 70%;
+  }
+  .table th, .table td {
+    font-size: 90%;
+  }
+  .contact-form {
+    width: 35%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
 }
 
 @media (min-width: 319px) and (max-width: 480px) {
-  html h2 {
-    font-size: 2rem;
-    width: 100%;
+  body h2 {
+    font-size: 2em;
+  }
+  body p {
+    font-size: 1em;
+  }
+  .section1 {
+    height: 450px;
+  }
+  .section1 .intro-head {
+    width: 90%;
   }
   .subsection2 {
     -webkit-box-orient: vertical;
@@ -686,15 +707,16 @@ nav a:hover {
   }
   .subsection2 img {
     margin-top: -10px;
+    width: 100%;
   }
   .subsection2 .text2 {
-    margin-top: 120px;
+    width: 90%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .subsection2 .text2 h2 {
     text-align: center;
-  }
-  .subsection2 .text2 p {
-    width: 100%;
   }
   .skill-category {
     -webkit-box-orient: vertical;

@@ -34,58 +34,54 @@ h3 {
 
 .section1 {
     top: 0;
-    padding: 90px 25% 0;
+    // padding: 90px 25% 0;
+    margin: 0 auto;
     position: static;
-    height: 700px;
+    height: 650px;
     width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     & .intro-head {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         text-align: center;
+        width: 45%;
         & h2 {
             color: $third-color;
-            // margin-top: 100px;
-            margin: 100px auto 0 auto;
+            padding-top: 50px;
         }
     } 
 }
 
-.section1 {
-    .intro-text {
-        display: flex;
-        align-items: center;
-        & p {
+.intro-text {
+    background-color: rgba(0, 0, 0, 0.726);
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & p {
+        text-align: center;
+        color: $forth-color;
+        cursor: pointer;
+        & a {
+            text-decoration: none;
             color: $forth-color;
-            margin-top: 190px;
-            cursor: pointer;
-            & a {
-                text-decoration: none;
-                color: $forth-color;
-            }
-            &:hover {
-                color: $second-color;
-            }
-        // & .fas fa-chevron-down {
-
-        // }
         }
-        & span:hover {
+        &:hover {
             color: $second-color;
         }
-        
+    & .arrow {
+        display: grid;
+        place-items: center;
+        padding-top: 10px;
+        }
     }
+    
 }
 
 
 .section-bg {
     background: rgba(0, 0, 0, 0.726);
-    width: 100vw;
     z-index: 998;
 }
 
@@ -281,21 +277,19 @@ h3 {
 
 .section4 {
     background-color: $sixth-color;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-bottom: 50px;
     & h2 {
         color: $second-color;
-        margin-top: -20px;
     }
     & .subsection4 {
         display: flex;
         justify-content: center;
-        margin-left: 100px;
         gap: 100px;
         & .text4 {
             display: flex;
             flex-direction: column;
-            padding-right: 30px;
+            // padding-right: 30px;
             padding-top: 50px;
             & .line4 {
                 width: 100%;
@@ -312,7 +306,8 @@ h3 {
 }
 
 .contact-form {
-        display: block;
+        display: flex;
+        justify-content: flex-end;
         width: 30%;
         margin-top: 60px;
         & form {
