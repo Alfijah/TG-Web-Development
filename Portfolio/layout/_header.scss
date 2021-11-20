@@ -153,7 +153,7 @@ nav a {
             font-size: 2em;
         }
         & p, & li {
-            font-size: 3em;
+            font-size: 1em;
         }
         & h3 {
             font-size: 0.5rem;
@@ -165,18 +165,19 @@ nav a {
         }
     }
 
-    .section1 {
-        height: 470px;
-    }
+    // .section1 {
+    //     height: 470px;
+    // }
 
     .text1 {
-        margin-top: -150px;
-        height: 470px;
         & h2 {
             width: 450px;
+            padding-top: 100px;
+            
         }
         & p {
-            display: none;
+            // display: none;
+            margin-top: -190px;
         }
     }
 
@@ -255,18 +256,18 @@ nav a {
         }
     }
 
-    .matrix {
-        // width: 410px;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        & .table-outer {
-            width: 80%;
-        }
-    }
-    .table {
-        font-size: 1rem;
-    }
+    // .matrix {
+    //     // width: 410px;
+    //     justify-content: center;
+    //     align-items: center;
+    //     align-content: center;
+    //     & .table-outer {
+    //         width: 80%;
+    //     }
+    // }
+    // .table {
+    //     font-size: 1rem;
+    // }
 
     .subsection4 {
         flex-direction: column;

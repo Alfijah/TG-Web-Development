@@ -39,6 +39,10 @@ h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -47,7 +51,7 @@ h3 {
           align-items: center;
 }
 
-.section1 .text1 {
+.section1 .intro-head {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,51 +68,47 @@ h3 {
   text-align: center;
 }
 
-.section1 .text1 h2 {
+.section1 .intro-head h2 {
   color: #FFC069;
-  margin: 150px auto 0 auto;
+  margin: 100px auto 0 auto;
 }
 
-.section1 .text1 .line1 {
-  width: 50%;
-  height: 3px;
-  background-color: #FFC069;
-  margin-top: 20px;
-  border-radius: 20px;
+.section1 .intro-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.section1 .text1 p {
+.section1 .intro-text p {
   color: #EFEFEF;
   margin-top: 190px;
   cursor: pointer;
 }
 
-.section1 .text1 p a {
+.section1 .intro-text p a {
   text-decoration: none;
   color: #EFEFEF;
 }
 
-.section1 .text1 p:hover {
+.section1 .intro-text p:hover {
   color: #A45D5D;
 }
 
-.section1 .text1 span:hover {
+.section1 .intro-text span:hover {
   color: #A45D5D;
 }
 
 .section-bg {
-  background: rgba(0, 0, 0, 0.836);
+  background: rgba(0, 0, 0, 0.726);
   width: 100vw;
   z-index: 998;
 }
 
-.text1 i {
+.intro-head i {
   margin-top: 20px;
-}
-
-#between-space1 {
-  height: 80px;
-  background-color: rgba(0, 0, 0, 0.836);
 }
 
 .section2 {
@@ -118,6 +118,7 @@ h3 {
 }
 
 .subsection2 {
+  width: 65%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -125,18 +126,16 @@ h3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-left: 18em;
+  margin: 0 auto;
   gap: 20px;
 }
 
 .subsection2 img {
-  max-width: 300px;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/ 3;
+  max-width: 30%;
+  height: auto;
   margin-top: 50px;
   margin-bottom: 50px;
-  border-radius: 5%;
+  border-radius: 10px;
 }
 
 .subsection2 .text2 {
@@ -155,7 +154,7 @@ h3 {
           align-items: center;
   padding-left: 50px;
   margin-bottom: 30px;
-  width: 50%;
+  width: 70%;
 }
 
 .subsection2 .text2:hover span {
@@ -181,7 +180,7 @@ h3 {
 }
 
 .section3 {
-  background: rgba(0, 0, 0, 0.836);
+  background: rgba(0, 0, 0, 0.726);
   margin-top: 0;
   padding-bottom: 50px;
 }
@@ -205,7 +204,7 @@ h3 {
 .subsection3 h2 {
   text-align: center;
   color: #FFC069;
-  padding-top: 50px;
+  margin-top: 50px;
 }
 
 .subsection3 .line3 {
@@ -217,20 +216,30 @@ h3 {
 }
 
 .skills {
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-.skill-category {
+  margin: 2rem auto 2rem auto;
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 40px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.skill-category {
+  width: 65%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   border-bottom: 1px solid #EFEFEF;
-  margin-bottom: 20px;
-  padding: 20px 150px;
-  background-color: rgba(255, 255, 255, 0.096);
+  margin-bottom: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.644);
   border-radius: 10px;
+  padding: 20px 0;
 }
 
 .skill-category:hover {
@@ -243,7 +252,7 @@ h3 {
 
 .skill-category h3 {
   color: #EFEFEF;
-  width: 50px;
+  width: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -254,11 +263,28 @@ h3 {
       -ms-flex-align: center;
           align-items: center;
   font-weight: light;
+  border-right: 1px solid #EFEFEF;
 }
 
 .skill-category ul {
   color: #EFEFEF;
   font-weight: lighter;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 5px;
+}
+
+.skill-category ul li {
+  list-style: none;
+  padding-left: 4em;
 }
 
 .matrix {
@@ -270,18 +296,12 @@ h3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  max-width: 100%;
-  height: auto;
+  width: 100vw;
 }
 
 .matrix p {
-  margin-bottom: 10px;
+  margin: 1rem auto 0.5rem auto;
+  font-size: 1.8em;
 }
 
 .matrix span {
@@ -289,34 +309,40 @@ h3 {
   font-size: 1rem;
 }
 
+.first-column {
+  padding-left: 15px;
+}
+
 .table {
-  background-color: rgba(255, 255, 255, 0.096);
+  background-color: rgba(0, 0, 0, 0.644);
   border-radius: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-collapse: collapse;
-  width: 100%;
-  margin: 1rem auto 2rem auto;
+  margin: 0.5rem auto 2rem auto;
+  width: 55%;
 }
 
 .table thead tr {
-  background-color: #FFC069;
-  text-align: left;
+  background-color: #ffc169b6;
+  text-align: right;
 }
 
 .table th {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  height: 2.5rem;
+  text-align: center;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
 }
 
 .table td {
-  padding: 10px 15px;
+  height: 2.4em;
 }
 
 .table tbody tr {
-  border-bottom: 1px solid #FFC069;
+  border-bottom: 1px solid #ffc16948;
   font-size: 1rem;
 }
 
@@ -329,7 +355,11 @@ h3 {
 }
 
 .table tbody tr:nth-of-type(5), .table tbody tr:nth-of-type(7), .table tbody tr:nth-of-type(9), .table tbody tr:nth-of-type(13) {
-  border-bottom: 3px solid #FFC069;
+  border-bottom: 3px solid #ffc169b9;
+}
+
+.thead {
+  width: 10%;
 }
 
 .section4 {
@@ -378,13 +408,13 @@ h3 {
   padding-top: 30px;
 }
 
-.section4 .contact-form {
+.contact-form {
   display: block;
   width: 30%;
   margin-top: 60px;
 }
 
-.section4 .contact-form form {
+.contact-form form {
   width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -396,21 +426,21 @@ h3 {
   gap: 10px;
 }
 
-.section4 .contact-form form input {
+.contact-form form input {
   border-radius: 10px;
   border: none;
-  height: 25px;
+  height: 2rem;
   padding-left: 20px;
-  color: rgba(0, 0, 0, 0.774);
-  background-color: rgba(0, 0, 0, 0.212);
+  color: rgba(0, 0, 0, 0.534);
+  background-color: rgba(0, 0, 0, 0.144);
 }
 
-.section4 .contact-form form #message {
+.contact-form form #message {
   padding-top: 15px;
   padding-bottom: 100px;
 }
 
-.section4 .contact-form form button {
+.contact-form form button {
   border-radius: 10px;
   border: none;
   height: 35px;
@@ -421,7 +451,7 @@ h3 {
   margin-top: 10px;
 }
 
-.section4 .contact-form form button:hover {
+.contact-form form button:hover {
   border: 2px solid #A45D5D;
   background-color: rgba(0, 0, 0, 0);
   color: #A45D5D;
@@ -599,7 +629,7 @@ nav a:hover {
     font-size: 2em;
   }
   html p, html li {
-    font-size: 3em;
+    font-size: 1em;
   }
   html h3 {
     font-size: 0.5rem;
@@ -607,18 +637,12 @@ nav a:hover {
   html .table tbody {
     font-size: xx-small;
   }
-  .section1 {
-    height: 470px;
-  }
-  .text1 {
-    margin-top: -150px;
-    height: 470px;
-  }
   .text1 h2 {
     width: 450px;
+    padding-top: 100px;
   }
   .text1 p {
-    display: none;
+    margin-top: -190px;
   }
   .subsection2 {
     width: 100%;
@@ -687,22 +711,6 @@ nav a:hover {
         -ms-flex-align: center;
             align-items: center;
     font-size: 1.9rem;
-  }
-  .matrix {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-line-pack: center;
-        align-content: center;
-  }
-  .matrix .table-outer {
-    width: 80%;
-  }
-  .table {
-    font-size: 1rem;
   }
   .subsection4 {
     -webkit-box-orient: vertical;
