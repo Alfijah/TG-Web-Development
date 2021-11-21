@@ -121,6 +121,12 @@ h3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0 auto;
 }
 
@@ -211,7 +217,7 @@ h3 {
 }
 
 .skills {
-  margin: 2rem auto 2rem auto;
+  margin: 3rem auto 2rem auto;
   width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -271,15 +277,12 @@ h3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   gap: 5px;
+  margin: 0 0 0 8%;
 }
 
 .skill-category ul li {
   list-style: none;
-  padding-left: 4em;
 }
 
 .matrix {
@@ -291,17 +294,21 @@ h3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100vw;
 }
 
-.matrix p {
+.matrix .matrix-title {
   margin: 1rem auto 0.5rem auto;
   font-size: 1.8em;
 }
 
-.matrix span {
+.matrix .matrix-rating {
   font-weight: lighter;
   font-size: 1rem;
+  margin: 0 auto;
 }
 
 .first-column {
@@ -336,11 +343,11 @@ h3 {
 }
 
 .table tbody tr {
-  border-bottom: 1px solid #a45d5d4d;
+  border-bottom: 1px solid #ffc1694b;
   font-size: 1rem;
 }
 
-.table tbody tr span {
+.table tbody tr .table-title {
   font-size: 1.2rem;
 }
 
@@ -353,7 +360,7 @@ h3 {
 }
 
 .table tbody tr:nth-of-type(5), .table tbody tr:nth-of-type(7), .table tbody tr:nth-of-type(9) {
-  border-bottom: 3px solid #a45d5dc2;
+  border-bottom: 3px solid #ffc169b2;
 }
 
 .thead {
@@ -362,8 +369,8 @@ h3 {
 
 .section4 {
   background-color: rgba(255, 255, 255, 0.829);
-  padding-top: 10px;
   padding-bottom: 50px;
+  width: 100vw;
 }
 
 .section4 h2 {
@@ -377,7 +384,10 @@ h3 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 50px;
 }
 
 .section4 .subsection4 .text4 {
@@ -391,14 +401,6 @@ h3 {
   padding-top: 50px;
 }
 
-.section4 .subsection4 .text4 .line4 {
-  width: 100%;
-  height: 3px;
-  background-color: #A45D5D;
-  margin-top: 20px;
-  border-radius: 20px;
-}
-
 .section4 .subsection4 .text4 p {
   padding-top: 30px;
 }
@@ -410,7 +412,7 @@ h3 {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  width: 30%;
+  width: 35%;
   margin-top: 60px;
 }
 
@@ -646,11 +648,12 @@ nav a:hover {
   }
   .subsection2 {
     width: 100%;
-    margin-left: 0px;
-    padding-left: 50px;
   }
   .subsection2 img {
-    width: 200px;
+    width: 100%;
+  }
+  .text2 h2 {
+    padding-top: 3rem;
   }
   .personal-data {
     width: 90%;
@@ -691,8 +694,8 @@ nav a:hover {
   body h2 {
     font-size: 2em;
   }
-  body p {
-    font-size: 1em;
+  body p, body li {
+    font-size: 0.8em;
   }
   .section1 {
     height: 450px;
@@ -714,7 +717,8 @@ nav a:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 100vw;
+    width: 100%;
+    padding-top: 40px;
   }
   .subsection2 img {
     width: 100%;
@@ -729,6 +733,9 @@ nav a:hover {
   .personal-data .text2 h2 {
     text-align: center;
   }
+  .personal-data .text2 p {
+    margin-top: -15px;
+  }
   .skill-category {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -738,26 +745,61 @@ nav a:hover {
         -ms-flex-align: center;
             align-items: center;
     padding-bottom: 30px;
+    width: 85%;
   }
   .skill-category h3 {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    font-size: 1.9rem;
+    font-size: 1.3em;
+    border-right: none;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  .skill-category .skill-list {
+    margin-right: 8%;
+  }
+  .skill-category .skill-list li:nth-of-type(1) {
+    border-top: 1px solid #EFEFEF;
+    padding-top: 20px;
+  }
+  .matrix .matrix-title {
+    font-size: 1em;
+  }
+  .matrix .matrix-rating {
+    font-size: 0.8em;
+    margin: 0 5%;
+  }
+  .table {
+    width: 85%;
+  }
+  .table thead {
+    font-size: 65%;
+  }
+  .table tbody tr {
+    font-size: 65%;
+  }
+  .table-title {
+    font-size: 1.1em;
   }
   .subsection4 {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin: 0 auto;
+  }
+  .subsection4 .text4 {
+    width: 85%;
   }
   .subsection4 .contact-form {
-    width: 100%;
-    margin-top: -50px;
+    width: 80%;
+    margin: -10px auto 0 auto;
   }
-  .subsection4 .contact-form form {
-    margin-left: -30px;
+  .subsection4 .contact-form form input {
+    font-size: 0.6em;
+  }
+  .subsection4 .contact-form form button {
+    font-size: 0.8em;
   }
 }
 /*# sourceMappingURL=main.css.map */

@@ -100,8 +100,9 @@ h3 {
     width: 65%;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
-    // gap: 50px; 
         & img {
             max-width: 30%;
             height: auto;
@@ -161,7 +162,7 @@ h3 {
 }
 
 .skills {
-    margin: 2rem auto 2rem auto;
+    margin: 3rem auto 2rem auto;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -188,7 +189,6 @@ h3 {
         display: flex;
         justify-content: center;
         align-items: center;
-        // font-size: $font-size-three;
         font-weight:light;
         border-right: 1px solid $forth-color;
         
@@ -198,28 +198,29 @@ h3 {
         font-weight: lighter;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         gap: 5px;
+        margin: 0 0 0 8%;
         & li {
             list-style: none;
-            padding-left: 4em;
             
         }
-    }
+    } 
 }
 
 .matrix {
     color: $forth-color;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100vw;
-    & p {
+    & .matrix-title {
         margin: 1rem auto 0.5rem auto;
         font-size: 1.8em;
     }
-    & span {
+    & .matrix-rating {
         font-weight: lighter;
         font-size: 1rem;
+        margin: 0 auto;
     }
 }
 
@@ -230,7 +231,6 @@ h3 {
 .table {
     background-color: rgba(0, 0, 0, 0.644);
     border-radius: 10px;
-    
     align-items: center;
     border-collapse: collapse;
     margin: 0.5rem auto 2rem auto;
@@ -250,9 +250,9 @@ h3 {
     }
     & tbody {
         & tr {
-            border-bottom: 1px solid #a45d5d4d;
+            border-bottom: 1px solid #ffc1694b;
             font-size: 1rem;
-             & span {
+            & .table-title {
                 font-size: 1.2rem;
              }
             & td:nth-of-type(2), & td:nth-of-type(3), & td:nth-of-type(4), & td:nth-of-type(5) {
@@ -263,7 +263,7 @@ h3 {
             border-bottom: none;
         }
         & tr:nth-of-type(5), & tr:nth-of-type(7), & tr:nth-of-type(9) {
-            border-bottom: 3px solid #a45d5dc2;
+            border-bottom: 3px solid #ffc169b2;
         }
     }
 }
@@ -274,27 +274,20 @@ h3 {
 
 .section4 {
     background-color: $sixth-color;
-    padding-top: 10px;
     padding-bottom: 50px;
+    width: 100vw;
     & h2 {
         color: $second-color;
     }
     & .subsection4 {
         display: flex;
         justify-content: center;
-        gap: 100px;
+        align-items: center;
+        gap: 50px;
         & .text4 {
             display: flex;
             flex-direction: column;
-            // padding-right: 30px;
             padding-top: 50px;
-            & .line4 {
-                width: 100%;
-                height: 3px;
-                background-color: $second-color;
-                margin-top: 20px;
-                border-radius: 20px;
-            }
             & p {
                 padding-top: 30px;
             }
@@ -305,7 +298,7 @@ h3 {
 .contact-form {
         display: flex;
         justify-content: flex-end;
-        width: 30%;
+        width: 35%;
         margin-top: 60px;
         & form {
             width: 90%;

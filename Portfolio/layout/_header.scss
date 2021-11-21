@@ -176,10 +176,14 @@ nav a {
 
     .subsection2 {
         width: 100%;
-        margin-left: 0px;
-        padding-left: 50px;
         & img {
-            width: 200px;
+            width: 100%;
+        }
+    }
+
+    .text2 {
+        & h2 {
+            padding-top: 3rem;
         }
     }
 
@@ -223,8 +227,8 @@ nav a {
         & h2 {
             font-size: 2em;
         }
-        & p {
-            font-size: 1em;
+        & p, & li {
+            font-size: 0.8em;
         }
     }
 
@@ -240,8 +244,8 @@ nav a {
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
-        width: 100vw;
-        // margin-left: 135px;
+        width: 100%;
+        padding-top: 40px;
         & img {
             width: 100%;
         }
@@ -257,43 +261,81 @@ nav a {
                 text-align: center;
             }
 
+            & p {
+                margin-top: -15px;
+            }
+
         }
     }
 
     .skill-category {
         flex-direction: column;
-        // width: 600px;
         align-items: center;
         padding-bottom: 30px;
+        width: 85%;
         & h3 {
             align-items: center;
-            font-size: 1.9rem;
+            font-size: 1.3em;
+            border-right: none;
+            // border-bottom: 1px solid $forth-color;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        & .skill-list {
+            margin-right: 8%;
+                & li:nth-of-type(1) {
+                    border-top: 1px solid $forth-color;
+                    padding-top: 20px;
+                }
         }
     }
 
-    // .matrix {
-    //     // width: 410px;
-    //     justify-content: center;
-    //     align-items: center;
-    //     align-content: center;
-    //     & .table-outer {
-    //         width: 80%;
-    //     }
-    // }
-    // .table {
-    //     font-size: 1rem;
-    // }
+    .matrix {
+        // margin: 0 8%;
+        & .matrix-title {
+            font-size: 1em;
+        }
+        & .matrix-rating {
+            font-size: 0.8em;
+            margin: 0 5%;
+        }
+    }
 
-    .subsection4 {
-        flex-direction: column;
-        margin: 0 auto;
-        & .contact-form {
-            width: 100%;
-            margin-top: -50px;
-            & form {
-                margin-left: -30px;
-                
+    .table {
+        width: 85%;
+        & thead {
+            font-size: 65%;
+        }
+        & tbody {
+            & tr {
+                font-size: 65%;
             }
         }
     }
+
+    .table-title {
+        font-size: 1.1em;
+    }
+
+    .subsection4 {
+        flex-direction: column;
+        & .text4 {
+            width: 85%;
+        }
+        & .contact-form {
+            width: 80%;
+            // margin-top: -10px;
+            margin: -10px auto 0 auto;
+            & form {
+                & input {
+                    font-size: 0.6em;
+                }
+                & button {
+                    font-size: 0.8em;
+                }
+            }
+        }
+    }
+
+    
 }
