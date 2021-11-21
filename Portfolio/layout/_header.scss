@@ -181,9 +181,13 @@ nav a {
         & img {
             width: 200px;
         }
+    }
+
+    .personal-data {
+        width: 90%;
+        justify-content: center;
         & .text2 {
-            padding-top: 60px;
-            width: 60%;
+            width: 80%;
         }
     }
 
@@ -232,19 +236,23 @@ nav a {
     }
     
     .subsection2 {
+        display: flex;
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
         width: 100vw;
         // margin-left: 135px;
         & img {
-            margin-top: -10px;
             width: 100%;
         }
+        
+    }
+
+    .personal-data {
+        width: 85%;
         & .text2 {
-            // margin-top: 120px;
-            width: 90%;
-            justify-content: center;
+            width: 100%;
+            margin: 0 auto;
             & h2 {
                 text-align: center;
             }
