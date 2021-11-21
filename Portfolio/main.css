@@ -695,7 +695,7 @@ nav a:hover {
     font-size: 2em;
   }
   body p, body li {
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
   .section1 {
     height: 450px;
@@ -760,7 +760,7 @@ nav a:hover {
     margin-right: 8%;
   }
   .skill-category .skill-list li:nth-of-type(1) {
-    border-top: 1px solid #EFEFEF;
+    border-top: 1px solid rgba(255, 255, 255, 0.425);
     padding-top: 20px;
   }
   .matrix .matrix-title {
@@ -777,7 +777,7 @@ nav a:hover {
     font-size: 65%;
   }
   .table tbody tr {
-    font-size: 65%;
+    font-size: 68%;
   }
   .table tbody tr .table-title {
     font-size: 1.1em;
@@ -791,9 +791,15 @@ nav a:hover {
   .subsection4 .text4 {
     width: 85%;
   }
+  .subsection4 .text4 h2 {
+    text-align: center;
+  }
   .subsection4 .contact-form {
     width: 80%;
     margin: -10px auto 0 auto;
+  }
+  .subsection4 .contact-form form {
+    margin-right: 9%;
   }
   .subsection4 .contact-form form input {
     font-size: 0.6em;
