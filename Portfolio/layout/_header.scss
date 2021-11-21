@@ -247,7 +247,7 @@ nav a {
         width: 100%;
         padding-top: 40px;
         & img {
-            width: 100%;
+            width: 85%;
         }
         
     }
@@ -309,13 +309,14 @@ nav a {
         & tbody {
             & tr {
                 font-size: 65%;
+                & .table-title {
+                    font-size: 1.1em;
+                }
             }
         }
     }
 
-    .table-title {
-        font-size: 1.1em;
-    }
+    
 
     .subsection4 {
         flex-direction: column;

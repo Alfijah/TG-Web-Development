@@ -131,7 +131,7 @@ h3 {
 }
 
 .subsection2 img {
-  max-width: 30%;
+  width: 30%;
   height: auto;
   margin: 3.5rem auto;
   border-radius: 10px;
@@ -721,7 +721,7 @@ nav a:hover {
     padding-top: 40px;
   }
   .subsection2 img {
-    width: 100%;
+    width: 85%;
   }
   .personal-data {
     width: 85%;
@@ -779,7 +779,7 @@ nav a:hover {
   .table tbody tr {
     font-size: 65%;
   }
-  .table-title {
+  .table tbody tr .table-title {
     font-size: 1.1em;
   }
   .subsection4 {
