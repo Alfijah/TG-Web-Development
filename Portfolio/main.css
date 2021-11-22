@@ -133,7 +133,7 @@ h3 {
 .subsection2 img {
   width: 30%;
   height: auto;
-  margin: 3.5rem auto;
+  margin: 3.5rem 0;
   border-radius: 10px;
 }
 
@@ -650,19 +650,19 @@ nav a:hover {
     width: 100%;
   }
   .subsection2 img {
-    width: 100%;
+    width: 30%;
   }
   .text2 h2 {
     padding-top: 3rem;
   }
   .personal-data {
-    width: 90%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    width: 55%;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
   .personal-data .text2 {
-    width: 80%;
+    width: 90%;
   }
   .skill-category {
     width: 85%;

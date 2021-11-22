@@ -177,7 +177,7 @@ nav a {
     .subsection2 {
         width: 100%;
         & img {
-            width: 100%;
+            width: 30%;
         }
     }
 
@@ -188,10 +188,10 @@ nav a {
     }
 
     .personal-data {
-        width: 90%;
-        justify-content: center;
+        width: 55%;
+        justify-content: flex-end;
         & .text2 {
-            width: 80%;
+            width: 90%;
         }
     }
 
