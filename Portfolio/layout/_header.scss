@@ -225,10 +225,10 @@ nav a {
 @media (min-width: 319px) and (max-width: 480px) {
     body {
         & h2 {
-            font-size: 2em;
+            font-size: 2.2em;
         }
         & p, & li {
-            font-size: 0.9em;
+            font-size: 1.1em;
         }
     }
 
@@ -247,7 +247,7 @@ nav a {
         width: 100%;
         padding-top: 40px;
         & img {
-            width: 70%;
+            width: 60%;
         }
         
     }
@@ -292,7 +292,7 @@ nav a {
 
     .matrix {
         & .matrix-title {
-            font-size: 1em;
+            font-size: 1.2em;
         }
         & .matrix-rating {
             font-size: 0.8em;
@@ -303,11 +303,11 @@ nav a {
     .table {
         width: 85%;
         & thead {
-            font-size: 65%;
+            font-size: 1em;
         }
         & tbody {
             & tr {
-                font-size: 68%;
+                font-size: 0.8em;
                 & .table-title {
                     font-size: 1.1em;
                 }
@@ -332,10 +332,10 @@ nav a {
             & form {
                 margin-right: 9%;
                 & input {
-                    font-size: 0.6em;
+                    font-size: 0.8em;
                 }
                 & button {
-                    font-size: 0.8em;
+                    font-size: 0.9em;
                 }
             }
         }
