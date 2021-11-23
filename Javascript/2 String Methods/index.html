@@ -17,11 +17,11 @@
         let textOne = someKittens.slice(0, partOne + 1)
         console.log(textOne);
 
-        let stringSplit = {
-            textOne: "De poes van de buurman heeft kittens gehad!",
-            textTwo: "Hij vraagt of wij nog kittens willen."
-        }
-        console.log(stringSplit);
+        // let stringSplit = {
+        //     textOne: "De poes van de buurman heeft kittens gehad!",
+        //     textTwo: "Hij vraagt of wij nog kittens willen."
+        // }
+        // console.log(stringSplit);
 
         //Opdracht 2.1: b
         let capital = someKittens.toUpperCase();
@@ -35,6 +35,13 @@
         let lastLetter = someKittens.indexOf(letterS, sKitten + 1);
         console.log(catLocate);
         console.log(someKittens.indexOf(letterS, sKitten + 1));
+
+        //Opdracht 2.1: c Tweede oplossing
+        let kittenLocate = textOne.indexOf("kittens");
+        let kittenS = textOne.lastIndexOf("s");
+        console.log(kittenLocate);
+        console.log(kittenS);
+
 
         //opdracht 2.1: d
         console.log(someKittens.charAt(catLocate));
