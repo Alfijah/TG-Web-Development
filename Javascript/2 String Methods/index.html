@@ -13,6 +13,9 @@
     <script>
         //Opdracht 2.1: a
         let someKittens = "De poes van de buurman heeft kittens gehad! Hij vraagt of wij nog kittens willen.";
+        let partOne = someKittens.indexOf("!");
+        let textOne = someKittens.slice(0, partOne + 1)
+        console.log(textOne);
 
         let stringSplit = {
             textOne: "De poes van de buurman heeft kittens gehad!",
@@ -25,10 +28,33 @@
         console.log(capital);
 
         //Opdracht 2.1: c
-        let catLocate = someKittens.indexOf("kittens", fromIndex);
-        console.log(catLocate);
+        let catLocate = someKittens.indexOf("kittens");
 
-        // let catStart = array.indexOf(catLocate, fromIndex);
+        let letterS = "s";
+        let sKitten = someKittens.indexOf(letterS);
+        let lastLetter = someKittens.indexOf(letterS, sKitten + 1);
+        console.log(catLocate);
+        console.log(someKittens.indexOf(letterS, sKitten + 1));
+
+        //opdracht 2.1: d
+        console.log(someKittens.charAt(catLocate));
+        console.log(someKittens.charAt(lastLetter));
+    
+
+        //Opdracht 2.2: a
+        console.log("Als bij een substring het eerste getal hoger is dan het tweede getal, krijg je hetzelfde resultaat als wanneer het eerste getal kleiner is dan het tweede getal.");
+        
+        //Opdracht 2.2: b
+        console.log("Als bij slice het eerste getal hoger is dan het tweede, dan wordt de index geteld vanaf de einde van de volgorde van de string/array.");
+
+        //Opdracht 2.2: c
+        console.log("Wanneer substring een negatieve waarde heeft, worden de index(es) geteld vanaf de einde van de volgorde.");
+        console.log("Wanneer slice een negatieve waarde heeft, geldt dit hetzelfde als bij substring het geval is.")
+
+        //Opdracht 2.3
+        let anotherKittens = "Die nieuwe kittens zijn zo schattig!";
+        console.log(anotherKittens.split(" "));
+
     </script>
 </body>
 </html>
