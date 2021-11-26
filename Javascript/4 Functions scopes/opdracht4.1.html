@@ -14,7 +14,15 @@
     <button onclick="myButton()">Click Me!</button>
     <br><br>
     <h2>Opdracht 4.1: b</h2>
-    <input id="inputData" onclick="myInput()">
+    <input id="inputData" onclick="myInput()"><br><br>
+
+    <h2>Opdracht 4.1: c</h2>
+    <p>In deze paragraaf is gebruik gemaakt van onchange event. Nu kan je kiezen welk fruit je het liefst eet!</p>
+    <select id="inputThree" onchange="thirdInput()">
+      <option value="Aardbeien">Aardbeien</option>
+      <option value="Bosbessen">Bosbessen</option>
+    </select>
+    <p id="fruits"></p>
 
     <script>
       //opdracht 4.1: a
@@ -33,10 +41,9 @@
 
 
       //Opdracht 4.1: c
-      const inputData = document.getElementById('inputData');
-      
-      function myInput(element) {
-        console.log(element);
+      function thirdInput() {
+        const inputThree = document.getElementById('inputThree').value;
+        document.getElementById("fruits").innerHTML = "You like: " + inputThree;
       }
 
 
