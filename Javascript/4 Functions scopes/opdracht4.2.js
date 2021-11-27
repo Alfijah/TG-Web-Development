@@ -40,7 +40,16 @@
         //Punt 6
         const innerTextParagraph = document.getElementById('innerTextParagraph');
         const innerTextResult = document.getElementById('innerTextResult');
-        innerTextOutput.value = innerTextParagraph.innerText;
+        innerTextResult.value = innerTextParagraph.innerText;
+
+
+
+        //Opdracht 4.2 B
+        function typeSomething() {
+            const someText = document.getElementById('myOnInput').value;
+            document.getElementById("yourText").innerHTML = "You wrote: " + someText;
+          }
+
 
         
         
