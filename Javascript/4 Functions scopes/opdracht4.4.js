@@ -26,3 +26,10 @@ function groepsLeden() {
         console.log("Intruder alert!");
     }
 }
+
+
+//B
+function printResultaat() {
+    const printNaam = groepsLeden();
+    document.getElementById('print').innerHTML = printNaam;
+}

@@ -45,6 +45,12 @@
             padding: 5px 10px;
             border-radius: 5px;
         }
+
+        /* #print {
+            background: white;
+            width: 50px;
+            height: 20px;
+        } */
     </style>
 </head>
 <body>
@@ -54,6 +60,18 @@
             <p>Schrijf een functie waar je een naam kan vergelijken met de namen van mensen in je eigen groepje. Waneer je functie wel/niet herkent, moet dat als boodschap teruggegeven worden.</p>
             <input type="text" id="naam">
             <button onclick="groepsLeden()">Bevestigen</button>
+        </div>
+        <div class="box">
+            <h2>B</h2>
+            <p>Schrijf een tweede functie die de eerste functie aanroept, en vervolgens de teruggegeven boodschap in een div element op je pagina toont.</p><br>
+            <p>Type een naam in de input van opdracht A en druk op de button hieronder om het resultaat te lezen.</p>
+            <button onclick="printResultaat()">Bevestigen</button>
+            <div id="print"></div>
+        </div>
+        <div class="box">
+            <h2>C</h2>
+            <p>Schrijf nu het bovenstaande nogmaals, maar gebruik dit keer Arrow functions.</p>
+            
         </div>
     </div>
 
