@@ -36,3 +36,13 @@ document.getElementById('display6').innerText = 'Resultaat: ' + fruitSoorten[ran
 
 //G
 fruitSoorten.splice(0, 1, 'Peer');
+console.log(fruitSoorten);
+document.getElementById('display7').innerText = 'Resultaat: ' + fruitSoorten;
+
+
+//H
+// console.log(move(fruitSoorten, 0, 1));
+fruitSoorten.shift();
+console.log(fruitSoorten.splice(1, 0, 'Peer' ));
+document.getElementById('display8').innerText = 'Resultaat: ' + fruitSoorten;
+
