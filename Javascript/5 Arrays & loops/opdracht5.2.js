@@ -69,18 +69,20 @@ for (cijfer = 2; cijfer <= 50; cijfer++) {
 
 
 //G
-let randomGetallen =  [2,7,5,10,4,9,3,1,8,6];
 
-function bubbleSort(randomGetallen) {
-    for(let num = 0; num < randomGetallen.length; num++) {
-        if (randomGetallen[num] > randomGetallen[num + 1]) {
-            let x = randomGetallen[num];
-            let y = randomGetallen[num + 1];
-            randomGetallen[num] = y;
-            randomGetallen[num + 1] = x;
+function bubbleSort(randomGetal) {
+    const randomGetallen = randomGetal.slice();
+    for (let a = 0; a < randomGetallen.length - 1; a++) {
+        for (let b = 0; b < randomGetallen.length - 1 - a; b++) {
+            if (randomGetallen[b] > randomGetallen[b + 1]) {
+                [randomGetallen[b], randomGetallen[b + 1]] = [randomGetallen[b + 1], randomGetallen[b]];
+            }
         }
     }
-    return randomGetallen;
+   return randomGetallen; 
 }
+
+const randomGetallen =  [2, 7, 5, 10, 4, 9, 3, 1, 8, 6];
+console.log(bubbleSort(randomGetallen));
 
 document.getElementById('display2').innerText = 'Resultaat: ' + bubbleSort(randomGetallen);
