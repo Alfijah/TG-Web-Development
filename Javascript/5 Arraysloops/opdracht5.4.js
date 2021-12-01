@@ -25,3 +25,11 @@ const spelResultaat3 = spelSoorten.some(woord =>woord.length > 7);
 
 console.log(spelResultaat3);
 document.getElementById('display4').innerText = spelResultaat3;
+
+
+//E
+const woordLengte = (lengte) => lengte.length > 5;
+let woordLengteVergelijking = spelSoorten.every(woordLengte);
+
+console.log(woordLengteVergelijking);
+document.getElementById('display5').innerText = woordLengteVergelijking;
