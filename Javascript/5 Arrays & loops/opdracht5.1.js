@@ -14,7 +14,7 @@ console.log(fruitSoorten.slice(0, 2));
 
 //D
 //Het getallen array heeft 10 elementen. Dit geeft dus 'undefined' als resultaat.
-//let randomGetal1 = Math.floor(Math.random() * 10);
+let randomGetal1 = Math.floor(Math.random() * getallen.length);
 
 //Omdat het fruitSoorten array uit 5 elementen bestaat heb ik hier gewerkt met het getal 5.
 let randomGetal2 = Math.floor(Math.random() * 5);

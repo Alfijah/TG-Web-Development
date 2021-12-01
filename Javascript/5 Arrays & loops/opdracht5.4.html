@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht 5.4</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        body {
+            width: 100vw;
+        }
+    
+        .container {
+            background: darkslategrey;
+            color: white;
+            width: 80%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+        }
+    
+        .box {
+            color: white;
+            border: 1px solid white;
+            padding: 10px;
+            border-radius: 10px;
+            width: 100%;
+        }
+    
+        button {
+            margin: 10px 0 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    
+        input {
+            margin: 10px 0 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    
+        .div-box {
+            width: 200px;
+            height: 20px;
+            background-color: white;
+            margin-top: 10px;
+            border-radius: 5px;
+            color: black;
+            padding-left: 5px;
+        }
+    </style>
+    <script src="opdracht5.4.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>A</h2>
+            <p>Gebruik Array.from() om er een nieuw array van te maken. <br><br><em>Antwoord: <br></em></p>
+            <div id="display1"></div>
+        </div>
+
+        <div>
+            <p> <br> Gegeven het volgende array: const spelSoorten = ['Sudoku', 'Logikwis', 'Kruiswoordpuzzel', 'Rubiks cube']</p>
+        </div>
+
+        <div class="box">
+            <h2>B</h2>
+            <p>Onderzoek de array method filter() en maak een voorbeeld. <br><br>
+            <em>Antwoord:</em> <br> Deze method creert een nieuw array met daarin nieuwe elementen die bijvoorbeeld aan een bepaalde conditie voldoen volens een bepaalde functie. <br><br>
+        Resultaat uit voorbeeld: <br></p>
+        <div id="display2"></div>
+        </div>
+
+        <div class="box">
+            <h2>C</h2>
+            <p>Onderzoek de find() method en maak een voorbeeld. <br><br>
+                <em>Antwoord: </em> <br> Deze methode geeft de eerste waarde terug die voldoet aan een bepaalde conditie in een function.
+                <br><br> Resultaat uit voorbeeld: <br>
+            </p>
+            <div id="display3"></div>
+        </div>
+
+        <div class="box">
+            <h2>D</h2>
+            <p>Onderzoek de some() method en maak een voorbeeld. <br><br>
+            <em>Antwoord: </em> <br></p>
+            <div id="display4"></div>
+        </div>
+        
+    </div>
+</body>
+</html>
