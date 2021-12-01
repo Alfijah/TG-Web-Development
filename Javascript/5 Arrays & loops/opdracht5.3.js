@@ -28,31 +28,16 @@ document.getElementById('display4').innerText = 'Nieuwe array dutchSports: ' + d
 
 
 //E
-ballSports.sort();
+let sportSort = ballSports.sort();
+document.getElementById('display5').innerText = 'Gesorteerde ballSports array: ' + sportSort;
 
 
 //F
 console.log(ballSports);
-document.getElementById('display5').innerText = 'Nieuwe array ballSports: ' + ballSports;
+document.getElementById('display6').innerText = 'Nieuwe array ballSports: ' + ballSports;
 
 
 //G
-function sportMeasure(ballSports) {
-    let eachLength;
-    for(let sport=0; sport<ballSports.length; sport++) {
-        let eachSport = ballSports[sport];
-        eachLength = eachSport.length;
-        console.log(eachLength);
-        
-    } return eachLength;
-}
-
-let sportsLength = [];
-sportsLength = sportMeasure(ballSports);
+let sportsLength = ballSports.map(eachSportLength => eachSportLength.length);
 console.log(sportsLength);
-
-// for(let sport=0; sport<ballSports.length; sport++) {
-//     let eachSport = ballSports[sport];
-//     let eachLength = eachSport.length;
-//     console.log(eachLength);
-// }   return eachLength;
+document.getElementById('display7').innerText = 'Lengte van elke sport: ' + sportsLength;
