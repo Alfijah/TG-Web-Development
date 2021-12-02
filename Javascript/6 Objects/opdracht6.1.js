@@ -45,3 +45,26 @@ console.log(classConstructed);
 
 
 //B
+const nieuwPet = Object.create(Pet1);
+nieuwPet.soort = 'viervoeter';
+console.log(nieuwPet);
+
+const nieuwPet2 = Object.create(Pet2);
+nieuwPet2.soort = 'viervoeter';
+console.log(nieuwPet2);
+
+const nieuwPet3 = Object.create(Pet3);
+nieuwPet3.soort = 'viervoeter';
+console.log(nieuwPet3);
+
+const nieuwPet4 = Object.create(Pet4);
+nieuwPet4.soort = 'viervoeter';
+console.log(nieuwPet4);
+
+const nieuwPet5 = Object.create(Pet5);
+nieuwPet5.soort = 'viervoeter';
+console.log(nieuwPet5);
+
+
+//C
+
