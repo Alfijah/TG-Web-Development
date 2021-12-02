@@ -16,11 +16,32 @@ const Pet2 = {
 console.log(Pet2);
 
 //Function constructor
-function Pet3(naam3, soort3) {
-    return
-    this.naam3 = naam3;
-    this.soort3 = soort3;
+function Pet3() {
+    this.naam3 = 'Astrid',
+    this.soort3 = 'koe';
 }
 
-const functionPet3 = new Pet3('Astrid', 'koe');
-console.log(Pet3('Astrid', 'koe'));
+const functionPet3 = new Pet3();
+console.log(functionPet3);
+
+//Singleton constructor
+const Pet4 = new function() {
+    this.naam4 = 'Merry',
+    this.soort4 = 'Paard'
+};
+
+console.log(Pet4);
+
+//Class-based constructor
+class Pet5 {
+    constructor(naam5, soort5) {
+        this.naam5 = 'Lotte'
+        this.soort5 = 'vogel'
+    }
+}
+
+const classConstructed = new Pet5('Lotte', 'vogel');
+console.log(classConstructed);
+
+
+//B
