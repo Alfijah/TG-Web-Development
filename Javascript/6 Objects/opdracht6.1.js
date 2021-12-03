@@ -67,4 +67,54 @@ console.log(nieuwPet5);
 
 
 //C
+const person = [{
+    naam: 'Jan',
+    leeftijd: 23
+},
+{
+    naam: 'Janneke',
+    leeftijd: 21
+},
+{
+    naam: 'Peter',
+    leeftijd: 30
+},
+{
+    naam: 'Petra',
+    leeftijd: 29
+},
+{
+    naam: 'Jos',
+    leeftijd: 18
+},
+{
+    naam: 'Joosje',
+    leeftijd: 19
+},
+{
+    naam: 'Bert',
+    leeftijd: 55
+},
+{
+    naam: 'Berta',
+    leeftijd: 53
+},
+{
+    naam: 'John',
+    leeftijd: 44
+},
+{
+    naam: 'Joanna',
+    leeftijd: 41
+}];
+
+// let leeftijdVolgorde = person.leeftijd;
+person.sort((a, b) => {
+    return a.leeftijd - b.leeftijd;
+});
+
+person.forEach((p) => {
+    console.log(p.leeftijd);
+})
+
 
