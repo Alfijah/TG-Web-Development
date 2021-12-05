@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(54,98,123,1) 35%, rgba(0,212,255,1) 180%);
+}
+
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.frame {
+    position: relative;
+    border: 10px solid rgba(0, 0, 0, 0.329);
+    width: 60%;
+    height: 600px;
+    z-index: 999;
+}
+
+img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.image1 {
+    z-index: 10;
+}
+
+.image2 {
+    z-index: 9;
+}
+
+.image3 {
+    z-index: 8;
+}
+
+.buttons {
+    position: absolute;
+    z-index: 1000;
+}
+
+.button_left {
+    top: 50%;
+    background-color: red;
+}
+
+.button_right {
+    top: 50%;
+    right: 0;
+    background-color: yellow;
+}
+
+.navigate_dots {
+    position: absolute;
+}
