@@ -24,7 +24,6 @@ body {
 
 .frame_carrousel {
     position: relative;
-    /* border: 10px solid rgba(0, 0, 0, 0.329); */
     width: 60%;
     height: 80%;
     z-index: 999;
