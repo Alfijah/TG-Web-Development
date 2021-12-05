@@ -72,7 +72,7 @@ img {
     z-index: 999;
 }
 
-.arrow__left_top::before {
+.arrow__left::before {
     content: '';
     position: absolute;
     width: 20px;
@@ -83,7 +83,7 @@ img {
     top: 48.8%;
 }
 
-.arrow__left_top::after {
+.arrow__left::after {
     content: '';
     position: absolute;
     width: 20px;
@@ -106,7 +106,7 @@ img {
     align-items: center;
 }
 
-.arrow__right_top::before {
+.arrow__right::before {
     content: '';
     position: absolute;
     width: 20px;
@@ -117,7 +117,7 @@ img {
     top: 48.8%;
 }
 
-.arrow__right_top::after {
+.arrow__right::after {
     content: '';
     position: absolute;
     width: 20px;
