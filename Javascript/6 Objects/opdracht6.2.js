@@ -54,7 +54,7 @@ mergeClubData = [
         telefoonnummer: 45678,
         contactpersoon: 'Racer'
     },
-    {
+    {   
         naam: 'Flash',
         type: 'Hardlopen',
         aantal: 15,
