@@ -1,17 +1,43 @@
-let slideIndex = 1;
-showImages(slideIndex);
 
-function slideArrow(n) {
-    showImages(slideIndex += n);
+//define variables
+const imageContainer = document.querySelector('.image_slides');
+const slides = Array.from(imageContainer.children);
+
+const leftArrow = document.querySelector('.arrow_left');
+const rightArrow = document.querySelector('.arrow_right');
+
+const navDots = document.querySelector('.container_nav_dots');
+const dot = Array.from(navDots.children);
+
+const firstSlide = slides[slides.length - slides.length];
+const lastSlide = slides[slides.length - 1];
+const firstDot = dot[dot.length - dot.length];
+const lastDot = dot[dot.length - 1];
+
+// console.log(firstSlide);
+// console.log(lastSlide);
+// console.log(firstDot);
+// console.log(lastDot);
+
+const slideWidth = slides[0].getBoundingClientRect().width;
+
+
+//arrange slides
+const setSlidesPosition = (slide, index) => {
+    slide.style.left = slideWidth * index + 'px';
 }
 
-function showImages(n) {
-    let i;
-    let image = document.getElementsByClassName('images');
-    if (n > image.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = image.length};
-    for (i = 0; i < image.length; i++) {
-        image[i].style.display = 'none';
-    }
-    image[slideIndex-1].style.display = 'block';
-}
+slides.forEach(setSlidesPosition);
+console.log(setSlidesPosition);
+
+
+//click right, move slides to right
+rightArrow.addEventListener('click', e => {
+    const currentSlide = imageContainer.querySelector('.current_slide');
+    const nextSlide = currentSlide.nextElementSibling;
+    const amountToMove = nextSlide.style.left;
+    console.log(nextSlide);
+
+    //move to the next slide
+    imageContainer.style.transform = 'translateX(-' + amountToMove + ')';
+})

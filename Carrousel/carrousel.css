@@ -34,6 +34,17 @@ body {
 
 /*IMAGES */
 
+.image_container {
+    /* background: red; */
+    /* position: relative; */
+    /* height: 100%; */
+}
+
+.image_slides {
+    /* position: relative; */
+    height: 100%;
+}
+
 img {
     position: absolute;
     width: 100%;
@@ -82,7 +93,7 @@ img {
 .arrow_container_right:hover {
     background-color: rgba(255, 255, 255, 0.164);
 }
-
+/* 
 .arrow__left::before,
 .arrow__left::after {
     content: '';
@@ -102,8 +113,8 @@ img {
 .arrow__left::after {
     transform: rotate(40deg);
     bottom: 48.7%;
-}
-
+} */
+/* 
 .arrow__right::before,
 .arrow__right::after {
     content: '';
@@ -124,7 +135,7 @@ img {
     transform: rotate(-40deg);
     bottom: 48.7%;
 }
-
+ */
 
 /* NAVIGATE DOTS */
 .container_nav_dots {
@@ -138,7 +149,7 @@ img {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
 }
 
 .nav_dots {
@@ -149,7 +160,7 @@ img {
     transition: background-color 0.5s ease-in-out;
 }
 
-.active, .nav_dots:hover {
+.active, .nav_dots:hover, .current_slide {
     background-color: rgba(255, 255, 255, 0.555);
 }
 

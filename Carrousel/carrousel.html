@@ -7,6 +7,7 @@
     <title>Carrousel</title>
     <link rel="stylesheet" href="carrousel.css">
     <script src="carrousel.js" defer></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
 <body>
     <div class="container">
@@ -14,25 +15,27 @@
         <div class="frame_carrousel">
 
             <div class="arrow_container_left">
-                <div onclick="slideArrow(-1)" class="arrows">
-                    <div class="arrow__left"></div>
+                <div class="arrows arrow_left">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+            </div>
+            
+            <div class="image_container">
+                <div class="image_slides">
+                    <img src="/Carrousel/dragon-g2c9c359d8_1280.jpg" class="images image_dragon current_slide">
+                    <img src="/Carrousel/flower-g00e9705aa_1280.jpg" class="images image_flower">
+                    <img src="/Carrousel/mountain-g6c394fb04_1280.jpg" class="images image_mountain">
                 </div>
             </div>
 
-            <div class="image_container">
-                <img src="/Carrousel/dragon-g2c9c359d8_1280.jpg" class="images image_dragon">
-                <img src="/Carrousel/flower-g00e9705aa_1280.jpg" class="images image_flower">
-                <img src="/Carrousel/mountain-g6c394fb04_1280.jpg" class="images image_mountain">
-            </div>
-
             <div class="arrow_container_right">
-                <div onclick="slideArrow(1)" class="arrows">
-                    <div class="arrow__right"></div>
+                <div  class="arrows arrow_right">
+                    <i class="fas fa-chevron-right"></i>
                 </div>
             </div>
 
             <div class="container_nav_dots">
-                <div class="nav_dots"></div>
+                <div class="nav_dots current_slide"></div>
                 <div class="nav_dots"></div>
                 <div class="nav_dots"></div>
             </div>
