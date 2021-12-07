@@ -42,15 +42,15 @@ img {
     border-radius: 10px 10px 0 0;
 }
 
-.image1 {
+.image_dragon {
     z-index: 10;
 }
 
-.image2 {
+.image_flower {
     z-index: 9;
 }
 
-.image3 {
+.image_mountain {
     z-index: 8;
 }
 
@@ -154,5 +154,5 @@ img {
 }
 
 
-/* SLIDING THE IMAGES */
+/* TRANSITIONS: SLIDING THE IMAGES */
 
