@@ -24,8 +24,8 @@ body {
 
 .frame_carrousel {
     position: relative;
-    width: 50%;
-    height: 70%;
+    width: 40%;
+    height: 60%;
     z-index: 999;
     box-shadow: 20px 20px 2000px;
     border-radius: 10px 10px 0 0;
@@ -99,49 +99,16 @@ img {
 .hide_arrow {
     display: none;
 }
-/* 
-.arrow__left::before,
-.arrow__left::after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 4px;
-    background-color: rgba(0, 0, 0, 0.5);
-    left: 16%;
-    z-index: 999;
+
+
+
+.fas {
+    /* width: 100%; */
+    /* position: absolute; */
+    color: rgba(255, 255, 255, 0.514);
 }
 
-.arrow__left::before {
-    transform: rotate(-40deg);
-    top: 48.7%;
-}
 
-.arrow__left::after {
-    transform: rotate(40deg);
-    bottom: 48.7%;
-} */
-/* 
-.arrow__right::before,
-.arrow__right::after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 4px;
-    background-color: rgba(0, 0, 0, 0.5);
-    right: 8px;
-    z-index: 999;
-}
-
-.arrow__right::before {
-    transform: rotate(40deg);
-    top: 48.7%;
-}
-
-.arrow__right::after {
-    transform: rotate(-40deg);
-    bottom: 48.7%;
-}
- */
 
 /* NAVIGATE DOTS */
 .container_nav_dots {
