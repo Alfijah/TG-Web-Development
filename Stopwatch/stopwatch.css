@@ -1,0 +1,33 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.general_container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./wood-g27224c5c3_1280.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.general_text {
+    font-size: 8rem;
+    top: 10px;
+    position: absolute;
+}
+
+.stopwatch_outer_frame {
+    background-color: #35530a;
+    width: 20%;
+    height: 45%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
