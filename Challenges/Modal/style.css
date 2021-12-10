@@ -8,7 +8,7 @@
 
 body {
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(165,42,42,1) 35%, rgba(0,212,255,1) 100%);
+background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(165,42,42,1) 100%, rgba(0,212,255,1) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,7 +34,7 @@ button {
     border: none;
     border-radius: 30px;
     background-color: goldenrod;
-    color: #fff;
+    color: black;
     font-size: 20px;
     letter-spacing: 2px;
     cursor: pointer;
