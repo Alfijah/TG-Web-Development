@@ -7,29 +7,42 @@
     <title>Stopwatch</title>
     <link rel="stylesheet" href="stopwatch.css">
     <script src="stopwatch.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Urbanist&display=swap');
+    </style>
 </head>
 <body>
     <div class="general_container">
         
-        <div class="general_text">stopwatch</div>
-        <div class="stopwatch_outer_frame">
+        <div class="text_container">
+            <div class="general_text">stopwatch</div>
+        </div>
 
-            <div class="stopwatch_inner_frame">
+        <div class="mobile_container">
+            <div class="mobile_frame">
 
-                <div class="stopwatch_display">
+                <div class="mobile_top_bar"></div>
+                <div class="mobile_body">
 
-                    <div class="brand_text">Fitbit</div>
-                    <div class="time"></div>
-                    <div class="timer_buttons">
+                    <div class="stopwatch_frame">
 
-                        <div class="start_button">start</div>
-                        <div class="pause_button">pause</div>
-                        <div class="stop_button">stop</div>
+                        <div class="stopwatch_display">
+                            <div class="time"></div>
+                        </div>
 
+                        <div class="timer_buttons">
+        
+                            <div class="start_button">start</div>
+                            <div class="pause_button">pause</div>
+                            <div class="stop_button">stop</div>
+    
+                        </div>
+                        
                     </div>
-
                 </div>
             </div>
+
+            
         </div>
     </div>
 </body>
