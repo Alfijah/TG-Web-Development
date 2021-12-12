@@ -8,14 +8,16 @@
     <link rel="stylesheet" href="stopwatch.css">
     <script src="stopwatch.js" defer></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Urbanist&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@200&display=swap');
     </style>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
 <body>
     <div class="general_container">
         
         <div class="text_container">
-            <div class="general_text">stopwatch</div>
+            <div class="title">stopwatch <span>pro</span> </div>
+            <div class="info_text">Mobile design</div>
         </div>
 
         <div class="mobile_container">
@@ -24,21 +26,34 @@
                 <div class="mobile_top_bar"></div>
                 <div class="mobile_body">
 
-                    <div class="stopwatch_frame">
+                    <div class="stopwatch_container">
 
                         <div class="stopwatch_display">
-                            <div class="time"></div>
+                            <div class="time">00:00:00</div>
                         </div>
 
                         <div class="timer_buttons">
         
-                            <div class="start_button">start</div>
-                            <div class="pause_button">pause</div>
-                            <div class="stop_button">stop</div>
+                            <div class="start_button buttons">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="pause_button buttons">
+                                <i class="fas fa-pause"></i>
+                            </div>
+                            <div class="stop_button buttons">
+                                <i class="fas fa-stop"></i>
+                            </div>
     
                         </div>
                         
                     </div>
+
+                    <div class="mobile_bottom">
+                        <div class="app_category clock_app">clock</div>
+                        <div class="app_category stopwatch_app">stopwatch</div>
+                        <div class="app_category timer_app">timer</div>
+                    </div>
+
                 </div>
             </div>
 

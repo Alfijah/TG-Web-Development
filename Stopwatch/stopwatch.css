@@ -28,17 +28,21 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(51,71,86,1) 100%);
     height: 80%;
     color: white;
     text-transform: capitalize;
-    /* background-color: pink; */
-    /* position: relative; */
     display: flex;
     justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
 }
 
-.general_text {
-    font-size: 6rem;
-    /* top: 10px; */
-    /* position: absolute; */
+.title {
+    font-size: 5.5rem;
 }
+
+.title span, .info_text {
+    font-size: 3rem;
+    font-weight: lighter;
+}
+
 
 .mobile_container {
     width: 40%;
@@ -55,25 +59,94 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(51,71,86,1) 100%);
     background-color: #082032;
     border-radius: 20px;
     border: 5px solid black;
+    position: relative;
+    z-index: 999;
+}
+
+.mobile_top_bar {
+    height: 25px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    z-index: 998;
 }
 
 .mobile_body {
-    background-color: #082032;
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(8,32,50,1) 50%);
+    /* background-color: #082032; */
     width: 100%;
     height: 100%;
-    border-radius: 20px;
+    border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     color: white;
 }
 
-.stopwatch_frame {
-    background-color: #191A19;
-    width: 270px;
-    height: 270px;
-    border-radius: 50%;
+.stopwatch_container {
+    /* background-color: #191A19; */
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    flex-direction: column;
+}
+
+.stopwatch_display {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 5px solid white;
+    display: grid;
+    place-items: center;
+    font-size: 3rem;
+    margin-top: 50px;
+
+}
+
+.timer_buttons {
+    height: 20%;
+    width: 85%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-around;
+    /* gap: 50px; */
+}
+
+.buttons {
+    color: white;
+    font-size: larger;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.buttons:hover, .active, .app_category:hover {
+    color: #F0A500;
+}
+
+.mobile_bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.app_category {
+    text-align: center;
+    text-transform: capitalize;
+    padding: 0.5em 0;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    width: 100%;
+    
+}
+
+.stopwatch_app, .app_category:hover {
+    color: #F0A500;
+    background-color: #334756;
+    border-radius: 10px 10px 0 0;
 }
