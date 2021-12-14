@@ -1,85 +1,90 @@
 // VARIABLES DEFINED
 
 const stopwatch = document.querySelector('.stopwatch');
-const startBtn = document.querySelector('.fa-play');
-const pauseBtn = document.querySelector('.fa-pause');
-const stopBtn = document.querySelector('.fa-stop');
+const startBtn = document.querySelector('.start_button');
+const pauseBtn = document.querySelector('.pause_button');
+const stopBtn = document.querySelector('.stop_button');
+
+stopwatch.innerText = '00:00:00';
 
 let min = 0;
 let sec = 0;
 let cent = 0;
-let stopTime = true; 
+let isRunning = false; 
+
 
 
 // FUNCTIONS DECLARED
 
 function startTime() {
-    if (stopTime == true) {
-        stopTime = false;
+    if (!isRunning) {
+        isRunning = true;
         updateTime();
     }
 }
 
-
 function pauseTime() {
-    if (stopTime == false) {
-        stopTime = true;
+    if (isRunning) {
+        isRunning = false;
     }
 }
 
 function resetTime() {
-    if (stopTime == false) {
-        stopTime = true;
         stopwatch.innerText = '00:00:00';
         min = 0;
         sec = 0;
         cent = 0;
-    }
 }
 
 function updateTime() {
-    if (stopTime == true) {
+    if (isRunning == true) {
         min = parseInt(min);
         sec = parseInt(sec);
         cent = parseInt(cent);
 
-        cent = cent + 1;
 
-        if (cent == 100) {
-            sec += 1;
-            cent = 0;
-        }
+         cent = cent + 1;
+        cent = '0' + cent
+        console.log(cent)
+        
+        // if (cent === 5) {
+        //     sec += 1;
+        //     cent = 0;
+        // }
 
-        if (sec == 60) {
+        if (cent === 2) {
             min += 1;
-            sec = 0;
+            cent = 0;
+            console.log('tellen')
         }
 
-        if (min == 99) {
-            min = 0;
-            return resetTime();
-        }
+        // if (min === 99) {
+        //     min = 0;
+        //     return resetTime();
+        // }
 
-        if (cent < 10) {
-            cent = '0' + cent;
-        }
+        // if (cent < 10) {
+        //     cent = '0' + cent;
+        // }
 
         if (sec < 10) {
             sec = '0' + sec;
+            console.log('meer tellen')
         }
 
-        if (min < 10) {
-            min = '0' + min;
-        }
+        // if (min < 10) {
+        //     min = '0' + min;
+        // }
 
         stopwatch.innerText = min + ':' + sec + ':' + cent;
 
-        setInterval(updateTime, 10)
+        setInterval(updateTime, 1000)
     }
 }
 
 
 //WHEN CLICKED ON THE BUTTONS
-startBtn.addEventListener('click', startTime());
-pauseBtn.addEventListener('click', pauseTime());
-stopBtn.addEventListener('click', resetTime());
+// startBtn.addEventListener('click', startTime());
+// pauseBtn.addEventListener('click', pauseTime());
+// stopBtn.addEventListener('click', resetTime());
+
