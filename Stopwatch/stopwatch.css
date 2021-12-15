@@ -72,6 +72,18 @@ body {
     z-index: 999;
 }
 
+.side_buttons {
+    width: 10px;
+    background-color: black;
+    position: absolute;
+    z-index: 999;
+}
+
+.left_buttons {
+    height: 20px;
+    left: -10px;
+}
+
 
 /* TOP BAR INSIDE MOBILE  */
 
@@ -160,18 +172,12 @@ body {
     cursor: pointer;
 }
 
-.active, .buttons:active {
+.active, .buttons:hover {
     color: #F0A500;
 }
 
-i:focus {
+.buttons:focus {
     color: #F0A500;
-
-}
-
-.buttons:active {
-    color: #F0A500;
-    background-color: red;
 }
 
 .app_category:hover {
