@@ -46,6 +46,10 @@ body {
     font-weight: lighter;
 }
 
+.stopwatch {
+    width: 100%;
+    padding: 13%;
+}
 
 
 /* GENERAL MOBILE SECTION */
@@ -78,7 +82,6 @@ body {
      border-radius: 10px 10px 0 0; 
     position: absolute;
     z-index: 998;
-    /* font-size: x-small; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-content: center;
@@ -157,7 +160,21 @@ body {
     cursor: pointer;
 }
 
-.buttons:hover, .active, .app_category:hover {
+.active, .buttons:active {
+    color: #F0A500;
+}
+
+i:focus {
+    color: #F0A500;
+
+}
+
+.buttons:active {
+    color: #F0A500;
+    background-color: red;
+}
+
+.app_category:hover {
     color: #F0A500;
 }
 

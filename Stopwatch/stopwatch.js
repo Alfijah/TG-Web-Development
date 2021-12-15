@@ -30,6 +30,7 @@ function pauseTime() {
 }
 
 function resetTime() {
+        isRunning = false;
         stopwatch.innerText = '00:00:00';
         min = 0;
         sec = 0;
@@ -43,48 +44,40 @@ function updateTime() {
         cent = parseInt(cent);
 
 
-         cent = cent + 1;
-        cent = '0' + cent
+        cent = cent + 1;
         console.log(cent)
         
-        // if (cent === 5) {
-        //     sec += 1;
-        //     cent = 0;
-        // }
-
-        if (cent === 2) {
-            min += 1;
+        if (cent === 100) {
+            sec = sec + 1;
             cent = 0;
-            console.log('tellen')
         }
 
-        // if (min === 99) {
-        //     min = 0;
-        //     return resetTime();
-        // }
+        if (sec === 60) {
+            min = min + 1;
+            sec = 0;
+        }
 
-        // if (cent < 10) {
-        //     cent = '0' + cent;
-        // }
+        if (min === 99) {
+            min = 0;
+            return resetTime();
+        }
+
+        if (cent < 10) {
+            cent = '0' + cent;
+        }
 
         if (sec < 10) {
             sec = '0' + sec;
             console.log('meer tellen')
         }
 
-        // if (min < 10) {
-        //     min = '0' + min;
-        // }
+        if (min < 10) {
+            min = '0' + min;
+        }
 
         stopwatch.innerText = min + ':' + sec + ':' + cent;
 
-        setInterval(updateTime, 1000)
+        setTimeout(updateTime, 10)
     }
 }
-
-
-//WHEN CLICKED ON THE BUTTONS
-// startBtn.addEventListener('click', startTime());
-// pauseBtn.addEventListener('click', pauseTime());
-// stopBtn.addEventListener('click', resetTime());
 
