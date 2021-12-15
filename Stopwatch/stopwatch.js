@@ -4,7 +4,7 @@ const stopwatch = document.querySelector('.stopwatch');
 const startBtn = document.querySelector('.start_button');
 const pauseBtn = document.querySelector('.pause_button');
 const stopBtn = document.querySelector('.stop_button');
-// const btnOnActive = document.querySelectorAll('.buttons');
+const btnOnActive = document.querySelectorAll('.buttons');
 
 stopwatch.innerText = '00:00:00';
 
@@ -82,30 +82,20 @@ function updateTime() {
 }
 
 //WHEN CLICK ON BUTTONS, CHANGE BUTTON COLOR
-// btnOnActive.forEach((button) => {
-
-//     button.addEventListener('click', () => {
-//         button.classList.add('active');
-//         // if (button.classList.contains('active')) {
-//         //     button.classList.remove('active');
-//         // }
-//     })
-// })
-
-var buttons = document.getElementsByClassName("buttons");
-
-function removeAllActive() {
-  [].forEach.call(buttons, function(el) {
-    el.classList.remove("active");
-  });
+function removeActive() {
+    btnOnActive.forEach((button) => {
+        button.classList.remove('active');
+    })
 }
 
-removeAllActive();
+removeActive();
 
-[].forEach.call(buttons, function(el) {
-  el.addEventListener("click", function() {
-    removeAllActive();
-    el.classList.add("active");
-  });
-});
+btnOnActive.forEach((button) => {
+
+    button.addEventListener('click', () => {
+        removeActive();
+        button.classList.add('active');
+    })
+})
+
 
