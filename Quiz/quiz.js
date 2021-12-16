@@ -1,8 +1,10 @@
-const quiz = document.querySelector('.quiz');
-const div = document.createElement('div');
-const startBtn = document.createTextNode('Start');
+//DEFINING VARIABLES
+const quizContainer = document.querySelector('.quiz-container');
+const divElement = document.createElement('div');
+const startBtn = divElement.classList.add('startBtn');
 
-quiz.appendChild(div);
-div.append(startBtn);
+quizContainer.appendChild(divElement).innerText = 'Start';
+
+
 
 console.log(div)
