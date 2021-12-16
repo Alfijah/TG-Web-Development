@@ -35,7 +35,7 @@ function resetTime() {
 }
 
 function updateTime() {
-    if (isRunning == true) {
+    if (isRunning) {
         min = parseInt(min);
         sec = parseInt(sec);
         cent = parseInt(cent);
