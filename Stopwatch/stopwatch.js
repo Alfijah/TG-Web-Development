@@ -1,5 +1,4 @@
-// VARIABLES DEFINED
-
+//GLOBAL VARIABLES DEFINED
 const stopwatch = document.querySelector('.stopwatch');
 const startBtn = document.querySelector('.start_button');
 const pauseBtn = document.querySelector('.pause_button');
@@ -13,9 +12,7 @@ let sec = 0;
 let cent = 0;
 let isRunning = false; 
 
-
 // FUNCTIONS DECLARED
-
 function startTime() {
     if (!isRunning) {
         isRunning = true;
@@ -42,7 +39,6 @@ function updateTime() {
         min = parseInt(min);
         sec = parseInt(sec);
         cent = parseInt(cent);
-
 
         cent = cent + 1;
         // console.log(cent)
@@ -81,21 +77,16 @@ function updateTime() {
     }
 }
 
-//WHEN CLICK ON BUTTONS, CHANGE BUTTON COLOR
+//WHEN CLICKING ON BUTTONS, CHANGE BUTTON COLOR
 function removeActive() {
     btnOnActive.forEach((button) => {
         button.classList.remove('active');
     })
 }
 
-removeActive();
-
 btnOnActive.forEach((button) => {
-
     button.addEventListener('click', () => {
         removeActive();
         button.classList.add('active');
     })
 })
-
-
