@@ -225,5 +225,16 @@ body {
 .stopwatch_app, .app_category:hover {
     color: #F0A500;
     background-color: #334756;
+}
+
+.clock_app {
+    border-radius: 10px 10px 0 15px;
+}
+
+.stopwatch_app {
     border-radius: 10px 10px 0 0;
+}
+
+.timer_app {
+    border-radius: 10px 10px 15px 0;
 }
