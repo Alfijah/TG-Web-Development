@@ -10,14 +10,41 @@ body {
     font-family: 'Indie flower';
 }
 
-.quiz-container {
+.generalContainer {
     width: 100vw;
     height: 100vh;
-    background: brown;
+    // background: brown;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .startBtn {
     width: 30%;
-    height: 30%;
-    border: 1px solid teal;
+    height: 8%;
+    background-color: teal;
+    display: grid;
+    place-items: center;
+}
+
+.moveBtns {
+    width: 50%;
+    height: 8%;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.previousBtn, .nextBtn {
+    background-color: teal;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.formContainer {
+    background-color: cadetblue;
 }
