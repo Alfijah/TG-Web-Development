@@ -1,0 +1,77 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Indie flower';
+}
+
+.generalContainer {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.startBtn {
+  width: 30%;
+  height: 8%;
+  background-color: teal;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  color: white;
+}
+
+.moveBtns {
+  width: 60%;
+  height: 8%;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.previousBtn, .nextBtn {
+  background-color: teal;
+  height: 100%;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  color: white;
+}
+
+.quizContainer {
+  background-color: cadetblue;
+  width: 80%;
+  height: 80%;
+}
+
+.quizTitle {
+  color: white;
+  font-size: 2rem;
+}
+/*# sourceMappingURL=main.css.map */

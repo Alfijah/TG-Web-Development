@@ -2,8 +2,8 @@
     "version": 3,
     "mappings": "AAAA,AAAA,cAAc,CAAC;EACX,gBAAgB,EAAE,SAAS;EAC3B,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,GAAG;CACd",
     "sources": [
-        "quiz.scss"
+        "main.scss"
     ],
     "names": [],
-    "file": "quiz.css"
+    "file": "main.css"
 }
