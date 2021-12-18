@@ -1,16 +1,18 @@
+@import './colors.scss';
+
 .startBtn {
     width: 30%;
     height: 8%;
-    background-color: teal;
+    background-color: $head-bgcolor;
     display: grid;
     place-items: center;
-    color: white;
+    color: $light-color;
 }
 
 .moveBtns {
     width: 60%;
     height: 8%;
-    background-color: white;
+    background-color: $light-color;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -18,10 +20,10 @@
 }
 
 .previousBtn, .nextBtn {
-    background-color: teal;
+    background-color: $head-bgcolor;
     height: 100%;
     width: 100%;
     display: grid;
     place-items: center;
-    color: white;
+    color: $light-color;
 }

@@ -14,17 +14,19 @@ startBtn.onclick = startQuiz;
 
 //MAKE THE PREVIOUS AND NEXT BUTTON
 moveBtns.classList.add('moveBtns');
-previousBtn.classList.add('previousBtn');
-nextBtn.classList.add('nextBtn');
+generalContainer.append(moveBtns);
 
-generalContainer.append(moveBtns, quizContainer);
+previousBtn.classList.add('previousBtn');
 moveBtns.appendChild(previousBtn).innerText = 'Previous';
+
+nextBtn.classList.add('nextBtn');
 moveBtns.appendChild(nextBtn).innerText = 'Next';
 
 //BUILD THE QUIZ'S Q AND A
 const question = [
     'What does HTML stand for?', "What is a computer's main circuit board called?",
-    'What does I.T. stand for?', 'How do you pronounce PNG?', 'Firefox and Opera are types of what?'
+    'What does I.T. stand for?', 'How do you pronounce PNG?', 'Firefox and Opera are types of what?',
+    'In 1936, Russia built a computer that run on what?'
 ];
 
 const answers = [
@@ -32,15 +34,72 @@ const answers = [
     ['Surfboard', 'Ironing Board', 'Motherboard', 'Fatherboard', 'Blackboard'],
     ['Internet Technology', 'Information Technology', 'Irritating Tuxedos', "Impossible Torpedo's", 'Ivanka Trump'],
     ['Pea-en-gee', 'Ping', 'Pung', 'Pang', 'Portable Graphics Format'],
-    ['Pokemon', 'Chilli', 'Anti-virus software', 'Browser', 'Marvel Heroes']
-];
-
-const correctAnswer = [
-    'Hyper Text Markup Language', 'Motherboard', 'Information Technology', 'Pea-en-gee', 'Browser'
+    ['Pokemon', 'Chilli', 'Anti-virus software', 'Browser', 'Marvel Heroes'],
+    ['Vodka', 'Water', 'Jealousy', 'Communism', 'Nested Dolls']
 ];
 
 //BUILD THE FORM
+function getPageNumber(page) {
+    switch (page) {
+        case 1:
+            return page + '/6';
+        case 2:
+            return page + '/6';
+        case 3:
+            return page + '/6';
+        case 4:
+            return page + '/6';
+        case 5:
+            return page + '/6';
+        case 6:
+            return page + '/6';
+    }
+}
+
+function getQuestion(page) {
+    switch (page) {
+        case 1:
+            return question[0];
+        case 2:
+            return question[1];
+        case 3:
+            return question[2];
+        case 4:
+            return question[3];
+        case 5:
+            return question[4];
+        case 6:
+            return question[5];
+    }
+}
+
+function getAnswers(page) {
+    switch(page) {
+        case 1:
+            return answers[0];
+        case 2:
+            return answers[1];
+        case 3:
+            return answers[2];
+        case 4:
+            return answers[3];
+        case 5:
+            return answers[4];
+        case 6:
+            return answers[5];
+    }
+}
+
+// for (let a = 0; a < answers.length; a++) {
+//     for (let b = 0; b < answers[a].length; b++) {
+//         console.log(answers[b]);
+//     }
+// }
+
+
+
 quizContainer.classList.add('quizContainer');
+generalContainer.appendChild(quizContainer);
 class PageContent {
     constructor(page) {
         this.quizTitle = document.createElement('div');
@@ -56,17 +115,16 @@ class PageContent {
         this.eachAnswer.classList.add('eachAnswer');
 
         this.quizTitle.innerText = "It's Quiz Time";
-        // this.questionBox.innerText = getQuestion(page);
-        // this.answersBox.innerText = getAnswers(page);
+        this.pageNumber.innerText = getPageNumber(page);
+        this.questionBox.innerText = getQuestion(page);
+        this.eachAnswer.innerText = getAnswers(page);
 
         quizContainer.append(this.quizTitle, this.pageNumber, this.questionBox, this.answersBox);
         this.answersBox.appendChild(this.eachAnswer);
-
     }
 }
 
-new PageContent();
-console.log(PageContent)
+new PageContent(6);
 
 
 
