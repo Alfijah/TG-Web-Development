@@ -26,16 +26,16 @@ moveBtns.appendChild(nextBtn).innerText = 'Next';
 const question = [
     'What does HTML stand for?', "What is a computer's main circuit board called?",
     'What does I.T. stand for?', 'How do you pronounce PNG?', 'Firefox and Opera are types of what?',
-    'In 1936, Russia built a computer that run on what?'
+    'In 1936, Russia built a computer that runs on what?'
 ];
 
 const answers = [
-    ['Hyper Text Markup Language', 'How To Make Lumpia', 'Hyper Text Management Laguage', 'Hyper Things Managing Language', 'Hyper Things Making Lumpia'],
-    ['Surfboard', 'Ironing Board', 'Motherboard', 'Fatherboard', 'Blackboard'],
-    ['Internet Technology', 'Information Technology', 'Irritating Tuxedos', "Impossible Torpedo's", 'Ivanka Trump'],
-    ['Pea-en-gee', 'Ping', 'Pung', 'Pang', 'Portable Graphics Format'],
-    ['Pokemon', 'Chilli', 'Anti-virus software', 'Browser', 'Marvel Heroes'],
-    ['Vodka', 'Water', 'Jealousy', 'Communism', 'Nested Dolls']
+    {eachPage: ['Hyper Text Markup Language', 'How To Make Lumpia', 'Hyper Text Management Laguage', 'Hyper Things Managing Language', 'Hyper Things Making Lumpia']},
+    {eachPage: ['Surfboard', 'Ironing Board', 'Motherboard', 'Fatherboard', 'Blackboard']},
+    {eachPage: ['Internet Technology', 'Information Technology', 'Irritating Tuxedos', "Impossible Torpedo's", 'Ivanka Trump']},
+    {eachPage: ['Pea-en-gee', 'Ping', 'Pung', 'Pang', 'Portable Graphics Format']},
+    {eachPage: ['Pokemon', 'Chilli', 'Anti-virus software', 'Browser', 'Marvel Heroes']},
+    {eachPage: ['Vodka', 'Water', 'Jealousy', 'Communism', 'Nested Dolls']}
 ];
 
 //BUILD THE FORM
@@ -76,7 +76,7 @@ function getQuestion(page) {
 function getAnswers(page) {
     switch(page) {
         case 1:
-            return answers[0];
+            return getAnswersSeperated(0);
         case 2:
             return answers[1];
         case 3:
@@ -90,13 +90,17 @@ function getAnswers(page) {
     }
 }
 
+function getAnswersSeperated(index) {
+    for( a = 0; a < answers[index].eachPage.length; a++) {
+        console.log(answers[index].eachPage[a]);
+    }
+}
+
 // for (let a = 0; a < answers.length; a++) {
 //     for (let b = 0; b < answers[a].length; b++) {
 //         console.log(answers[b]);
 //     }
 // }
-
-
 
 quizContainer.classList.add('quizContainer');
 generalContainer.appendChild(quizContainer);
@@ -114,7 +118,7 @@ class PageContent {
         this.answersBox.classList.add('answersBox');
         this.eachAnswer.classList.add('eachAnswer');
 
-        this.quizTitle.innerText = "It's Quiz Time";
+        this.quizTitle.innerText = "It's Quiz Time!";
         this.pageNumber.innerText = getPageNumber(page);
         this.questionBox.innerText = getQuestion(page);
         this.eachAnswer.innerText = getAnswers(page);
@@ -124,26 +128,7 @@ class PageContent {
     }
 }
 
-new PageContent(6);
-
-
-
-// function quizForm(data) {
-//     const quizTitle = document.createElement('div');
-//     quizTitle.classList.add('quizTitle');
-//     quizContainer.appendChild(quizTitle).innerText = 'Quiz Time!';
-// }
-
-// for (i = 1; i < 7; i++) {
-//     const pageNumber = document.createElement('div');
-//     pageNumber.classList.add('pageNumber');
-//     quizContainer.appendChild(pageNumber).innerText = i + '/6';
-// }
-
-
-// quizForm();
-
-
+new PageContent(1);
 
 //FUNCTIONS
 function startQuiz() {

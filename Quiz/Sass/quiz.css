@@ -31,16 +31,17 @@
 
 .questionBox {
   width: 90%;
-  height: 20%;
+  height: 15%;
   background-color: white;
   display: -ms-grid;
   display: grid;
   place-items: center;
   border-radius: 20px;
+  font-size: 3rem;
 }
 
 .answersBox {
-  height: 60%;
+  height: 50%;
   width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -49,9 +50,12 @@
 }
 
 .eachAnswer {
-  height: 20%;
+  height: 100%;
   width: 100%;
   background-color: white;
   border-radius: 20px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
 }
 /*# sourceMappingURL=quiz.css.map */

@@ -97,7 +97,7 @@ body {
 
 .questionBox {
   width: 90%;
-  height: 20%;
+  height: 15%;
   background-color: white;
   display: -ms-grid;
   display: grid;
@@ -106,7 +106,7 @@ body {
 }
 
 .answersBox {
-  height: 60%;
+  height: 50%;
   width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -119,5 +119,8 @@ body {
   width: 100%;
   background-color: white;
   border-radius: 20px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
 }
 /*# sourceMappingURL=main.css.map */
