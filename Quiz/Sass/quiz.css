@@ -24,18 +24,20 @@
   display: grid;
   place-items: center;
   border-radius: 20px;
-  font-size: 1.7rem;
+  font-size: 1.2rem;
 }
 .quizContainer .allAnswers {
   height: 50%;
   width: 90%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   gap: 5px;
   background-color: brown;
 }
 
 .answerBox {
-  height: 15%;
+  height: 25%;
   width: 100%;
   background-color: white;
   border-radius: 20px;
@@ -47,9 +49,13 @@
   width: 15%;
   height: 100%;
   background-color: red;
+  display: grid;
+  place-items: center;
 }
 .answerBox .answerText {
   width: 85%;
   height: 100%;
-  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=quiz.css.map */
