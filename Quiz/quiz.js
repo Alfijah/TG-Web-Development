@@ -4,7 +4,7 @@ const startBtn = document.createElement('div');
 const moveBtns = document.createElement('div');
 const previousBtn = document.createElement('div');
 const nextBtn = document.createElement('div');
-// const quizContainer = document.createElement('div');
+const quizContainer = document.createElement('div');
 
 //MAKE THE STARTBUTTON
 startBtn.classList.add('startBtn');
@@ -13,6 +13,7 @@ startBtn.onclick = startQuiz;
 
 function startQuiz() {
     generalContainer.removeChild(startBtn);
+    // generalContainer.classList.add('quizContainer');
     //next add the form page
 }
 
@@ -34,13 +35,17 @@ const question = [
 ];
 
 const answers = [
-    { eachPage: ['Hyper Text Markup Language', 'How To Make Lumpia', 'Hyper Text Management Laguage', 'Hyper Things Managing Language', 'Hyper Things Making Lumpia'] },
+    { eachPage: [ 'Hyper Text Markup Language', 'How To Make Lumpia', 'Hyper Text Management Laguage', 'Hyper Things Managing Language', 'Hyper Things Making Lumpia'] },
     { eachPage: ['Surfboard', 'Ironing Board', 'Motherboard', 'Fatherboard', 'Blackboard'] },
     { eachPage: ['Internet Technology', 'Information Technology', 'Irritating Tuxedos', "Impossible Torpedo's", 'Ivanka Trump'] },
     { eachPage: ['Pea-en-gee', 'Ping', 'Pung', 'Pang', 'Portable Graphics Format'] },
     { eachPage: ['Pokemon', 'Chilli', 'Anti-virus software', 'Browser', 'Marvel Heroes'] },
     { eachPage: ['Vodka', 'Water', 'Jealousy', 'Communism', 'Nested Dolls'] }
 ];
+
+const data = {
+    divInfo:[{index: 1, answers: ""}, ]
+}
 
 //BUILD THE FORM
 function getPageNumber(page) {
@@ -94,25 +99,17 @@ function getAnswers(page) {
     }
 }
 
-function getAnswersSeperated(index) {
-    for (let a = 0; a < answers[index].eachPage.length; a++) {
-        return answers[index].eachPage[a];
-        //  console.log(answers[index].eachPage[a]);
-    }
-    // answers[index].eachPage.forEach((answer) => answer); 
-}
-
-// quizContainer.classList.add('quizContainer');
+quizContainer.classList.add('quizContainer');
 generalContainer.appendChild(quizContainer);
 class PageContent {
     constructor(page) {
-        this.quizContainer = document.createElement('div');
+        // this.quizContainer = document.createElement('div');
         this.quizTitle = document.createElement('div');
         this.pageNumber = document.createElement('div');
         this.questionBox = document.createElement('div');
         this.allAnswers = document.createElement('div');
-        
-        this.quizContainer.classList.add('quizContainer');
+
+        // this.quizContainer.classList.add('quizContainer');
         this.quizTitle.classList.add('quizTitle');
         this.pageNumber.classList.add('pageNumber');
         this.questionBox.classList.add('questionBox');
@@ -123,7 +120,7 @@ class PageContent {
         this.questionBox.innerText = getQuestion(page);
 
         quizContainer.append(this.quizTitle, this.pageNumber, this.questionBox, this.allAnswers);
-        
+
         for (let i = 1; i < 6; i++) {
             this.answerNumber = document.createElement('div');
             this.answerText = document.createElement('div');
@@ -134,14 +131,12 @@ class PageContent {
             this.answerText.classList.add('answerText');
 
             this.answerNumber.innerText = i;
-            this.answerText.innerText = getAnswers(page);
+            this.answerText.innerText = answers[page - 1].eachPage[i - 1];
 
             this.allAnswers.appendChild(this.answerBox);
             this.answerBox.append(this.answerNumber, this.answerText);
-
         }
     }
-
 }
 
 new PageContent(1);
