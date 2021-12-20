@@ -9,42 +9,51 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    .quizTitle {
+        color: $light-color;
+        font-size: 1.8rem;
+        height: 10%;
+    }
+    .pageNumber {
+        height: 5%;
+        color: $light-color;
+    }
+    .questionBox {
+        width: 90%;
+        height: 15%;
+        background-color: $light-color;
+        display: grid;
+        place-items: center;
+        border-radius: 20px;
+        font-size: 1.7rem;
+    }
+    .allAnswers {
+        height: 50%;
+        width: 90%;
+        display: flex;
+        gap: 5px;
+        background-color: brown;
+    }
 }
 
-.quizTitle {
-    color: $light-color;
-    font-size: 1.8rem;
-    height: 10%;
-}
-
-.pageNumber {
-    height: 5%;
-    color: $light-color;
-}
-
-.questionBox {
-    width: 90%;
+.answerBox {
     height: 15%;
-    background-color: $light-color;
-    display: grid;
-    place-items: center;
-    border-radius: 20px;
-    font-size: 3rem;
-}
-
-.answersBox {
-    height: 50%;
-    width: 90%;
-    display: flex;
-    gap: 5px;
-    background-color: brown;
-}
-
-.eachAnswer {
-    height: 100%;
     width: 100%;
     background-color: $light-color;
     border-radius: 20px;
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .answerNumber {
+    width: 15%;
+    height: 100%;
+    background-color: red;
+    }
+    .answerText {
+    width: 85%;
+    height: 100%;
+    background-color: blue;
+    }
 }
+
+

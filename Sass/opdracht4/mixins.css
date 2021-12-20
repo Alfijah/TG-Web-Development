@@ -3,9 +3,7 @@
   color: aqua;
   background: darkgrey;
 }
-
 .button:hover {
   color: darkgrey;
   background: orange;
-}
-/*# sourceMappingURL=mixins.css.map */
+}/*# sourceMappingURL=mixins.css.map */

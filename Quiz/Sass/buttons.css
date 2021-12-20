@@ -2,7 +2,6 @@
   width: 30%;
   height: 8%;
   background-color: teal;
-  display: -ms-grid;
   display: grid;
   place-items: center;
   color: white;
@@ -12,14 +11,9 @@
   width: 60%;
   height: 8%;
   background-color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-around;
+  align-items: center;
   gap: 10px;
 }
 
@@ -27,9 +21,7 @@
   background-color: teal;
   height: 100%;
   width: 100%;
-  display: -ms-grid;
   display: grid;
   place-items: center;
   color: white;
-}
-/*# sourceMappingURL=buttons.css.map */
+}/*# sourceMappingURL=buttons.css.map */

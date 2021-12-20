@@ -3,37 +3,26 @@
 *::after {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Indie flower';
+  font-family: "Indie flower";
 }
 
 .generalContainer {
   width: 100vw;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .startBtn {
   width: 30%;
   height: 8%;
   background-color: teal;
-  display: -ms-grid;
   display: grid;
   place-items: center;
   color: white;
@@ -43,14 +32,9 @@ body {
   width: 60%;
   height: 8%;
   background-color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-around;
+  align-items: center;
   gap: 10px;
 }
 
@@ -58,7 +42,6 @@ body {
   background-color: teal;
   height: 100%;
   width: 100%;
-  display: -ms-grid;
   display: grid;
   place-items: center;
   color: white;
@@ -68,59 +51,54 @@ body {
   background-color: teal;
   width: 80%;
   height: 80%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
 }
-
-.quizTitle {
+.quizContainer .quizTitle {
   color: white;
   font-size: 1.8rem;
   height: 10%;
 }
-
-.pageNumber {
+.quizContainer .pageNumber {
   height: 5%;
   color: white;
 }
-
-.questionBox {
+.quizContainer .questionBox {
   width: 90%;
   height: 15%;
   background-color: white;
-  display: -ms-grid;
   display: grid;
   place-items: center;
   border-radius: 20px;
+  font-size: 1.7rem;
 }
-
-.answersBox {
+.quizContainer .allAnswers {
   height: 50%;
   width: 90%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 5px;
+  background-color: brown;
 }
 
-.eachAnswer {
-  height: 20%;
+.answerBox {
+  height: 15%;
   width: 100%;
   background-color: white;
   border-radius: 20px;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-/*# sourceMappingURL=main.css.map */
+.answerBox .answerNumber {
+  width: 15%;
+  height: 100%;
+  background-color: red;
+}
+.answerBox .answerText {
+  width: 85%;
+  height: 100%;
+  background-color: blue;
+}/*# sourceMappingURL=main.css.map */

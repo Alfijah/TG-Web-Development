@@ -78,7 +78,7 @@ function getAnswers(page) {
         case 1:
             return getAnswersSeperated(0);
         case 2:
-            return answers[1];
+            return getAnswersSeperated(1);
         case 3:
             return answers[2];
         case 4:
@@ -91,9 +91,19 @@ function getAnswers(page) {
 }
 
 function getAnswersSeperated(index) {
-    for( a = 0; a < answers[index].eachPage.length; a++) {
-        console.log(answers[index].eachPage[a]);
+    allAnswers.append(answerNumber, answerText);
+
+    for ( let i = 1; i < 7; i++) {
+        answerNumber.innerText = i;
+
+        for( a = 0; a < answers[index].eachPage.length; a++) {
+            answers[index].eachPage[a];
+
+            // console.log(answers[index].eachPage[a]);
+        }
+        
     }
+console.log(i) 
 }
 
 // for (let a = 0; a < answers.length; a++) {
@@ -109,23 +119,29 @@ class PageContent {
         this.quizTitle = document.createElement('div');
         this.pageNumber = document.createElement('div');
         this.questionBox = document.createElement('div');
-        this.answersBox = document.createElement('div');
-        this.eachAnswer = document.createElement('div');
+        this.allAnswers = document.createElement('div');
+        this.answerBox = document.createElement('div');
+        this.answerNumber = document.createElement('div');
+        this.answerText = document.createElement('div');
 
         this.quizTitle.classList.add('quizTitle');
         this.pageNumber.classList.add('pageNumber');
         this.questionBox.classList.add('questionBox');
-        this.answersBox.classList.add('answersBox');
-        this.eachAnswer.classList.add('eachAnswer');
+        this.allAnswers.classList.add('allAnswers');
+        this.answerBox.classList.add('answerBox');
+        this.answerNumber.classList.add('answerNumber');
+        this.answerText.classList.add('answerText');
 
         this.quizTitle.innerText = "It's Quiz Time!";
         this.pageNumber.innerText = getPageNumber(page);
         this.questionBox.innerText = getQuestion(page);
-        this.eachAnswer.innerText = getAnswers(page);
+        // this.answerText.innerText = getAnswers(page);
 
-        quizContainer.append(this.quizTitle, this.pageNumber, this.questionBox, this.answersBox);
-        this.answersBox.appendChild(this.eachAnswer);
+        quizContainer.append(this.quizTitle, this.pageNumber, this.questionBox, this.allAnswers);
+        this.allAnswers.appendChild(this.answerBox);
+        this.answerBox.append(this.answerNumber, this.answerText);
     }
+
 }
 
 new PageContent(1);

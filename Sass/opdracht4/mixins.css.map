@@ -1,11 +1,1 @@
-{
-    "version": 3,
-    "mappings": "ACwBA,AAAA,OAAO,CAAC;EATJ,SAAS,EAAE,IAAI;EACf,KAAK,EASgB,IAAI;EARzB,UAAU,EAQ2B,QAAQ;CAChD;;AAFD,AANI,OAMG,AANF,MAAM,CAAC;EACJ,KAAK,EAMkB,QAAQ;EAL/B,UAAU,EAKiC,MAAM;CAJpD",
-    "sources": [
-        "mixins.scss",
-        "assets/_button.scss",
-        "assets/_colors.scss"
-    ],
-    "names": [],
-    "file": "mixins.css"
-}
+{"version":3,"sources":["assets/_button.scss","mixins.scss"],"names":[],"mappings":"AAwBA;EATI,eAAA;EACA,WASqB;EARrB,oBAQqC;ACrBzC;ADcI;EACI,eAMuB;EALvB,kBAK2C;ACjBnD","file":"mixins.css"}
