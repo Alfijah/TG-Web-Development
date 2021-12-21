@@ -19,6 +19,10 @@ body {
   align-items: center;
 }
 
+.button {
+  cursor: pointer;
+}
+
 .startBtn {
   width: 30%;
   height: 8%;
@@ -37,8 +41,7 @@ body {
   align-items: center;
   gap: 10px;
 }
-
-.previousBtn, .nextBtn {
+.moveBtns .previousBtn, .moveBtns .nextBtn {
   background-color: teal;
   height: 100%;
   width: 100%;
@@ -73,7 +76,7 @@ body {
   display: grid;
   place-items: center;
   border-radius: 20px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 .quizContainer .allAnswers {
   height: 50%;
@@ -93,6 +96,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 .answerBox .answerNumber {
   width: 15%;

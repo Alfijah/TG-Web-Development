@@ -1,5 +1,9 @@
 @import './colors.scss';
 
+.button {
+    cursor: pointer;
+}
+
 .startBtn {
     width: 30%;
     height: 8%;
@@ -17,13 +21,14 @@
     justify-content: space-around;
     align-items: center;
     gap: 10px;
+    .previousBtn, .nextBtn {
+        background-color: $head-bgcolor;
+        height: 100%;
+        width: 100%;
+        display: grid;
+        place-items: center;
+        color: $light-color;
+    }
 }
 
-.previousBtn, .nextBtn {
-    background-color: $head-bgcolor;
-    height: 100%;
-    width: 100%;
-    display: grid;
-    place-items: center;
-    color: $light-color;
-}
+
