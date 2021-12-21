@@ -13,6 +13,7 @@ function startQuiz() {
     generalContainer.removeChild(startBtn);
     new Page(pageCounter);
     makeSwitchButtons()
+
 }
 
 //MAKE THE PREVIOUS AND NEXT BUTTON
@@ -34,48 +35,38 @@ function makeSwitchButtons() {
 }
 
 function goToPreviousPage() {
-    console.log(pageCounter)
+    if(pageCounter == 1) return;
     pageCounter--;
     generalContainer.innerHTML = "";
     new Page(pageCounter);
     makeSwitchButtons()
-
-    // if (2 <= pageCounter <= 6) {
-    //     generalContainer.innerHTML = "";
-    //     pageCounter--;
-    //     new Page(pageCounter);
-    //     makeSwitchButtons()
-    // } 
-    if (pageCounter < 1) {
-        console.log('hi')
-        generalContainer.remove(this.quizContainer);
-    }
 }
 
 function goToNextPage() {
-    console.log(pageCounter)
     generalContainer.innerHTML = "";
     pageCounter++;
+    // if(pageCounter == 7)
+    // {
+    //         new EmptyPage();
+    //return
+    // }
     new Page(pageCounter);
     makeSwitchButtons()
-
-    if (pageCounter > question.length) {
-        generalContainer.innerHTML = "";
-    }
-    
-
-    // if (1 <= pageCounter <= 5) {
-    //     generalContainer.innerHTML = "";
-    //     pageCounter++;
-    //     new Page(pageCounter);
-    //     makeSwitchButtons()
-    // } 
-    // else if (pageCounter > question.length) {
-    //     generalContainer.innerHTML = "";
-    //     return `Your score is ${score}`;
-    //     // console.log('test')
-    // }
 }
+
+// function getResult(page) {
+//     if (page == 7) {
+//         generalContainer.removeChild(this.quizContainer);
+
+//         const result = document.createElement('div');
+//         result.classList.add('result');
+//         generalContainer.appendChild(result).innerText = `Your score is ${score}`;
+
+//         const resultBtn = document.createElement('div');
+//         resultBtn.classList.add('resultBtn');
+//         generalContainer.appendChild(resultBtn).innerText = 'Restart';
+//     }
+// }
 
 //BUILD THE QUIZ'S Q AND A
 const question = [
@@ -127,8 +118,20 @@ function getQuestion(page) {
             return question[5];
     }
 }
+
+class EmptyPage {
+    constructor() {
+
+        //knop
+        // resultaat
+    }
+    
+}
+
+
 class Page {
     constructor(page) {
+
         this.quizContainer = document.createElement('div');
         this.quizTitle = document.createElement('div');
         this.pageNumber = document.createElement('div');
@@ -162,7 +165,7 @@ class Page {
 
             this.allAnswers.appendChild(this.answerBox);
             this.answerBox.append(this.answerNumber, this.answerText);
-        }
+        }        
     }
 }
 
