@@ -1,31 +1,49 @@
 //DEFINE VARIABLES
 const generalContainer = document.querySelector('.generalContainer');
 const startBtn = document.createElement('div');
-const moveBtns = document.createElement('div');
-const previousBtn = document.createElement('div');
-const nextBtn = document.createElement('div');
-const quizContainer = document.createElement('div');
+// const quizContainer = document.createElement('div');
+// let isQuizVisible = false;
+// generalContainer.remove(this.quizContainer);
 
 //MAKE THE STARTBUTTON
-startBtn.classList.add('startBtn');
+startBtn.classList.add('startBtn', 'button');
 generalContainer.appendChild(startBtn).innerText = 'Start!';
 startBtn.onclick = startQuiz;
 
 function startQuiz() {
     generalContainer.removeChild(startBtn);
-    // generalContainer.classList.add('quizContainer');
-    //next add the form page
+    new PageContent(1);
+    goToPreviousPage();
+    goToNextPage();
 }
 
 //MAKE THE PREVIOUS AND NEXT BUTTON
-moveBtns.classList.add('moveBtns');
+
+
+function goToPreviousPage() {
+const moveBtns = document.createElement('div');
+moveBtns.classList.add('moveBtns', 'button');
 generalContainer.append(moveBtns);
 
-previousBtn.classList.add('previousBtn');
-moveBtns.appendChild(previousBtn).innerText = 'Previous';
 
-nextBtn.classList.add('nextBtn');
-moveBtns.appendChild(nextBtn).innerText = 'Next';
+const previousBtn = document.createElement('div');
+
+    previousBtn.classList.add('previousBtn');
+    moveBtns.appendChild(previousBtn).innerText = 'Previous';
+}
+
+function goToNextPage() {
+const moveBtns = document.createElement('div');
+moveBtns.classList.add('moveBtns', 'button');
+generalContainer.append(moveBtns);
+
+
+const nextBtn = document.createElement('div');
+
+    nextBtn.classList.add('nextBtn');
+    moveBtns.appendChild(nextBtn).innerText = 'Next';
+}
+
 
 //BUILD THE QUIZ'S Q AND A
 const question = [
@@ -35,7 +53,7 @@ const question = [
 ];
 
 const answers = [
-    { eachPage: [ 'Hyper Text Markup Language', 'How To Make Lumpia', 'Hyper Text Management Laguage', 'Hyper Things Managing Language', 'Hyper Things Making Lumpia'] },
+    { eachPage: ['Hyper Text Markup Language', 'How To Make Lumpia', 'Hyper Text Management Laguage', 'Hyper Things Managing Language', 'Hyper Things Making Lumpia'] },
     { eachPage: ['Surfboard', 'Ironing Board', 'Motherboard', 'Fatherboard', 'Blackboard'] },
     { eachPage: ['Internet Technology', 'Information Technology', 'Irritating Tuxedos', "Impossible Torpedo's", 'Ivanka Trump'] },
     { eachPage: ['Pea-en-gee', 'Ping', 'Pung', 'Pang', 'Portable Graphics Format'] },
@@ -44,7 +62,7 @@ const answers = [
 ];
 
 const data = {
-    divInfo:[{index: 1, answers: ""}, ]
+    divInfo: [{ index: 1, answers: "" },]
 }
 
 //BUILD THE FORM
@@ -99,17 +117,17 @@ function getAnswers(page) {
     }
 }
 
-quizContainer.classList.add('quizContainer');
-generalContainer.appendChild(quizContainer);
+// quizContainer.classList.add('quizContainer');
+// generalContainer.appendChild(quizContainer);
 class PageContent {
     constructor(page) {
-        // this.quizContainer = document.createElement('div');
+        this.quizContainer = document.createElement('div');
         this.quizTitle = document.createElement('div');
         this.pageNumber = document.createElement('div');
         this.questionBox = document.createElement('div');
         this.allAnswers = document.createElement('div');
 
-        // this.quizContainer.classList.add('quizContainer');
+        this.quizContainer.classList.add('quizContainer');
         this.quizTitle.classList.add('quizTitle');
         this.pageNumber.classList.add('pageNumber');
         this.questionBox.classList.add('questionBox');
@@ -119,7 +137,8 @@ class PageContent {
         this.pageNumber.innerText = getPageNumber(page);
         this.questionBox.innerText = getQuestion(page);
 
-        quizContainer.append(this.quizTitle, this.pageNumber, this.questionBox, this.allAnswers);
+        generalContainer.appendChild(this.quizContainer);
+        this.quizContainer.append(this.quizTitle, this.pageNumber, this.questionBox, this.allAnswers);
 
         for (let i = 1; i < 6; i++) {
             this.answerNumber = document.createElement('div');
@@ -139,4 +158,4 @@ class PageContent {
     }
 }
 
-new PageContent(1);
+// new PageContent(4);
