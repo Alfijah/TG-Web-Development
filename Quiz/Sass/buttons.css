@@ -11,7 +11,7 @@
   color: white;
 }
 
-.moveBtns {
+.switchButtons {
   width: 60%;
   height: 8%;
   background-color: white;
@@ -20,7 +20,7 @@
   align-items: center;
   gap: 10px;
 }
-.moveBtns .previousBtn, .moveBtns .nextBtn {
+.switchButtons .previousBtn, .switchButtons .nextBtn {
   background-color: teal;
   height: 100%;
   width: 100%;

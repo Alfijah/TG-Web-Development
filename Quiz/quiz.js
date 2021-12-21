@@ -1,9 +1,8 @@
 //DEFINE VARIABLES
 const generalContainer = document.querySelector('.generalContainer');
 const startBtn = document.createElement('div');
-// const quizContainer = document.createElement('div');
-// let isQuizVisible = false;
-// generalContainer.remove(this.quizContainer);
+let pageCounter = 1;
+let score;
 
 //MAKE THE STARTBUTTON
 startBtn.classList.add('startBtn', 'button');
@@ -12,38 +11,71 @@ startBtn.onclick = startQuiz;
 
 function startQuiz() {
     generalContainer.removeChild(startBtn);
-    new PageContent(1);
-    goToPreviousPage();
-    goToNextPage();
+    new Page(pageCounter);
+    makeSwitchButtons()
 }
 
 //MAKE THE PREVIOUS AND NEXT BUTTON
+function makeSwitchButtons() {
+    const switchButtons = document.createElement('div');
+    switchButtons.classList.add('switchButtons', 'button');
+    generalContainer.append(switchButtons);
 
+    const previousBtn = document.createElement('div');
+    previousBtn.classList.add('previousBtn');
+    switchButtons.appendChild(previousBtn).innerText = 'Previous';
+
+    const nextBtn = document.createElement('div');
+    nextBtn.classList.add('nextBtn');
+    switchButtons.appendChild(nextBtn).innerText = 'Next';
+
+    previousBtn.onclick = goToPreviousPage;
+    nextBtn.onclick = goToNextPage;
+}
 
 function goToPreviousPage() {
-const moveBtns = document.createElement('div');
-moveBtns.classList.add('moveBtns', 'button');
-generalContainer.append(moveBtns);
+    console.log(pageCounter)
+    pageCounter--;
+    generalContainer.innerHTML = "";
+    new Page(pageCounter);
+    makeSwitchButtons()
 
-
-const previousBtn = document.createElement('div');
-
-    previousBtn.classList.add('previousBtn');
-    moveBtns.appendChild(previousBtn).innerText = 'Previous';
+    // if (2 <= pageCounter <= 6) {
+    //     generalContainer.innerHTML = "";
+    //     pageCounter--;
+    //     new Page(pageCounter);
+    //     makeSwitchButtons()
+    // } 
+    if (pageCounter < 1) {
+        console.log('hi')
+        generalContainer.remove(this.quizContainer);
+    }
 }
 
 function goToNextPage() {
-const moveBtns = document.createElement('div');
-moveBtns.classList.add('moveBtns', 'button');
-generalContainer.append(moveBtns);
+    console.log(pageCounter)
+    generalContainer.innerHTML = "";
+    pageCounter++;
+    new Page(pageCounter);
+    makeSwitchButtons()
 
+    if (pageCounter > question.length) {
+        generalContainer.innerHTML = "";
+    }
+    
 
-const nextBtn = document.createElement('div');
-
-    nextBtn.classList.add('nextBtn');
-    moveBtns.appendChild(nextBtn).innerText = 'Next';
+    // if (1 <= pageCounter <= 5) {
+    //     generalContainer.innerHTML = "";
+    //     pageCounter++;
+    //     new Page(pageCounter);
+    //     makeSwitchButtons()
+    // } 
+    // else if (pageCounter > question.length) {
+    //     generalContainer.innerHTML = "";
+    //     return `Your score is ${score}`;
+    //     // console.log('test')
+    // }
 }
-
 
 //BUILD THE QUIZ'S Q AND A
 const question = [
@@ -60,10 +92,6 @@ const answers = [
     { eachPage: ['Pokemon', 'Chilli', 'Anti-virus software', 'Browser', 'Marvel Heroes'] },
     { eachPage: ['Vodka', 'Water', 'Jealousy', 'Communism', 'Nested Dolls'] }
 ];
-
-const data = {
-    divInfo: [{ index: 1, answers: "" },]
-}
 
 //BUILD THE FORM
 function getPageNumber(page) {
@@ -99,27 +127,7 @@ function getQuestion(page) {
             return question[5];
     }
 }
-
-function getAnswers(page) {
-    switch (page) {
-        case 1:
-            return getAnswersSeperated(0);
-        case 2:
-            return getAnswersSeperated(1);
-        case 3:
-            return answers[2];
-        case 4:
-            return answers[3];
-        case 5:
-            return answers[4];
-        case 6:
-            return answers[5];
-    }
-}
-
-// quizContainer.classList.add('quizContainer');
-// generalContainer.appendChild(quizContainer);
-class PageContent {
+class Page {
     constructor(page) {
         this.quizContainer = document.createElement('div');
         this.quizTitle = document.createElement('div');
@@ -158,4 +166,4 @@ class PageContent {
     }
 }
 
-// new PageContent(4);
+// new Page(1);
