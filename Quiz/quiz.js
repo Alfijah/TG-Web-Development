@@ -1,6 +1,7 @@
 //DEFINE VARIABLES
 const generalContainer = document.querySelector('.generalContainer');
 const startBtn = document.createElement('div');
+const givenAnswer = [];
 let pageCounter = 1;
 let score;
 
@@ -52,7 +53,7 @@ function goToNextPage() {
     makeSwitchButtons()
 }
 
-function getResult() {
+function getRestarted() {
     generalContainer.innerHTML = "";
     startBtn.classList.add('startBtn', 'button');
     generalContainer.appendChild(startBtn).innerText = 'Start!';
@@ -75,6 +76,15 @@ const answers = [
     { eachPage: ['Pokemon', 'Chilli', 'Anti-virus software', 'Browser', 'Marvel Heroes'] },
     { eachPage: ['Vodka', 'Water', 'Jealousy', 'Communism', 'Nested Dolls'] }
 ];
+
+const correctAnswer = {
+    [question[0]]: 'Hyper Text Markup Language',
+    [question[1]]: 'Motherboard',
+    [question[2]]: 'Information Technology',
+    [question[3]]: 'Pea-en-gee',
+    [question[4]]: 'Browser',
+    [question[5]]: 'Water'
+};
 
 //BUILD THE FORM
 function getPageNumber(page) {
@@ -110,21 +120,11 @@ function getQuestion(page) {
             return question[5];
     }
 }
-class LastPage {
-    constructor() {
-        const result = document.createElement('div');
-        result.classList.add('result');
-        generalContainer.appendChild(result).innerText = `Your score is: ${score}`;
 
-        const restartBtn = document.createElement('div');
-        restartBtn.classList.add('restartBtn', 'button');
-        generalContainer.appendChild(restartBtn).innerText = 'Restart';
-
-        restartBtn.onclick = getResult;
-    }
-}
+// const eachAnswer;
 class Page {
     constructor(page) {
+        let eachAnswer;
         this.quizContainer = document.createElement('div');
         this.quizTitle = document.createElement('div');
         this.pageNumber = document.createElement('div');
@@ -145,20 +145,50 @@ class Page {
         this.quizContainer.append(this.quizTitle, this.pageNumber, this.questionBox, this.allAnswers);
 
         for (let i = 1; i < 6; i++) {
+            this.answerBox = document.createElement('div');
             this.answerNumber = document.createElement('div');
             this.answerText = document.createElement('div');
-            this.answerBox = document.createElement('div');
 
             this.answerBox.classList.add('answerBox');
             this.answerNumber.classList.add('answerNumber');
             this.answerText.classList.add('answerText');
 
             this.answerNumber.innerText = i;
-            this.answerText.innerText = answers[page - 1].eachPage[i - 1];
+            eachAnswer = this.answerText.innerText = answers[page - 1].eachPage[i - 1];
 
             this.allAnswers.appendChild(this.answerBox);
             this.answerBox.append(this.answerNumber, this.answerText);
+
+            this.answerText.onclick = chooseAnswer;
+        }
+        function chooseAnswer() {
+            console.log('test')
+            // const answerText = document.querySelector('.answerText')
+            // givenAnswer.push(answerText.innerText)
+            // console.log('GIVEN ' + givenAnswer)
+
+            console.log(eachAnswer)
+            // console.log(correctAnswer[question[pageCounter - 1]])
+
+            if (eachAnswer === correctAnswer[question[pageCounter - 1]]) {
+                console.log('correct')
+
+            }
+
+
         }
     }
 }
-// new Page(1);
+class LastPage {
+    constructor() {
+        const result = document.createElement('div');
+        result.classList.add('result');
+        generalContainer.appendChild(result).innerText = `Your score is: ${score}`;
+
+        const restartBtn = document.createElement('div');
+        restartBtn.classList.add('restartBtn', 'button');
+        generalContainer.appendChild(restartBtn).innerText = 'Restart';
+
+        restartBtn.onclick = getRestarted;
+    }
+}
