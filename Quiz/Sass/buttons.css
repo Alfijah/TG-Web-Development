@@ -2,7 +2,7 @@
   cursor: pointer;
 }
 
-.startBtn {
+.startBtn, .restartBtn {
   width: 30%;
   height: 8%;
   background-color: teal;

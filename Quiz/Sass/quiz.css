@@ -58,6 +58,10 @@
   width: 85%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+}
+
+.result {
+  font-size: 2rem;
 }/*# sourceMappingURL=quiz.css.map */

@@ -23,7 +23,7 @@ body {
   cursor: pointer;
 }
 
-.startBtn {
+.startBtn, .restartBtn {
   width: 30%;
   height: 8%;
   background-color: teal;
@@ -110,6 +110,10 @@ body {
   width: 85%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+}
+
+.result {
+  font-size: 2rem;
 }/*# sourceMappingURL=main.css.map */

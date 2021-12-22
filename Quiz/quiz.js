@@ -13,7 +13,6 @@ function startQuiz() {
     generalContainer.removeChild(startBtn);
     new Page(pageCounter);
     makeSwitchButtons()
-
 }
 
 //MAKE THE PREVIOUS AND NEXT BUTTON
@@ -35,7 +34,7 @@ function makeSwitchButtons() {
 }
 
 function goToPreviousPage() {
-    if(pageCounter == 1) return;
+    if (pageCounter == 1) return;
     pageCounter--;
     generalContainer.innerHTML = "";
     new Page(pageCounter);
@@ -45,28 +44,21 @@ function goToPreviousPage() {
 function goToNextPage() {
     generalContainer.innerHTML = "";
     pageCounter++;
-    // if(pageCounter == 7)
-    // {
-    //         new EmptyPage();
-    //return
-    // }
+    if (pageCounter == 7) {
+        new LastPage();
+        return;
+    }
     new Page(pageCounter);
     makeSwitchButtons()
 }
 
-// function getResult(page) {
-//     if (page == 7) {
-//         generalContainer.removeChild(this.quizContainer);
-
-//         const result = document.createElement('div');
-//         result.classList.add('result');
-//         generalContainer.appendChild(result).innerText = `Your score is ${score}`;
-
-//         const resultBtn = document.createElement('div');
-//         resultBtn.classList.add('resultBtn');
-//         generalContainer.appendChild(resultBtn).innerText = 'Restart';
-//     }
-// }
+function getResult() {
+    generalContainer.innerHTML = "";
+    startBtn.classList.add('startBtn', 'button');
+    generalContainer.appendChild(startBtn).innerText = 'Start!';
+    pageCounter = 1;
+    return;
+}
 
 //BUILD THE QUIZ'S Q AND A
 const question = [
@@ -118,20 +110,21 @@ function getQuestion(page) {
             return question[5];
     }
 }
-
-class EmptyPage {
+class LastPage {
     constructor() {
+        const result = document.createElement('div');
+        result.classList.add('result');
+        generalContainer.appendChild(result).innerText = `Your score is: ${score}`;
 
-        //knop
-        // resultaat
+        const restartBtn = document.createElement('div');
+        restartBtn.classList.add('restartBtn', 'button');
+        generalContainer.appendChild(restartBtn).innerText = 'Restart';
+
+        restartBtn.onclick = getResult;
     }
-    
 }
-
-
 class Page {
     constructor(page) {
-
         this.quizContainer = document.createElement('div');
         this.quizTitle = document.createElement('div');
         this.pageNumber = document.createElement('div');
@@ -165,8 +158,7 @@ class Page {
 
             this.allAnswers.appendChild(this.answerBox);
             this.answerBox.append(this.answerNumber, this.answerText);
-        }        
+        }
     }
 }
-
 // new Page(1);
