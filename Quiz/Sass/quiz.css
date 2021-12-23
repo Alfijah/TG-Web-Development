@@ -61,6 +61,14 @@
   font-size: 1.4rem;
 }
 
+.correct {
+  background-color: green;
+}
+
+.wrong {
+  background-color: red;
+}
+
 .result {
   font-size: 2rem;
 }/*# sourceMappingURL=quiz.css.map */

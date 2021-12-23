@@ -113,11 +113,11 @@ body {
   font-size: 1.4rem;
 }
 
-.clickedCorrect {
+.correct {
   background-color: green;
 }
 
-.clickedWrong {
+.wrong {
   background-color: red;
 }
 

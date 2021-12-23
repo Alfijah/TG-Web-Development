@@ -128,7 +128,7 @@ class Page {
         this.pageNumber = document.createElement('div');
         this.questionBox = document.createElement('div');
         this.allAnswers = document.createElement('div');
-       
+
 
         this.quizContainer.classList.add('quizContainer');
         this.quizTitle.classList.add('quizTitle');
@@ -158,28 +158,43 @@ class Page {
             this.allAnswers.appendChild(this.answerBox);
             this.answerBox.append(this.answerNumber, this.answerText);
 
-            if (this.allAnswers) {
-                [...document.querySelector('.allAnswers')].forEach(node => {
-                    console.log(node)
-                })
-                // console.log('ALL ANSWERS => ', this.allAnswers)
-            }
+            const eachAnswer = answers[page - 1].eachPage[i - 1];
+            // console.log(eachAnswer)
 
-            this.answerText.addEventListener("click", () => {
-                const eachAnswer = answers[page - 1].eachPage[i - 1];
-                if (eachAnswer === correctAnswer[question[pageCounter - 1]]) {
-                    // answers[page - 1].eachPage[i - 1].style.backgroundColor = 'green';
-                    // eachAnswer.style.backgroundColor = 'green';
-                    this.answerBox.style.backgroundColor = 'green';
-                    console.log("correct")
-                } else {
-                    console.log("false")
-                    this.answerBox.style.backgroundColor = 'red';
-                }
-            })
         }
+
+        // LOOP OVER ALL THE ANSWERS!
+        this.allAnswers.childNodes.forEach((node, i) => {
+            console.log('ANSWER!!!', node);
+
+            // add eventListener to the answerBox
+            node.addEventListener('click', () => {
+                // grab textContent from the answerText element
+                const answerOnClick = node.childNodes[1].textContent;
+                console.log('ANSWER ONCLICK => ', answerOnClick);
+
+                // find the correct answer in the correctAnswer array
+                // const correctAnswerNode = correctAnswer.find((answer) => {
+                //     if (answer === answerOnClick) {
+                //         return true;
+                //     }
+                //     console.log('ANSWER!', answer);
+                // });
+
+                const correctAnswerNode = correctAnswer[question[pageCounter - 1]];
+
+                // check if the correctAnswerNode = the answer that was clicked on
+                if (correctAnswerNode === answerOnClick) {
+                    console.log('ANSWER CORRECT!');
+                    node.childNodes[i].style.backgroundColor = 'green';
+                } else {
+                    node.childNodes[i].style.backgroundColor = 'red';
+                }
+            });
+        });
     }
 }
+
 
 class LastPage {
     constructor() {
