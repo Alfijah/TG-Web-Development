@@ -121,7 +121,6 @@ function getQuestion(page) {
     }
 }
 
-// const eachAnswer;
 class Page {
     constructor(page) {
         this.quizContainer = document.createElement('div');
@@ -129,6 +128,7 @@ class Page {
         this.pageNumber = document.createElement('div');
         this.questionBox = document.createElement('div');
         this.allAnswers = document.createElement('div');
+       
 
         this.quizContainer.classList.add('quizContainer');
         this.quizTitle.classList.add('quizTitle');
@@ -157,25 +157,30 @@ class Page {
 
             this.allAnswers.appendChild(this.answerBox);
             this.answerBox.append(this.answerNumber, this.answerText);
-    
-            // this.answerText.onclick = chooseAnswer;
+
+            if (this.allAnswers) {
+                [...document.querySelector('.allAnswers')].forEach(node => {
+                    console.log(node)
+                })
+                // console.log('ALL ANSWERS => ', this.allAnswers)
+            }
 
             this.answerText.addEventListener("click", () => {
-                const answer = answers[page - 1].eachPage[i - 1];
-                if (answer === correctAnswer[question[pageCounter - 1]]) {
-                    this.answerNumber.style.backgroundColor = 'green';
-                    this.answerText.style.backgroundColor = 'green';
-
+                const eachAnswer = answers[page - 1].eachPage[i - 1];
+                if (eachAnswer === correctAnswer[question[pageCounter - 1]]) {
+                    // answers[page - 1].eachPage[i - 1].style.backgroundColor = 'green';
+                    // eachAnswer.style.backgroundColor = 'green';
+                    this.answerBox.style.backgroundColor = 'green';
                     console.log("correct")
                 } else {
                     console.log("false")
-                    this.answerNumber.style.backgroundColor = 'red';
-                    this.answerText.style.backgroundColor = 'red';
+                    this.answerBox.style.backgroundColor = 'red';
                 }
             })
         }
     }
 }
+
 class LastPage {
     constructor() {
         const result = document.createElement('div');

@@ -113,6 +113,14 @@ body {
   font-size: 1.4rem;
 }
 
+.clickedCorrect {
+  background-color: green;
+}
+
+.clickedWrong {
+  background-color: red;
+}
+
 .result {
   font-size: 2rem;
 }/*# sourceMappingURL=main.css.map */
