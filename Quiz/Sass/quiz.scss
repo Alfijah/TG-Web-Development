@@ -34,7 +34,7 @@
         flex-direction: column;
         justify-content: center;
         gap: 5px;
-        background-color: brown;
+        // background-color: brown;
     }
 }
 
@@ -51,7 +51,7 @@
     .answerNumber {
     width: 15%;
     height: 100%;
-    background-color: red;
+    // background-color: red;
     display: grid;
     place-items: center;
     }
@@ -61,6 +61,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    font-size: 1.4rem;
     }
 }
 

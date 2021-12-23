@@ -124,7 +124,6 @@ function getQuestion(page) {
 // const eachAnswer;
 class Page {
     constructor(page) {
-        let eachAnswer;
         this.quizContainer = document.createElement('div');
         this.quizTitle = document.createElement('div');
         this.pageNumber = document.createElement('div');
@@ -154,28 +153,26 @@ class Page {
             this.answerText.classList.add('answerText');
 
             this.answerNumber.innerText = i;
-            eachAnswer = this.answerText.innerText = answers[page - 1].eachPage[i - 1];
+            this.answerText.innerText = answers[page - 1].eachPage[i - 1];
 
             this.allAnswers.appendChild(this.answerBox);
             this.answerBox.append(this.answerNumber, this.answerText);
+    
+            // this.answerText.onclick = chooseAnswer;
 
-            this.answerText.onclick = chooseAnswer;
-        }
-        function chooseAnswer() {
-            console.log('test')
-            // const answerText = document.querySelector('.answerText')
-            // givenAnswer.push(answerText.innerText)
-            // console.log('GIVEN ' + givenAnswer)
+            this.answerText.addEventListener("click", () => {
+                const answer = answers[page - 1].eachPage[i - 1];
+                if (answer === correctAnswer[question[pageCounter - 1]]) {
+                    this.answerNumber.style.backgroundColor = 'green';
+                    this.answerText.style.backgroundColor = 'green';
 
-            console.log(eachAnswer)
-            // console.log(correctAnswer[question[pageCounter - 1]])
-
-            if (eachAnswer === correctAnswer[question[pageCounter - 1]]) {
-                console.log('correct')
-
-            }
-
-
+                    console.log("correct")
+                } else {
+                    console.log("false")
+                    this.answerNumber.style.backgroundColor = 'red';
+                    this.answerText.style.backgroundColor = 'red';
+                }
+            })
         }
     }
 }
