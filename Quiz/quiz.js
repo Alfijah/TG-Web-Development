@@ -167,6 +167,7 @@ class Page {
                     console.log('ANSWER CORRECT!');
                     node.childNodes[0].style.backgroundColor = 'green';
                     node.childNodes[1].style.backgroundColor = 'green';
+                    return;
                 } else {
                     node.childNodes[0].style.backgroundColor = 'red';
                     node.childNodes[1].style.backgroundColor = 'red';
