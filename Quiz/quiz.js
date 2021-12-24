@@ -19,15 +19,15 @@ function startQuiz() {
 //MAKE THE PREVIOUS AND NEXT BUTTON
 function makeSwitchButtons() {
     const switchButtons = document.createElement('div');
-    switchButtons.classList.add('switchButtons', 'button');
-    generalContainer.append(switchButtons);
-
     const previousBtn = document.createElement('div');
-    previousBtn.classList.add('previousBtn');
-    switchButtons.appendChild(previousBtn).innerText = 'Previous';
-
     const nextBtn = document.createElement('div');
+
+    switchButtons.classList.add('switchButtons', 'button');
+    previousBtn.classList.add('previousBtn');
     nextBtn.classList.add('nextBtn');
+
+    generalContainer.append(switchButtons);
+    switchButtons.appendChild(previousBtn).innerText = 'Previous';
     switchButtons.appendChild(nextBtn).innerText = 'Next';
 
     previousBtn.onclick = goToPreviousPage;
@@ -77,14 +77,9 @@ const answers = [
     { eachPage: ['Vodka', 'Water', 'Jealousy', 'Communism', 'Nested Dolls'] }
 ];
 
-const correctAnswer = {
-    [question[0]]: 'Hyper Text Markup Language',
-    [question[1]]: 'Motherboard',
-    [question[2]]: 'Information Technology',
-    [question[3]]: 'Pea-en-gee',
-    [question[4]]: 'Browser',
-    [question[5]]: 'Water'
-};
+const correctAnswer = [
+    'Hyper Text Markup Language', 'Motherboard', 'Information Technology', 'Pea-en-gee', 'Browser', 'Water'
+];
 
 //BUILD THE FORM
 function getPageNumber(page) {
@@ -157,38 +152,24 @@ class Page {
 
             this.allAnswers.appendChild(this.answerBox);
             this.answerBox.append(this.answerNumber, this.answerText);
-
-            const eachAnswer = answers[page - 1].eachPage[i - 1];
-            // console.log(eachAnswer)
-
         }
 
-        // LOOP OVER ALL THE ANSWERS!
-        this.allAnswers.childNodes.forEach((node, i) => {
-            console.log('ANSWER!!!', node);
-
-            // add eventListener to the answerBox
+        this.allAnswers.childNodes.forEach((node) => {    
             node.addEventListener('click', () => {
-                // grab textContent from the answerText element
                 const answerOnClick = node.childNodes[1].textContent;
-                console.log('ANSWER ONCLICK => ', answerOnClick);
+                const correctAnswerNode = correctAnswer.find((answer) => {
+                    if (answer === answerOnClick) {
+                    return true;
+                    }
+                });
 
-                // find the correct answer in the correctAnswer array
-                // const correctAnswerNode = correctAnswer.find((answer) => {
-                //     if (answer === answerOnClick) {
-                //         return true;
-                //     }
-                //     console.log('ANSWER!', answer);
-                // });
-
-                const correctAnswerNode = correctAnswer[question[pageCounter - 1]];
-
-                // check if the correctAnswerNode = the answer that was clicked on
                 if (correctAnswerNode === answerOnClick) {
                     console.log('ANSWER CORRECT!');
-                    node.childNodes[i].style.backgroundColor = 'green';
+                    node.childNodes[0].style.backgroundColor = 'green';
+                    node.childNodes[1].style.backgroundColor = 'green';
                 } else {
-                    node.childNodes[i].style.backgroundColor = 'red';
+                    node.childNodes[0].style.backgroundColor = 'red';
+                    node.childNodes[1].style.backgroundColor = 'red';
                 }
             });
         });

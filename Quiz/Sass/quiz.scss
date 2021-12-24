@@ -1,14 +1,24 @@
 @import './colors.scss';
 
+%standard-flexbox-use {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%standard-grid-use {
+    display: grid;
+    place-items: center;
+}
+
 .quizContainer {
     background-color: $head-bgcolor;
     width: 80%;
     height: 80%;
-    display: flex;
+    @extend %standard-flexbox-use;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 10px;
+    margin-bottom: 20px;
     .quizTitle {
         color: $light-color;
         font-size: 1.8rem;
@@ -22,8 +32,7 @@
         width: 90%;
         height: 15%;
         background-color: $light-color;
-        display: grid;
-        place-items: center;
+        @extend %standard-grid-use;
         border-radius: 20px;
         font-size: 1.5rem;
     }
@@ -40,37 +49,33 @@
 
 .answerBox {
     height: 25%;
-    width: 100%;
-    background-color: $light-color;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // background-color: $light-color;
+    border-radius: 25px 0 0 25px;
+    @extend %standard-flexbox-use;
     font-size: 1.5rem;
     cursor: pointer;
+    &:nth-of-type(2), &:nth-of-type(4)  {
+        flex-direction: row-reverse;
+        border-radius: 0 25px 25px 0;
+    }
     .answerNumber {
-    width: 15%;
-    height: 100%;
-    // background-color: red;
-    display: grid;
-    place-items: center;
-    }
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        @extend %standard-grid-use;
+        background-color: $light-color;
+        }
     .answerText {
-    width: 85%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    font-size: 1.4rem;
+        width: 85%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 1.2rem;
+        background-color: $light-color;
+        padding-left: 15px;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 100% 50%);
     }
-}
-
-.correct {
-    background-color: green;
-}
-
-.wrong {
-    background-color: red;
 }
 
 .result {

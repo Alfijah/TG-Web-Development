@@ -50,15 +50,24 @@ body {
   color: white;
 }
 
+.answerBox, .quizContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.answerBox .answerNumber, .quizContainer .questionBox {
+  display: grid;
+  place-items: center;
+}
+
 .quizContainer {
   background-color: teal;
   width: 80%;
   height: 80%;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 10px;
+  margin-bottom: 20px;
 }
 .quizContainer .quizTitle {
   color: white;
@@ -73,8 +82,6 @@ body {
   width: 90%;
   height: 15%;
   background-color: white;
-  display: grid;
-  place-items: center;
   border-radius: 20px;
   font-size: 1.5rem;
 }
@@ -89,20 +96,19 @@ body {
 
 .answerBox {
   height: 25%;
-  width: 100%;
-  background-color: white;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: 25px 0 0 25px;
   font-size: 1.5rem;
   cursor: pointer;
 }
+.answerBox:nth-of-type(2), .answerBox:nth-of-type(4) {
+  flex-direction: row-reverse;
+  border-radius: 0 25px 25px 0;
+}
 .answerBox .answerNumber {
-  width: 15%;
-  height: 100%;
-  display: grid;
-  place-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
 }
 .answerBox .answerText {
   width: 85%;
@@ -110,15 +116,11 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  font-size: 1.4rem;
-}
-
-.correct {
-  background-color: green;
-}
-
-.wrong {
-  background-color: red;
+  font-size: 1.2rem;
+  background-color: white;
+  padding-left: 15px;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 100% 50%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 100% 50%);
 }
 
 .result {
