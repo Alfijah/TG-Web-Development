@@ -27,7 +27,7 @@
   flex-direction: column;
   margin-bottom: 10px;
   border-radius: 10px;
-  box-shadow: 0 0 5px #000;
+  box-shadow: 0 0 3px #000;
 }
 .quizContainer .quizTitle {
   color: white;
@@ -104,5 +104,5 @@
   padding: 10px 30px;
   margin-bottom: 10px;
   border-radius: 10px;
-  box-shadow: 0 0 5px #000;
+  box-shadow: 0 0 3px #000;
 }/*# sourceMappingURL=quiz.css.map */

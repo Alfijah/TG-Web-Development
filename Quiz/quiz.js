@@ -14,7 +14,7 @@ const question = [
 const answers = [
     { eachPage: ['Hyper Text Markup Language', 'How To Make Lumpia', 'Hyper Text Management Laguage', 'Hyper Things Managing Language', 'Hyper Things Making Lumpia'] },
     { eachPage: ['Surfboard', 'Ironing Board', 'Motherboard', 'Fatherboard', 'Blackboard'] },
-    { eachPage: ['Internet Technology', 'Information Technology', 'Irritating Tuxedos', "Impossible Torpedo's", 'Ivanka Trump'] },
+    { eachPage: ['Internet Technology', 'Information Technology', 'Irritating Tuxedos', "Impossible Torpedoes", 'Ivanka Trump'] },
     { eachPage: ['Pea-en-gee', 'Ping', 'Pung', 'Pang', 'Portable Graphics Format'] },
     { eachPage: ['Pokemon', 'Chilli', 'Anti-virus software', 'Browser', 'Marvel Heroes'] },
     { eachPage: ['Vodka', 'Water', 'Jealousy', 'Communism', 'Nested Dolls'] }
@@ -23,7 +23,6 @@ const answers = [
 const correctAnswer = [
     'Hyper Text Markup Language', 'Motherboard', 'Information Technology', 'Pea-en-gee', 'Browser', 'Water'
 ];
-
 
 class Page {
     constructor(page) {
@@ -75,7 +74,6 @@ class Page {
                 if (correctAnswerNode === answerOnClick) {
                     node.childNodes[0].style.backgroundColor = '#34BE82';
                     node.childNodes[1].style.backgroundColor = '#34BE82';
-                    return;
                 } else {
                     node.childNodes[0].style.backgroundColor = '#950101';
                     node.childNodes[1].style.backgroundColor = '#950101';
@@ -85,8 +83,8 @@ class Page {
     }
 }
 
+const NewPage = Object.create(Page);
 
-// let newPage = new Page(1);
 class LastPage {
     constructor() {
         const result = document.createElement('div');
@@ -101,6 +99,41 @@ class LastPage {
     }
 }
 
+//BUILD THE PAGENUMBER AND QUESTION IN THE QUIZ
+function getPageNumber(page) {
+    switch (page) {
+        case 1:
+            return page + '/6';
+        case 2:
+            return page + '/6';
+        case 3:
+            return page + '/6';
+        case 4:
+            return page + '/6';
+        case 5:
+            return page + '/6';
+        case 6:
+            return page + '/6';
+    }
+}
+
+function getQuestion(page) {
+    switch (page) {
+        case 1:
+            return question[0];
+        case 2:
+            return question[1];
+        case 3:
+            return question[2];
+        case 4:
+            return question[3];
+        case 5:
+            return question[4];
+        case 6:
+            return question[5];
+    }
+}
+
 //MAKE THE BUTTONS
 startBtn.classList.add('startBtn', 'button');
 generalContainer.appendChild(startBtn).innerText = 'Start!';
@@ -109,7 +142,7 @@ startBtn.onclick = startQuiz;
 function startQuiz() {
     generalContainer.removeChild(startBtn);
     new Page(pageCounter);
-    makeSwitchButtons()
+    makeSwitchButtons();
 }
 
 function makeSwitchButtons() {
@@ -148,6 +181,11 @@ function goToNextPage() {
     makeSwitchButtons()
 }
 
+function checkCorrectAnswer() {
+
+   
+}
+
 function getRestarted() {
     generalContainer.innerHTML = "";
     startBtn.classList.add('startBtn', 'button');
@@ -156,38 +194,5 @@ function getRestarted() {
     return;
 }
 
-//BUILD THE PAGENUMBER AND QUESTION IN THE QUIZ
-function getPageNumber(page) {
-    switch (page) {
-        case 1:
-            return page + '/6';
-        case 2:
-            return page + '/6';
-        case 3:
-            return page + '/6';
-        case 4:
-            return page + '/6';
-        case 5:
-            return page + '/6';
-        case 6:
-            return page + '/6';
-    }
-}
 
-function getQuestion(page) {
-    switch (page) {
-        case 1:
-            return question[0];
-        case 2:
-            return question[1];
-        case 3:
-            return question[2];
-        case 4:
-            return question[3];
-        case 5:
-            return question[4];
-        case 6:
-            return question[5];
-    }
-}
 
