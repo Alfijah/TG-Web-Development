@@ -165,12 +165,12 @@ class Page {
 
                 if (correctAnswerNode === answerOnClick) {
                     console.log('ANSWER CORRECT!');
-                    node.childNodes[0].style.backgroundColor = 'green';
-                    node.childNodes[1].style.backgroundColor = 'green';
+                    node.childNodes[0].style.backgroundColor = '#34BE82';
+                    node.childNodes[1].style.backgroundColor = '#34BE82';
                     return;
                 } else {
-                    node.childNodes[0].style.backgroundColor = 'red';
-                    node.childNodes[1].style.backgroundColor = 'red';
+                    node.childNodes[0].style.backgroundColor = '#950101';
+                    node.childNodes[1].style.backgroundColor = '#950101';
                 }
             });
         });
