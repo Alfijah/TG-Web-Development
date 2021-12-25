@@ -8,6 +8,10 @@
 
 body {
   font-family: "Indie flower";
+  background: url("/Quiz/Sass/assets/question-g64a92d398_1280.png") no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
 }
 
 .generalContainer {
@@ -48,6 +52,7 @@ body {
   display: grid;
   place-items: center;
   color: white;
+  font-size: 1.5rem;
 }
 
 .answerBox, .quizContainer {
@@ -61,6 +66,16 @@ body {
   place-items: center;
 }
 
+.answerBox:nth-child(even)::before, .answerBox:nth-child(odd)::before {
+  content: "";
+  position: absolute;
+  width: 63px;
+  height: 63px;
+  border-radius: 50%;
+  background-color: teal;
+  z-index: 0;
+}
+
 .quizContainer {
   background-color: teal;
   width: 80%;
@@ -72,11 +87,10 @@ body {
 .quizContainer .quizTitle {
   color: white;
   font-size: 1.8rem;
-  height: 10%;
 }
 .quizContainer .pageNumber {
-  height: 5%;
   color: white;
+  font-size: 1.8rem;
 }
 .quizContainer .questionBox {
   width: 90%;
@@ -84,6 +98,7 @@ body {
   background-color: white;
   border-radius: 20px;
   font-size: 1.5rem;
+  margin-bottom: 9px;
 }
 .quizContainer .allAnswers {
   height: 50%;
@@ -91,24 +106,32 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 10px;
+  gap: 14px;
 }
 
 .answerBox {
   height: 25%;
   border-radius: 25px 0 0 25px;
-  font-size: 1.5rem;
+  font-size: 1.15rem;
   cursor: pointer;
+  position: relative;
 }
-.answerBox:nth-of-type(2), .answerBox:nth-of-type(4) {
+.answerBox:nth-child(odd)::before {
+  left: 0;
+}
+.answerBox:nth-child(even) {
   flex-direction: row-reverse;
   border-radius: 0 25px 25px 0;
+}
+.answerBox:nth-child(even)::before {
+  right: 0;
 }
 .answerBox .answerNumber {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   background-color: white;
+  z-index: 9;
 }
 .answerBox .answerText {
   width: 85%;
@@ -116,9 +139,8 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  font-size: 1.2rem;
   background-color: white;
-  padding-left: 15px;
+  padding-left: 20px;
 }
 
 .result {

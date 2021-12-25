@@ -21,6 +21,7 @@
     justify-content: space-around;
     align-items: center;
     gap: 10px;
+
     .previousBtn, .nextBtn {
         background-color: $head-bgcolor;
         height: 100%;
@@ -28,6 +29,7 @@
         display: grid;
         place-items: center;
         color: $light-color;
+        font-size: 1.5rem;
     }
 }
 

@@ -11,6 +11,16 @@
     place-items: center;
 }
 
+%answernumber-pseudo {
+    content: '';
+    position: absolute;
+    width: 63px;
+    height: 63px;
+    border-radius: 50%;
+    background-color: $head-bgcolor;
+    z-index: 0;
+}
+
 .quizContainer {
     background-color: $head-bgcolor;
     width: 80%;
@@ -19,15 +29,17 @@
     flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
+    
     .quizTitle {
         color: $light-color;
         font-size: 1.8rem;
-        height: 10%;
     }
+    
     .pageNumber {
-        height: 5%;
         color: $light-color;
+        font-size: 1.8rem;
     }
+    
     .questionBox {
         width: 90%;
         height: 15%;
@@ -35,14 +47,16 @@
         @extend %standard-grid-use;
         border-radius: 20px;
         font-size: 1.5rem;
+        margin-bottom: 9px;
     }
+    
     .allAnswers {
         height: 50%;
         width: 90%;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 10px;
+        gap: 14px;
         // background-color: brown;
     }
 }
@@ -52,28 +66,42 @@
     // background-color: $light-color;
     border-radius: 25px 0 0 25px;
     @extend %standard-flexbox-use;
-    font-size: 1.5rem;
+    font-size: 1.15rem;
     cursor: pointer;
-    &:nth-of-type(2), &:nth-of-type(4)  {
+    position: relative;
+
+    &:nth-child(odd)::before {
+       @extend %answernumber-pseudo;
+       left: 0;
+    }
+    
+    &:nth-child(even) {
         flex-direction: row-reverse;
         border-radius: 0 25px 25px 0;
+
+        &::before {
+            @extend %answernumber-pseudo;
+            right: 0;
+        }
     }
+    
     .answerNumber {
         width: 50px;
         height: 50px;
         border-radius: 50%;
         @extend %standard-grid-use;
         background-color: $light-color;
+        z-index: 9;
         }
-    .answerText {
+    
+        .answerText {
         width: 85%;
         height: 100%;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        font-size: 1.2rem;
         background-color: $light-color;
-        padding-left: 15px;
+        padding-left: 20px;
     }
 }
 

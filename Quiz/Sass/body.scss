@@ -8,6 +8,10 @@
 
 body {
     font-family: 'Indie flower';
+    background: url('/Quiz/Sass/assets/question-g64a92d398_1280.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
 }
 
 .generalContainer {
@@ -18,4 +22,5 @@ body {
     flex-direction: column;
     align-items: center;
     // overflow: hidden;
+
 }
