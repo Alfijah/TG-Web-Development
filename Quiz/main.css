@@ -25,6 +25,7 @@ body {
 
 .button {
   cursor: pointer;
+  box-shadow: 0 0 5px #000;
 }
 
 .startBtn, .restartBtn {
@@ -85,6 +86,7 @@ body {
   flex-direction: column;
   margin-bottom: 10px;
   border-radius: 10px;
+  box-shadow: 0 0 5px #000;
 }
 .quizContainer .quizTitle {
   color: white;
@@ -148,6 +150,10 @@ body {
   padding-left: 20px;
 }
 
+.correct {
+  background-color: green;
+}
+
 .result {
   font-size: 1.9rem;
   background-color: white;
@@ -157,4 +163,5 @@ body {
   padding: 10px 30px;
   margin-bottom: 10px;
   border-radius: 10px;
+  box-shadow: 0 0 5px #000;
 }/*# sourceMappingURL=main.css.map */

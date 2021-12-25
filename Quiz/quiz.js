@@ -1,65 +1,8 @@
-//DEFINE VARIABLES
 const generalContainer = document.querySelector('.generalContainer');
 const startBtn = document.createElement('div');
 const givenAnswer = [];
 let pageCounter = 1;
 let score;
-
-//MAKE THE STARTBUTTON
-startBtn.classList.add('startBtn', 'button');
-generalContainer.appendChild(startBtn).innerText = 'Start!';
-startBtn.onclick = startQuiz;
-
-function startQuiz() {
-    generalContainer.removeChild(startBtn);
-    new Page(pageCounter);
-    makeSwitchButtons()
-}
-
-//MAKE THE PREVIOUS AND NEXT BUTTON
-function makeSwitchButtons() {
-    const switchButtons = document.createElement('div');
-    const previousBtn = document.createElement('div');
-    const nextBtn = document.createElement('div');
-
-    switchButtons.classList.add('switchButtons', 'button');
-    previousBtn.classList.add('previousBtn');
-    nextBtn.classList.add('nextBtn');
-
-    generalContainer.append(switchButtons);
-    switchButtons.appendChild(previousBtn).innerText = 'Previous';
-    switchButtons.appendChild(nextBtn).innerText = 'Next';
-
-    previousBtn.onclick = goToPreviousPage;
-    nextBtn.onclick = goToNextPage;
-}
-
-function goToPreviousPage() {
-    if (pageCounter == 1) return;
-    pageCounter--;
-    generalContainer.innerHTML = "";
-    new Page(pageCounter);
-    makeSwitchButtons()
-}
-
-function goToNextPage() {
-    generalContainer.innerHTML = "";
-    pageCounter++;
-    if (pageCounter == 7) {
-        new LastPage();
-        return;
-    }
-    new Page(pageCounter);
-    makeSwitchButtons()
-}
-
-function getRestarted() {
-    generalContainer.innerHTML = "";
-    startBtn.classList.add('startBtn', 'button');
-    generalContainer.appendChild(startBtn).innerText = 'Start!';
-    pageCounter = 1;
-    return;
-}
 
 //BUILD THE QUIZ'S Q AND A
 const question = [
@@ -81,40 +24,6 @@ const correctAnswer = [
     'Hyper Text Markup Language', 'Motherboard', 'Information Technology', 'Pea-en-gee', 'Browser', 'Water'
 ];
 
-//BUILD THE FORM
-function getPageNumber(page) {
-    switch (page) {
-        case 1:
-            return page + '/6';
-        case 2:
-            return page + '/6';
-        case 3:
-            return page + '/6';
-        case 4:
-            return page + '/6';
-        case 5:
-            return page + '/6';
-        case 6:
-            return page + '/6';
-    }
-}
-
-function getQuestion(page) {
-    switch (page) {
-        case 1:
-            return question[0];
-        case 2:
-            return question[1];
-        case 3:
-            return question[2];
-        case 4:
-            return question[3];
-        case 5:
-            return question[4];
-        case 6:
-            return question[5];
-    }
-}
 
 class Page {
     constructor(page) {
@@ -164,7 +73,6 @@ class Page {
                 });
 
                 if (correctAnswerNode === answerOnClick) {
-                    console.log('ANSWER CORRECT!');
                     node.childNodes[0].style.backgroundColor = '#34BE82';
                     node.childNodes[1].style.backgroundColor = '#34BE82';
                     return;
@@ -178,6 +86,7 @@ class Page {
 }
 
 
+// let newPage = new Page(1);
 class LastPage {
     constructor() {
         const result = document.createElement('div');
@@ -191,3 +100,94 @@ class LastPage {
         restartBtn.onclick = getRestarted;
     }
 }
+
+//MAKE THE BUTTONS
+startBtn.classList.add('startBtn', 'button');
+generalContainer.appendChild(startBtn).innerText = 'Start!';
+startBtn.onclick = startQuiz;
+
+function startQuiz() {
+    generalContainer.removeChild(startBtn);
+    new Page(pageCounter);
+    makeSwitchButtons()
+}
+
+function makeSwitchButtons() {
+    const switchButtons = document.createElement('div');
+    const previousBtn = document.createElement('div');
+    const nextBtn = document.createElement('div');
+
+    switchButtons.classList.add('switchButtons');
+    previousBtn.classList.add('previousBtn', 'button');
+    nextBtn.classList.add('nextBtn', 'button');
+
+    generalContainer.append(switchButtons);
+    switchButtons.appendChild(previousBtn).innerText = 'Previous';
+    switchButtons.appendChild(nextBtn).innerText = 'Next';
+
+    previousBtn.onclick = goToPreviousPage;
+    nextBtn.onclick = goToNextPage;
+}
+
+function goToPreviousPage() {
+    if (pageCounter == 1) return;
+    pageCounter--;
+    generalContainer.innerHTML = "";
+    new Page(pageCounter);
+    makeSwitchButtons()
+}
+
+function goToNextPage() {
+    generalContainer.innerHTML = "";
+    pageCounter++;
+    if (pageCounter == 7) {
+        new LastPage();
+        return;
+    }
+    new Page(pageCounter);
+    makeSwitchButtons()
+}
+
+function getRestarted() {
+    generalContainer.innerHTML = "";
+    startBtn.classList.add('startBtn', 'button');
+    generalContainer.appendChild(startBtn).innerText = 'Start!';
+    pageCounter = 1;
+    return;
+}
+
+//BUILD THE PAGENUMBER AND QUESTION IN THE QUIZ
+function getPageNumber(page) {
+    switch (page) {
+        case 1:
+            return page + '/6';
+        case 2:
+            return page + '/6';
+        case 3:
+            return page + '/6';
+        case 4:
+            return page + '/6';
+        case 5:
+            return page + '/6';
+        case 6:
+            return page + '/6';
+    }
+}
+
+function getQuestion(page) {
+    switch (page) {
+        case 1:
+            return question[0];
+        case 2:
+            return question[1];
+        case 3:
+            return question[2];
+        case 4:
+            return question[3];
+        case 5:
+            return question[4];
+        case 6:
+            return question[5];
+    }
+}
+
