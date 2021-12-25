@@ -30,29 +30,30 @@ body {
 .startBtn, .restartBtn {
   width: 30%;
   height: 8%;
-  background-color: teal;
+  background-color: #C84B31;
   display: grid;
   place-items: center;
   color: white;
+  border-radius: 10px;
 }
 
 .switchButtons {
   width: 60%;
   height: 8%;
-  background-color: white;
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 10px;
 }
 .switchButtons .previousBtn, .switchButtons .nextBtn {
-  background-color: teal;
+  background-color: #C84B31;
   height: 100%;
   width: 100%;
   display: grid;
   place-items: center;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
 }
 
 .answerBox, .quizContainer {
@@ -69,36 +70,40 @@ body {
 .answerBox:nth-child(even)::before, .answerBox:nth-child(odd)::before {
   content: "";
   position: absolute;
-  width: 63px;
-  height: 63px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
-  background-color: teal;
+  background-color: #C84B31;
   z-index: 0;
 }
 
 .quizContainer {
-  background-color: teal;
-  width: 80%;
-  height: 80%;
+  background-color: #C84B31;
+  width: 90%;
+  height: 83%;
+  justify-content: space-evenly;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
 }
 .quizContainer .quizTitle {
   color: white;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 .quizContainer .pageNumber {
   color: white;
-  font-size: 1.8rem;
+  font-size: 1.1rem;
+  margin-top: -35px;
 }
 .quizContainer .questionBox {
   width: 90%;
-  height: 15%;
+  height: 12%;
   background-color: white;
-  border-radius: 20px;
-  font-size: 1.5rem;
+  border-radius: 15px;
+  font-size: 1.1rem;
   margin-bottom: 9px;
+  padding: 2px 20px;
+  margin-top: -20px;
 }
 .quizContainer .allAnswers {
   height: 50%;
@@ -106,13 +111,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 14px;
+  gap: 8px;
+  margin-top: -12px;
 }
 
 .answerBox {
   height: 25%;
-  border-radius: 25px 0 0 25px;
-  font-size: 1.15rem;
+  font-size: 1rem;
   cursor: pointer;
   position: relative;
 }
@@ -144,5 +149,12 @@ body {
 }
 
 .result {
-  font-size: 2rem;
+  font-size: 1.9rem;
+  background-color: white;
+  color: black;
+  width: 80%;
+  height: 30%;
+  padding: 10px 30px;
+  margin-bottom: 10px;
+  border-radius: 10px;
 }/*# sourceMappingURL=main.css.map */

@@ -5,27 +5,28 @@
 .startBtn, .restartBtn {
   width: 30%;
   height: 8%;
-  background-color: teal;
+  background-color: #C84B31;
   display: grid;
   place-items: center;
   color: white;
+  border-radius: 10px;
 }
 
 .switchButtons {
   width: 60%;
   height: 8%;
-  background-color: white;
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 10px;
 }
 .switchButtons .previousBtn, .switchButtons .nextBtn {
-  background-color: teal;
+  background-color: #C84B31;
   height: 100%;
   width: 100%;
   display: grid;
   place-items: center;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
 }/*# sourceMappingURL=buttons.css.map */

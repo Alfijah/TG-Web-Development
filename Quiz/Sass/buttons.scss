@@ -11,12 +11,12 @@
     display: grid;
     place-items: center;
     color: $light-color;
+    border-radius: 10px;
 }
 
 .switchButtons {
     width: 60%;
     height: 8%;
-    background-color: $light-color;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -29,7 +29,8 @@
         display: grid;
         place-items: center;
         color: $light-color;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
+        border-radius: 10px;
     }
 }
 
