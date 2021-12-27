@@ -1,7 +1,7 @@
 const generalContainer = document.querySelector('.generalContainer');
-const startBtn = document.createElement('div');
-const givenAnswer = [];
 let pageCounter = 1;
+const allSelectedAnswers = [];
+const correctSelectedAnswers = [];
 let score;
 
 //BUILD THE QUIZ'S Q AND A
@@ -32,7 +32,6 @@ class Page {
         this.questionBox = document.createElement('div');
         this.allAnswers = document.createElement('div');
 
-
         this.quizContainer.classList.add('quizContainer');
         this.quizTitle.classList.add('quizTitle');
         this.pageNumber.classList.add('pageNumber');
@@ -61,38 +60,19 @@ class Page {
             this.allAnswers.appendChild(this.answerBox);
             this.answerBox.append(this.answerNumber, this.answerText);
         }
-
-        this.allAnswers.childNodes.forEach((node) => {    
-            node.addEventListener('click', () => {
-                const answerOnClick = node.childNodes[1].textContent;
-                const correctAnswerNode = correctAnswer.find((answer) => {
-                    if (answer === answerOnClick) {
-                    return true;
-                    }
-                });
-
-                if (correctAnswerNode === answerOnClick) {
-                    node.childNodes[0].style.backgroundColor = '#34BE82';
-                    node.childNodes[1].style.backgroundColor = '#34BE82';
-                } else {
-                    node.childNodes[0].style.backgroundColor = '#950101';
-                    node.childNodes[1].style.backgroundColor = '#950101';
-                }
-            });
-        });
+        checkIfAnswerCorrect();
     }
 }
-
-const NewPage = Object.create(Page);
 
 class LastPage {
     constructor() {
         const result = document.createElement('div');
-        result.classList.add('result');
-        generalContainer.appendChild(result).innerText = `Your score is: ${score}`;
-
         const restartBtn = document.createElement('div');
+
+        result.classList.add('result');
         restartBtn.classList.add('restartBtn', 'button');
+
+        generalContainer.appendChild(result).innerText = `Your score is: ${score}`;
         generalContainer.appendChild(restartBtn).innerText = 'Restart';
 
         restartBtn.onclick = getRestarted;
@@ -135,6 +115,7 @@ function getQuestion(page) {
 }
 
 //MAKE THE BUTTONS
+const startBtn = document.createElement('div');
 startBtn.classList.add('startBtn', 'button');
 generalContainer.appendChild(startBtn).innerText = 'Start!';
 startBtn.onclick = startQuiz;
@@ -167,7 +148,7 @@ function goToPreviousPage() {
     pageCounter--;
     generalContainer.innerHTML = "";
     new Page(pageCounter);
-    makeSwitchButtons()
+    makeSwitchButtons();
 }
 
 function goToNextPage() {
@@ -178,12 +159,30 @@ function goToNextPage() {
         return;
     }
     new Page(pageCounter);
-    makeSwitchButtons()
+    makeSwitchButtons();
 }
 
-function checkCorrectAnswer() {
+function checkIfAnswerCorrect() {
+    const allAnswers = document.querySelector('.allAnswers');
 
-   
+    allAnswers.childNodes.forEach((node) => {
+        node.addEventListener('click', () => {
+            const answerOnClick = node.childNodes[1].textContent;
+            const correctAnswerNode = correctAnswer.find((answer) => {
+                if (answer === answerOnClick) {
+                    return true;
+                }
+            });
+
+            if (correctAnswerNode === answerOnClick) {
+                node.childNodes[0].style.backgroundColor = '#34BE82';
+                node.childNodes[1].style.backgroundColor = '#34BE82';
+            } else {
+                node.childNodes[0].style.backgroundColor = '#950101';
+                node.childNodes[1].style.backgroundColor = '#950101';
+            }
+        });
+    });
 }
 
 function getRestarted() {
@@ -191,8 +190,4 @@ function getRestarted() {
     startBtn.classList.add('startBtn', 'button');
     generalContainer.appendChild(startBtn).innerText = 'Start!';
     pageCounter = 1;
-    return;
 }
-
-
-
