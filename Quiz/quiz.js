@@ -162,6 +162,16 @@ function goToNextPage() {
     createNavButtons();
 }
 
+function findCorrectAnswer() {
+    const answerNumber = document.querySelector('.answerNumber');
+    const answerText = document.querySelector('.answerText');
+    if (correctAnswer[pageCounter - 1]) {
+        answerNumber.style.backgroundColor = '#34BE82';
+        answerText.style.backgroundColor = '#34BE82';
+        console.log(correctAnswer[pageCounter - 1])
+    };
+}
+
 function clickAnyAnswer() {
     const allAnswers = document.querySelector('.allAnswers');
 
@@ -181,13 +191,13 @@ function clickAnyAnswer() {
                 // correctSelectedAnswers++;
                 console.log(correctSelectedAnswers);
                 disableClick();
-                
             } else {
                 node.childNodes[0].style.backgroundColor = '#950101';
                 node.childNodes[1].style.backgroundColor = '#950101';
                 allSelectedAnswers.push(answerOnClick);
                 console.log(allSelectedAnswers);
                 disableClick();
+                findCorrectAnswer();
             }
         };
     });
@@ -195,7 +205,6 @@ function clickAnyAnswer() {
 
 function disableClick() {
     const allAnswers = document.querySelector('.allAnswers');
-
     allAnswers.childNodes.forEach((node) => {
         node.onclick = null;
     });
