@@ -60,8 +60,14 @@ class Page {
             this.allAnswers.appendChild(this.answerBox);
             this.answerBox.append(this.answerNumber, this.answerText);
         }
-        checkIfAnswerCorrect();
+        this.allAnswers.childNodes.forEach((node) => {
+            node.addEventListener("click", checkIfAnswerCorrect);
+            // node.removeEventListener("click")
+        })
+        //  this.answerBox.addEventListener("click", checkIfAnswerCorrect);
+
     }
+    
 }
 
 class LastPage {
@@ -72,7 +78,7 @@ class LastPage {
         result.classList.add('result');
         restartBtn.classList.add('restartBtn', 'button');
 
-        generalContainer.appendChild(result).innerText = `Your score is: ${score}`;
+        generalContainer.appendChild(result).innerText = `Your score is: ${score} out of 6!`;
         generalContainer.appendChild(restartBtn).innerText = 'Restart';
 
         restartBtn.onclick = getRestarted;
@@ -123,21 +129,21 @@ startBtn.onclick = startQuiz;
 function startQuiz() {
     generalContainer.removeChild(startBtn);
     new Page(pageCounter);
-    makeSwitchButtons();
+    createNavButtons();
 }
 
-function makeSwitchButtons() {
-    const switchButtons = document.createElement('div');
+function createNavButtons() {
+    const navButtons = document.createElement('div');
     const previousBtn = document.createElement('div');
     const nextBtn = document.createElement('div');
 
-    switchButtons.classList.add('switchButtons');
+    navButtons.classList.add('navButtons');
     previousBtn.classList.add('previousBtn', 'button');
     nextBtn.classList.add('nextBtn', 'button');
 
-    generalContainer.append(switchButtons);
-    switchButtons.appendChild(previousBtn).innerText = 'Previous';
-    switchButtons.appendChild(nextBtn).innerText = 'Next';
+    generalContainer.append(navButtons);
+    navButtons.appendChild(previousBtn).innerText = 'Previous';
+    navButtons.appendChild(nextBtn).innerText = 'Next';
 
     previousBtn.onclick = goToPreviousPage;
     nextBtn.onclick = goToNextPage;
@@ -148,7 +154,7 @@ function goToPreviousPage() {
     pageCounter--;
     generalContainer.innerHTML = "";
     new Page(pageCounter);
-    makeSwitchButtons();
+    createNavButtons();
 }
 
 function goToNextPage() {
@@ -159,30 +165,45 @@ function goToNextPage() {
         return;
     }
     new Page(pageCounter);
-    makeSwitchButtons();
+    createNavButtons();
 }
 
 function checkIfAnswerCorrect() {
     const allAnswers = document.querySelector('.allAnswers');
+    const answerBox = document.querySelector('.answerBox');
 
-    allAnswers.childNodes.forEach((node) => {
-        node.addEventListener('click', () => {
-            const answerOnClick = node.childNodes[1].textContent;
-            const correctAnswerNode = correctAnswer.find((answer) => {
-                if (answer === answerOnClick) {
-                    return true;
-                }
-            });
-
-            if (correctAnswerNode === answerOnClick) {
-                node.childNodes[0].style.backgroundColor = '#34BE82';
-                node.childNodes[1].style.backgroundColor = '#34BE82';
-            } else {
-                node.childNodes[0].style.backgroundColor = '#950101';
-                node.childNodes[1].style.backgroundColor = '#950101';
+        const answerOnClick = node.childNodes[1].textContent;
+        const correctAnswerNode = correctAnswer.find((answer) => {
+            console.log(answer)
+            if (answer === answerOnClick) {
+                return true;
             }
         });
-    });
+
+        if (correctAnswerNode === answerOnClick) {
+            node.childNodes[0].style.backgroundColor = '#34BE82';
+            node.childNodes[1].style.backgroundColor = '#34BE82';
+            correctSelectedAnswers.push(answerOnClick);
+            // console.log(correctSelectedAnswers);
+            
+        } else {
+            console.log('wrong')
+            node.childNodes[0].style.backgroundColor = '#950101';
+            node.childNodes[1].style.backgroundColor = '#950101';
+            allSelectedAnswers.push(answerOnClick);
+            // console.log(allSelectedAnswers);
+        }
+    // disableClick();
+}
+
+function disableClick() {
+    const allAnswers = document.querySelector('.allAnswers');
+
+    allAnswers.childNodes.forEach((node) => {
+        node.removeEventListener('click', checkIfAnswerCorrect);
+        console.log(node.removeEventListener);
+    })
+
 }
 
 function getRestarted() {
@@ -191,3 +212,33 @@ function getRestarted() {
     generalContainer.appendChild(startBtn).innerText = 'Start!';
     pageCounter = 1;
 }
+
+// function checkIfAnswerCorrect() {
+//     const allAnswers = document.querySelector('.allAnswers');
+
+//     allAnswers.childNodes.forEach((node) => {
+//         node.addEventListener('click', () => {
+//             const answerOnClick = node.childNodes[1].textContent;
+//             const correctAnswerNode = correctAnswer.find((answer) => {
+//                 if (answer === answerOnClick) {
+//                     return true;
+//                 }
+//             });
+
+//             if (correctAnswerNode === answerOnClick) {
+//                 node.childNodes[0].style.backgroundColor = '#34BE82';
+//                 node.childNodes[1].style.backgroundColor = '#34BE82';
+//                 correctSelectedAnswers.push(answerOnClick);
+//                 console.log(correctSelectedAnswers);
+                
+//             } else {
+//                 node.childNodes[0].style.backgroundColor = '#950101';
+//                 node.childNodes[1].style.backgroundColor = '#950101';
+//                 allSelectedAnswers.push(answerOnClick);
+//                 console.log(allSelectedAnswers);
+//             }
+//         });
+//     });
+    
+//     disableClick();
+// }

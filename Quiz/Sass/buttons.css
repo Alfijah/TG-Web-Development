@@ -13,7 +13,7 @@
   border-radius: 10px;
 }
 
-.switchButtons {
+.navButtons {
   width: 60%;
   height: 8%;
   display: flex;
@@ -21,7 +21,7 @@
   align-items: center;
   gap: 10px;
 }
-.switchButtons .previousBtn, .switchButtons .nextBtn {
+.navButtons .previousBtn, .navButtons .nextBtn {
   background-color: #C84B31;
   height: 100%;
   width: 100%;
