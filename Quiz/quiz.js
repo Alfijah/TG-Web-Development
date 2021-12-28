@@ -1,10 +1,10 @@
 const generalContainer = document.querySelector('.generalContainer');
 let pageCounter = 1;
-const allSelectedAnswers = [];
-const correctSelectedAnswers = [];
+let allSelectedAnswers = [];
+let correctSelectedAnswers = [];
 let score;
 
-//BUILD THE QUIZ'S Q AND A
+//CREATE THE QUIZ BLUEPRINT
 const question = [
     'What does HTML stand for?', "What is a computer's main circuit board called?",
     'What does I.T. stand for?', 'How do you pronounce PNG?', 'Firefox and Opera are types of what?',
@@ -60,14 +60,8 @@ class Page {
             this.allAnswers.appendChild(this.answerBox);
             this.answerBox.append(this.answerNumber, this.answerText);
         }
-        this.allAnswers.childNodes.forEach((node) => {
-            node.addEventListener("click", checkIfAnswerCorrect);
-            // node.removeEventListener("click")
-        })
-        //  this.answerBox.addEventListener("click", checkIfAnswerCorrect);
-
+        clickAnyAnswer();
     }
-    
 }
 
 class LastPage {
@@ -85,7 +79,7 @@ class LastPage {
     }
 }
 
-//BUILD THE PAGENUMBER AND QUESTION IN THE QUIZ
+//CREATE THE PAGENUMBER AND QUESTION IN THE QUIZ
 function getPageNumber(page) {
     switch (page) {
         case 1:
@@ -168,42 +162,43 @@ function goToNextPage() {
     createNavButtons();
 }
 
-function checkIfAnswerCorrect() {
+function clickAnyAnswer() {
     const allAnswers = document.querySelector('.allAnswers');
-    const answerBox = document.querySelector('.answerBox');
 
-        const answerOnClick = node.childNodes[1].textContent;
-        const correctAnswerNode = correctAnswer.find((answer) => {
-            console.log(answer)
-            if (answer === answerOnClick) {
-                return true;
+    allAnswers.childNodes.forEach((node) => {
+        node.onclick = function checkIfAnswerCorrect() {
+            const answerOnClick = node.childNodes[1].textContent;
+            const correctAnswerNode = correctAnswer.find((answer) => {
+                if (answer === answerOnClick) {
+                    return true;
+                }
+            });
+
+            if (correctAnswerNode === answerOnClick) {
+                node.childNodes[0].style.backgroundColor = '#34BE82';
+                node.childNodes[1].style.backgroundColor = '#34BE82';
+                correctSelectedAnswers.push(answerOnClick);
+                // correctSelectedAnswers++;
+                console.log(correctSelectedAnswers);
+                disableClick();
+                
+            } else {
+                node.childNodes[0].style.backgroundColor = '#950101';
+                node.childNodes[1].style.backgroundColor = '#950101';
+                allSelectedAnswers.push(answerOnClick);
+                console.log(allSelectedAnswers);
+                disableClick();
             }
-        });
-
-        if (correctAnswerNode === answerOnClick) {
-            node.childNodes[0].style.backgroundColor = '#34BE82';
-            node.childNodes[1].style.backgroundColor = '#34BE82';
-            correctSelectedAnswers.push(answerOnClick);
-            // console.log(correctSelectedAnswers);
-            
-        } else {
-            console.log('wrong')
-            node.childNodes[0].style.backgroundColor = '#950101';
-            node.childNodes[1].style.backgroundColor = '#950101';
-            allSelectedAnswers.push(answerOnClick);
-            // console.log(allSelectedAnswers);
-        }
-    // disableClick();
+        };
+    });
 }
 
 function disableClick() {
     const allAnswers = document.querySelector('.allAnswers');
 
     allAnswers.childNodes.forEach((node) => {
-        node.removeEventListener('click', checkIfAnswerCorrect);
-        console.log(node.removeEventListener);
-    })
-
+        node.onclick = null;
+    });
 }
 
 function getRestarted() {
@@ -212,33 +207,3 @@ function getRestarted() {
     generalContainer.appendChild(startBtn).innerText = 'Start!';
     pageCounter = 1;
 }
-
-// function checkIfAnswerCorrect() {
-//     const allAnswers = document.querySelector('.allAnswers');
-
-//     allAnswers.childNodes.forEach((node) => {
-//         node.addEventListener('click', () => {
-//             const answerOnClick = node.childNodes[1].textContent;
-//             const correctAnswerNode = correctAnswer.find((answer) => {
-//                 if (answer === answerOnClick) {
-//                     return true;
-//                 }
-//             });
-
-//             if (correctAnswerNode === answerOnClick) {
-//                 node.childNodes[0].style.backgroundColor = '#34BE82';
-//                 node.childNodes[1].style.backgroundColor = '#34BE82';
-//                 correctSelectedAnswers.push(answerOnClick);
-//                 console.log(correctSelectedAnswers);
-                
-//             } else {
-//                 node.childNodes[0].style.backgroundColor = '#950101';
-//                 node.childNodes[1].style.backgroundColor = '#950101';
-//                 allSelectedAnswers.push(answerOnClick);
-//                 console.log(allSelectedAnswers);
-//             }
-//         });
-//     });
-    
-//     disableClick();
-// }
