@@ -15,12 +15,16 @@
   width: 58px;
   height: 58px;
   border-radius: 50%;
-  background-color: #C84B31;
+  background-color: white;
   z-index: 0;
 }
 
+.answerBox .answerText, .answerBox .answerNumber, .quizContainer .questionBox {
+  border: 2px solid #C84B31;
+}
+
 .quizContainer {
-  background-color: #C84B31;
+  background-color: white;
   width: 90%;
   height: 83%;
   justify-content: space-evenly;
@@ -30,11 +34,11 @@
   box-shadow: 0 0 3px #000;
 }
 .quizContainer .quizTitle {
-  color: white;
+  color: black;
   font-size: 1.5rem;
 }
 .quizContainer .pageNumber {
-  color: white;
+  color: black;
   font-size: 1.1rem;
   margin-top: -35px;
 }

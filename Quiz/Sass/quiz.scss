@@ -17,12 +17,16 @@
     width: 58px;
     height: 58px;
     border-radius: 50%;
-    background-color: $head-bgcolor;
+    background-color: $light-color;
     z-index: 0;
 }
 
+%border-style {
+    border: 2px solid $head-bgcolor;
+}
+
 .quizContainer {
-    background-color: $head-bgcolor;
+    background-color: $light-color;
     width: 90%;
     height: 83%;
     @extend %standard-flexbox-use;
@@ -33,12 +37,12 @@
     box-shadow: 0 0 3px #000;
     
     .quizTitle {
-        color: $light-color;
+        color: $dark-color;
         font-size: 1.5rem;
     }
     
     .pageNumber {
-        color: $light-color;
+        color: $dark-color;
         font-size: 1.1rem;
         margin-top: -35px;
     }
@@ -48,6 +52,7 @@
         height: 12%;
         background-color: $light-color;
         @extend %standard-grid-use;
+        @extend %border-style;
         border-radius: 15px;
         font-size: 1.1rem;
         margin-bottom: 9px;
@@ -94,11 +99,13 @@
         height: 50px;
         border-radius: 50%;
         @extend %standard-grid-use;
+        @extend %border-style;
         background-color: $light-color;
         z-index: 9;
         }
     
         .answerText {
+        @extend %border-style;
         width: 85%;
         height: 100%;
         display: flex;

@@ -1,6 +1,7 @@
 .button {
   cursor: pointer;
   box-shadow: 0 0 3px #000;
+  font-size: 1.1rem;
 }
 
 .startBtn, .restartBtn {
@@ -28,6 +29,5 @@
   display: grid;
   place-items: center;
   color: white;
-  font-size: 1.1rem;
   border-radius: 10px;
 }/*# sourceMappingURL=buttons.css.map */

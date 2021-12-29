@@ -2,7 +2,7 @@ const generalContainer = document.querySelector('.generalContainer');
 let pageCounter = 1;
 let allSelectedAnswers = [];
 let correctSelectedAnswers = [];
-let score;
+console.log(allSelectedAnswers)
 
 //CREATE THE QUIZ BLUEPRINT
 const question = [
@@ -20,9 +20,18 @@ const answers = [
     { eachPage: ['Vodka', 'Water', 'Jealousy', 'Communism', 'Nested Dolls'] }
 ];
 
-const correctAnswer = [
-    'Hyper Text Markup Language', 'Motherboard', 'Information Technology', 'Pea-en-gee', 'Browser', 'Water'
-];
+// const correctAnswer = [
+//     'Hyper Text Markup Language', 'Motherboard', 'Information Technology', 'Pea-en-gee', 'Browser', 'Water'
+// ];
+
+const correctAnswer = {
+    [question[0]]: 'Hyper Text Markup Language',
+    [question[1]]: 'Motherboard',
+    [question[2]]: 'Information Technology',
+    [question[3]]: 'Pea-en-gee',
+    [question[4]]: 'Browser',
+    [question[5]]: 'Water'
+};
 
 class Page {
     constructor(page) {
@@ -72,7 +81,7 @@ class LastPage {
         result.classList.add('result');
         restartBtn.classList.add('restartBtn', 'button');
 
-        generalContainer.appendChild(result).innerText = `Your score is: ${score} out of 6!`;
+        generalContainer.appendChild(result).innerText = `Your score is: ${correctSelectedAnswers.length} out of 6!`;
         generalContainer.appendChild(restartBtn).innerText = 'Restart';
 
         restartBtn.onclick = getRestarted;
@@ -152,6 +161,7 @@ function goToPreviousPage() {
 }
 
 function goToNextPage() {
+    // if (pageCounter == 6 && allSelectedAnswers.length < 6) return;
     generalContainer.innerHTML = "";
     pageCounter++;
     if (pageCounter == 7) {
@@ -165,10 +175,9 @@ function goToNextPage() {
 function findCorrectAnswer() {
     const answerNumber = document.querySelector('.answerNumber');
     const answerText = document.querySelector('.answerText');
-    if (correctAnswer[pageCounter - 1]) {
+    if (correctAnswer[question[pageCounter - 1]]) {
         answerNumber.style.backgroundColor = '#34BE82';
         answerText.style.backgroundColor = '#34BE82';
-        console.log(correctAnswer[pageCounter - 1])
     };
 }
 
@@ -178,17 +187,14 @@ function clickAnyAnswer() {
     allAnswers.childNodes.forEach((node) => {
         node.onclick = function checkIfAnswerCorrect() {
             const answerOnClick = node.childNodes[1].textContent;
-            const correctAnswerNode = correctAnswer.find((answer) => {
-                if (answer === answerOnClick) {
-                    return true;
-                }
-            });
 
-            if (correctAnswerNode === answerOnClick) {
+            if (correctAnswer[question[pageCounter - 1]] === answerOnClick) {
                 node.childNodes[0].style.backgroundColor = '#34BE82';
                 node.childNodes[1].style.backgroundColor = '#34BE82';
                 correctSelectedAnswers.push(answerOnClick);
-                // correctSelectedAnswers++;
+                allSelectedAnswers.push(answerOnClick);
+                console.log(allSelectedAnswers);
+
                 console.log(correctSelectedAnswers);
                 disableClick();
             } else {
