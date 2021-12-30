@@ -14,8 +14,8 @@
 %answernumber-pseudo {
     content: '';
     position: absolute;
-    width: 58px;
-    height: 58px;
+    width: 18vw;
+    height: 18vw;
     border-radius: 50%;
     background-color: $light-color;
     z-index: 0;
@@ -61,7 +61,7 @@
 
     }
     
-    .allAnswers {
+    .answerBox {
         height: 50%;
         width: 90%;
         display: flex;
@@ -72,7 +72,7 @@
     }
 }
 
-.answerBox {
+.eachAnswer {
     height: 25%;
     @extend %standard-flexbox-use;
     font-size: 1rem;

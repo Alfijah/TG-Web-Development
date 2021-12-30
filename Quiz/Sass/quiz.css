@@ -1,25 +1,25 @@
-.answerBox, .quizContainer {
+.eachAnswer, .quizContainer {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.answerBox .answerNumber, .quizContainer .questionBox {
+.eachAnswer .answerNumber, .quizContainer .questionBox {
   display: grid;
   place-items: center;
 }
 
-.answerBox:nth-child(even)::before, .answerBox:nth-child(odd)::before {
+.eachAnswer:nth-child(even)::before, .eachAnswer:nth-child(odd)::before {
   content: "";
   position: absolute;
-  width: 58px;
-  height: 58px;
+  width: 18vw;
+  height: 18vw;
   border-radius: 50%;
   background-color: white;
   z-index: 0;
 }
 
-.answerBox .answerText, .answerBox .answerNumber, .quizContainer .questionBox {
+.eachAnswer .answerText, .eachAnswer .answerNumber, .quizContainer .questionBox {
   border: 2px solid #C84B31;
 }
 
@@ -52,7 +52,7 @@
   padding: 2px 20px;
   margin-top: -20px;
 }
-.quizContainer .allAnswers {
+.quizContainer .answerBox {
   height: 50%;
   width: 90%;
   display: flex;
@@ -62,30 +62,30 @@
   margin-top: -12px;
 }
 
-.answerBox {
+.eachAnswer {
   height: 25%;
   font-size: 1rem;
   cursor: pointer;
   position: relative;
 }
-.answerBox:nth-child(odd)::before {
+.eachAnswer:nth-child(odd)::before {
   left: 0;
 }
-.answerBox:nth-child(even) {
+.eachAnswer:nth-child(even) {
   flex-direction: row-reverse;
   border-radius: 0 25px 25px 0;
 }
-.answerBox:nth-child(even)::before {
+.eachAnswer:nth-child(even)::before {
   right: 0;
 }
-.answerBox .answerNumber {
+.eachAnswer .answerNumber {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   background-color: white;
   z-index: 9;
 }
-.answerBox .answerText {
+.eachAnswer .answerText {
   width: 85%;
   height: 100%;
   display: flex;
