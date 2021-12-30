@@ -5,6 +5,8 @@ const pauseBtn = document.querySelector('.pause_button');
 const stopBtn = document.querySelector('.stop_button');
 const btnOnActive = document.querySelectorAll('.buttons');
 
+stopwatch.classList.add('stopwatch');
+
 stopwatch.innerText = '00:00:00';
 
 let min = 0;
