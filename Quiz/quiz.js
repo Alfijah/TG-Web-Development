@@ -2,6 +2,8 @@ const generalContainer = document.querySelector('.generalContainer');
 let pageCounter = 1;
 let allSelectedAnswers = [];
 let correctSelectedAnswers = [];
+WrongAnswerIsClicked = false;
+
 
 //CREATE THE QUIZ BLUEPRINT
 const question = [
@@ -126,25 +128,27 @@ function goToNextPage() {
     new Page(pageCounter);
     createNavButtons();
 }
-
 function clickAnyAnswer() {
     const answerBox = document.querySelector('.answerBox');
     answerBox.childNodes.forEach((node) => {
         const answerOnClick = node.childNodes[1].textContent;
+        // console.log('ONclick', answerOnClick)
         const correctAnswerNode = correctAnswer.find((answer) => {
             if (answer === answerOnClick) {
+                // console.log(answer)
                 return true;
             }
         })
 
         node.onclick = function checkIfAnswerCorrect() {
             if (correctAnswerNode === answerOnClick) {
-                node.childNodes[0].style.backgroundColor = '#34BE82';
-                node.childNodes[1].style.backgroundColor = '#34BE82';
+                showCorrectAnswer();
                 correctSelectedAnswers.push(answerOnClick);
                 allSelectedAnswers.push(answerOnClick);
                 disableClickOnAnswer();
             } else {
+                WrongAnswerIsClicked = true;
+                console.log("ddd")
                 node.childNodes[0].style.backgroundColor = '#950101';
                 node.childNodes[1].style.backgroundColor = '#950101';
                 allSelectedAnswers.push(answerOnClick);
@@ -154,20 +158,36 @@ function clickAnyAnswer() {
         }
 
         function showCorrectAnswer() {
-            console.log('show')
-            const answerNumber = document.querySelectorAll('.answerNumber')
-            const answerText = document.querySelectorAll('.answerText');
-            answerText.forEach((answer) => {
-                console.log(answerText);
-                // console.log(correctAnswerNode);
-                if (answer == correctAnswerNode) {
-                    console.log('next')
+            if (correctAnswer[pageCounter - 1] === answerOnClick)  {
+                console.log('show next')
 
-                    answerNumber.classList.add('correct');
-                    answerText.classList.add('correct');
-                }
-            })
+
+                node.childNodes[2].style.backgroundColor = '#34BE82';
+                node.childNodes[1].style.backgroundColor = '#34BE82';
+                WrongAnswerIsClicked =false;
+            }
+            if(WrongAnswerIsClicked)
+            {
+                answerBox.childNodes[2].style.backgroundColor = '#34BE82';
+                answerBox.childNodes[1].style.backgroundColor = '#34BE82';
+            }
         }
+
+        // function showCorrectAnswer() {
+        //     console.log('show')
+        //     const answerNumber = document.querySelectorAll('.answerNumber')
+        //     const answerText = document.querySelectorAll('.answerText');
+        //     answerText.forEach((answer, i) => {
+        //         console.log(answer);
+
+        //         if (answer == 'Hyper Text Markup Language') {
+        //             console.log('next')
+
+        //             answerNumber.classList.add('correct');
+        //             answerText.classList.add('correct');
+        //         }
+        //     })
+        // }
     });
 }
 

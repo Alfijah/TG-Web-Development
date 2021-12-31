@@ -180,8 +180,8 @@
     %answernumber-pseudo {
         content: '';
         position: absolute;
-        width: 5vw;
-        height: 5vw;
+        width: 4.5vw;
+        height: 4.5vw;
         border-radius: 50%;
         background-color: $light-color;
         z-index: 0;
@@ -189,11 +189,11 @@
 
     .eachAnswer {
         &:nth-child(odd)::before {
-           left: 17px;
+           left: 21px;
         }
         
         &:nth-child(even)::before {
-            right: 17px;
+            right: 21px;
         }
     }
 }

@@ -664,18 +664,18 @@ body {
   .eachAnswer:nth-child(odd)::before, .eachAnswer:nth-child(even)::before {
     content: "";
     position: absolute;
-    width: 5vw;
-    height: 5vw;
+    width: 4.5vw;
+    height: 4.5vw;
     border-radius: 50%;
     background-color: white;
     z-index: 0;
   }
 
   .eachAnswer:nth-child(odd)::before {
-    left: 17px;
+    left: 21px;
   }
   .eachAnswer:nth-child(even)::before {
-    right: 17px;
+    right: 21px;
   }
 }
 @media (min-width: 1669px) and (max-width: 1819px) {
