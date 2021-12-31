@@ -128,27 +128,30 @@ function goToNextPage() {
     new Page(pageCounter);
     createNavButtons();
 }
+
 function clickAnyAnswer() {
     const answerBox = document.querySelector('.answerBox');
     answerBox.childNodes.forEach((node) => {
         const answerOnClick = node.childNodes[1].textContent;
         // console.log('ONclick', answerOnClick)
-        const correctAnswerNode = correctAnswer.find((answer) => {
-            if (answer === answerOnClick) {
-                // console.log(answer)
-                return true;
-            }
-        })
+        // const correctAnswerNode = correctAnswer.find((answer) => {
+        //     if (answer === answerOnClick) {
+        //         // console.log(answer)
+        //         return true;
+        //     }
+        // })
 
         node.onclick = function checkIfAnswerCorrect() {
-            if (correctAnswerNode === answerOnClick) {
-                showCorrectAnswer();
+            if (correctAnswer[pageCounter - 1] === answerOnClick) {
+                // showCorrectAnswer();
+                node.childNodes[0].style.backgroundColor = '#34BE82';
+                node.childNodes[1].style.backgroundColor = '#34BE82';
                 correctSelectedAnswers.push(answerOnClick);
                 allSelectedAnswers.push(answerOnClick);
                 disableClickOnAnswer();
             } else {
-                WrongAnswerIsClicked = true;
-                console.log("ddd")
+                // WrongAnswerIsClicked = true;
+                // console.log("ddd")
                 node.childNodes[0].style.backgroundColor = '#950101';
                 node.childNodes[1].style.backgroundColor = '#950101';
                 allSelectedAnswers.push(answerOnClick);
@@ -158,36 +161,41 @@ function clickAnyAnswer() {
         }
 
         function showCorrectAnswer() {
-            if (correctAnswer[pageCounter - 1] === answerOnClick)  {
-                console.log('show next')
+            console.log('show')
+            const answerBox = document.querySelector('.answerBox');
+            const eachAnswer = document.querySelector('.eachAnswer')
+            const answerNumber = document.querySelector('.answerNumber');
+            const answerText = document.querySelector('.answerText');
+            console.log('show', answerBox.textContent[1])
+
+          
+
+            const correctAnswerNode = correctAnswer.find((answer) => {
+                if (answer === answerText.textContent) {
+
+                    answerNumber.style.backgroundColor = '#34BE82';
+                    answerText.style.backgroundColor = '#34BE82';
+                    // console.log(answer)
+                    return true;
+                }
+            })
+
+            // if (correctAnswer[pageCounter - 1] === answerOnClick)  {
+            //     console.log('show next')
 
 
-                node.childNodes[2].style.backgroundColor = '#34BE82';
-                node.childNodes[1].style.backgroundColor = '#34BE82';
-                WrongAnswerIsClicked =false;
-            }
-            if(WrongAnswerIsClicked)
-            {
-                answerBox.childNodes[2].style.backgroundColor = '#34BE82';
-                answerBox.childNodes[1].style.backgroundColor = '#34BE82';
-            }
+            //     node.childNodes[2].style.backgroundColor = '#34BE82';
+            //     node.childNodes[1].style.backgroundColor = '#34BE82';
+            //     WrongAnswerIsClicked =false;
+            // }
+            // if(WrongAnswerIsClicked)
+            // {
+            //     answerBox.childNodes[2].style.backgroundColor = '#34BE82';
+            //     answerBox.childNodes[1].style.backgroundColor = '#34BE82';
+            // }
+
+
         }
-
-        // function showCorrectAnswer() {
-        //     console.log('show')
-        //     const answerNumber = document.querySelectorAll('.answerNumber')
-        //     const answerText = document.querySelectorAll('.answerText');
-        //     answerText.forEach((answer, i) => {
-        //         console.log(answer);
-
-        //         if (answer == 'Hyper Text Markup Language') {
-        //             console.log('next')
-
-        //             answerNumber.classList.add('correct');
-        //             answerText.classList.add('correct');
-        //         }
-        //     })
-        // }
     });
 }
 
