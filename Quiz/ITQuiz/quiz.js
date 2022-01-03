@@ -140,8 +140,8 @@ function clickAnyAnswer() {
                 disableClickOnAnswer();
 
             } else {
-                node.childNodes[0].style.backgroundColor = '#950101';
-                node.childNodes[1].style.backgroundColor = '#950101';
+                node.childNodes[0].style.backgroundColor = '#D0312D';
+                node.childNodes[1].style.backgroundColor = '#D0312D';
                 allSelectedAnswers.push(answerOnClick);
                 showCorrectAnswer();
                 disableClickOnAnswer();
