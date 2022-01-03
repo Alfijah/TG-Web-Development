@@ -2,8 +2,6 @@ const generalContainer = document.querySelector('.generalContainer');
 let pageCounter = 1;
 let allSelectedAnswers = [];
 let correctSelectedAnswers = [];
-WrongAnswerIsClicked = false;
-
 
 //CREATE THE QUIZ BLUEPRINT
 const question = [
@@ -110,7 +108,7 @@ function createNavButtons() {
 }
 
 function goToPreviousPage() {
-    if (pageCounter == 1) return;
+    if (pageCounter === 1) return;
     pageCounter--;
     generalContainer.innerHTML = "";
     new Page(pageCounter);
@@ -118,10 +116,10 @@ function goToPreviousPage() {
 }
 
 function goToNextPage() {
-    if (pageCounter == 6 && allSelectedAnswers.length < 6) return;
+    if (pageCounter === 6 && allSelectedAnswers.length < 6) return;
     generalContainer.innerHTML = "";
     pageCounter++;
-    if (pageCounter == 7) {
+    if (pageCounter === 7) {
         new LastPage();
         return;
     }
@@ -133,68 +131,34 @@ function clickAnyAnswer() {
     const answerBox = document.querySelector('.answerBox');
     answerBox.childNodes.forEach((node) => {
         const answerOnClick = node.childNodes[1].textContent;
-        // console.log('ONclick', answerOnClick)
-        // const correctAnswerNode = correctAnswer.find((answer) => {
-        //     if (answer === answerOnClick) {
-        //         // console.log(answer)
-        //         return true;
-        //     }
-        // })
 
         node.onclick = function checkIfAnswerCorrect() {
             if (correctAnswer[pageCounter - 1] === answerOnClick) {
-                // showCorrectAnswer();
-                node.childNodes[0].style.backgroundColor = '#34BE82';
-                node.childNodes[1].style.backgroundColor = '#34BE82';
                 correctSelectedAnswers.push(answerOnClick);
                 allSelectedAnswers.push(answerOnClick);
+                showCorrectAnswer();
                 disableClickOnAnswer();
+
             } else {
-                // WrongAnswerIsClicked = true;
-                // console.log("ddd")
                 node.childNodes[0].style.backgroundColor = '#950101';
                 node.childNodes[1].style.backgroundColor = '#950101';
                 allSelectedAnswers.push(answerOnClick);
-                disableClickOnAnswer();
                 showCorrectAnswer();
+                disableClickOnAnswer();
             }
         }
 
         function showCorrectAnswer() {
-            console.log('show')
             const answerBox = document.querySelector('.answerBox');
-            const eachAnswer = document.querySelector('.eachAnswer')
-            const answerNumber = document.querySelector('.answerNumber');
-            const answerText = document.querySelector('.answerText');
-            console.log('show', answerBox.textContent[1])
+            let correct = correctAnswer[pageCounter - 1];
 
-          
-
-            const correctAnswerNode = correctAnswer.find((answer) => {
-                if (answer === answerText.textContent) {
-
-                    answerNumber.style.backgroundColor = '#34BE82';
-                    answerText.style.backgroundColor = '#34BE82';
-                    // console.log(answer)
-                    return true;
+            answerBox.childNodes.forEach((node) => {
+                let answer = node.textContent.substring(1);
+                if (answer === correct) {
+                    node.childNodes[0].style.backgroundColor = '#34BE82';
+                    node.childNodes[1].style.backgroundColor = '#34BE82';
                 }
             })
-
-            // if (correctAnswer[pageCounter - 1] === answerOnClick)  {
-            //     console.log('show next')
-
-
-            //     node.childNodes[2].style.backgroundColor = '#34BE82';
-            //     node.childNodes[1].style.backgroundColor = '#34BE82';
-            //     WrongAnswerIsClicked =false;
-            // }
-            // if(WrongAnswerIsClicked)
-            // {
-            //     answerBox.childNodes[2].style.backgroundColor = '#34BE82';
-            //     answerBox.childNodes[1].style.backgroundColor = '#34BE82';
-            // }
-
-
         }
     });
 }
@@ -204,7 +168,6 @@ function disableClickOnAnswer() {
     answerBox.childNodes.forEach((node) => {
         node.onclick = null;
     });
-
 }
 
 function getRestarted() {
