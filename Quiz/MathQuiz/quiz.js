@@ -1,29 +1,18 @@
+
 const generalContainer = document.querySelector('.generalContainer');
 let pageCounter = 1;
+// const mathOperators = [-, +, ]
 let allSelectedAnswers = [];
 let correctSelectedAnswers = [];
 WrongAnswerIsClicked = false;
 
 
 //CREATE THE QUIZ BLUEPRINT
-const question = [
-    'What does HTML stand for?', "What is a computer's main circuit board called?",
-    'What does I.T. stand for?', 'How do you pronounce PNG?', 'Firefox and Opera are types of what?',
-    'In 1936, Russia built a computer that runs on what?'
-];
+const question = Math.floor();
 
-const answers = [
-    { eachPage: ['Hyper Text Markup Language', 'How To Make Lumpia', 'Hyper Text Management Laguage', 'Hyper Things Managing Language', 'Hyper Things Making Lumpia'] },
-    { eachPage: ['Surfboard', 'Ironing Board', 'Motherboard', 'Fatherboard', 'Blackboard'] },
-    { eachPage: ['Internet Technology', 'Information Technology', 'Irritating Tuxedos', "Impossible Torpedoes", 'Ivanka Trump'] },
-    { eachPage: ['Pea-en-gee', 'Ping', 'Pung', 'Pang', 'Portable Graphics Format'] },
-    { eachPage: ['Pokemon', 'Chilli', 'Anti-virus software', 'Browser', 'Marvel Heroes'] },
-    { eachPage: ['Vodka', 'Water', 'Jealousy', 'Communism', 'Nested Dolls'] }
-];
+const answers;
 
-const correctAnswer = [
-    'Hyper Text Markup Language', 'Motherboard', 'Information Technology', 'Pea-en-gee', 'Browser', 'Water'
-];
+const correctAnswer;
 
 class Page {
     constructor(page) {
@@ -133,68 +122,33 @@ function clickAnyAnswer() {
     const answerBox = document.querySelector('.answerBox');
     answerBox.childNodes.forEach((node) => {
         const answerOnClick = node.childNodes[1].textContent;
-        // console.log('ONclick', answerOnClick)
-        // const correctAnswerNode = correctAnswer.find((answer) => {
-        //     if (answer === answerOnClick) {
-        //         // console.log(answer)
-        //         return true;
-        //     }
-        // })
 
         node.onclick = function checkIfAnswerCorrect() {
             if (correctAnswer[pageCounter - 1] === answerOnClick) {
-                // showCorrectAnswer();
-                node.childNodes[0].style.backgroundColor = '#34BE82';
-                node.childNodes[1].style.backgroundColor = '#34BE82';
                 correctSelectedAnswers.push(answerOnClick);
                 allSelectedAnswers.push(answerOnClick);
+                showCorrectAnswer();
                 disableClickOnAnswer();
             } else {
-                // WrongAnswerIsClicked = true;
-                // console.log("ddd")
-                node.childNodes[0].style.backgroundColor = '#950101';
-                node.childNodes[1].style.backgroundColor = '#950101';
+                node.childNodes[0].style.backgroundColor = '#D0312D';
+                node.childNodes[1].style.backgroundColor = '#D0312D';
                 allSelectedAnswers.push(answerOnClick);
-                disableClickOnAnswer();
                 showCorrectAnswer();
+                disableClickOnAnswer();
             }
         }
 
         function showCorrectAnswer() {
-            console.log('show')
             const answerBox = document.querySelector('.answerBox');
-            const eachAnswer = document.querySelector('.eachAnswer')
-            const answerNumber = document.querySelector('.answerNumber');
-            const answerText = document.querySelector('.answerText');
-            console.log('show', answerBox.textContent[1])
+            let correct = correctAnswer[pageCounter - 1];
 
-          
-
-            const correctAnswerNode = correctAnswer.find((answer) => {
-                if (answer === answerText.textContent) {
-
-                    answerNumber.style.backgroundColor = '#34BE82';
-                    answerText.style.backgroundColor = '#34BE82';
-                    // console.log(answer)
-                    return true;
+            answerBox.childNodes.forEach((node) => {
+                let answer = node.textContent.substring(1);
+                if (answer === correct) {
+                    node.childNodes[0].style.backgroundColor = '#34BE82';
+                    node.childNodes[1].style.backgroundColor = '#34BE82';
                 }
             })
-
-            // if (correctAnswer[pageCounter - 1] === answerOnClick)  {
-            //     console.log('show next')
-
-
-            //     node.childNodes[2].style.backgroundColor = '#34BE82';
-            //     node.childNodes[1].style.backgroundColor = '#34BE82';
-            //     WrongAnswerIsClicked =false;
-            // }
-            // if(WrongAnswerIsClicked)
-            // {
-            //     answerBox.childNodes[2].style.backgroundColor = '#34BE82';
-            //     answerBox.childNodes[1].style.backgroundColor = '#34BE82';
-            // }
-
-
         }
     });
 }
@@ -204,7 +158,6 @@ function disableClickOnAnswer() {
     answerBox.childNodes.forEach((node) => {
         node.onclick = null;
     });
-
 }
 
 function getRestarted() {
