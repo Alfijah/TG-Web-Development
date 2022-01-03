@@ -115,6 +115,10 @@
   cursor: pointer;
   box-shadow: 0 0 3px #000;
   font-size: 1.1rem;
+  transition: all 0.2s ease-in-out;
+}
+.button:hover {
+  transform: scale(1.1);
 }
 
 .startBtn, .restartBtn {
@@ -133,12 +137,12 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 .navButtons .previousBtn, .navButtons .nextBtn {
   background-color: #C84B31;
   height: 100%;
-  width: 100%;
+  width: 60%;
   color: white;
   border-radius: 10px;
 }/*# sourceMappingURL=buttons.css.map */
