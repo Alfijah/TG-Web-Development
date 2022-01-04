@@ -144,6 +144,8 @@ function clickAnyAnswer() {
             } else {
                 node.childNodes[0].style.backgroundColor = '#D0312D';
                 node.childNodes[1].style.backgroundColor = '#D0312D';
+                node.childNodes[0].style.borderColor = '#D0312D';
+                node.childNodes[1].style.borderColor = '#D0312D';
                 allSelectedAnswers.push(answerOnClick.value);
                 console.log('all2', allSelectedAnswers.length);
                 showCorrectAnswer();
@@ -161,6 +163,8 @@ function showCorrectAnswer() {
         if (answer === correct) {
             node.childNodes[0].style.backgroundColor = '#34BE82';
             node.childNodes[1].style.backgroundColor = '#34BE82';
+            node.childNodes[0].style.borderColor = '#34BE82';
+            node.childNodes[1].style.borderColor = '#34BE82';
         }
     })
 }
