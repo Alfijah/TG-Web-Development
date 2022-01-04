@@ -249,20 +249,42 @@ body {
   box-shadow: 0 0 3px #000;
 }
 
+.startBtn, .restartBtn, .levelButton {
+  width: 30%;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background-color: #C84B31;
+  color: white;
+}
+
 .button {
   cursor: pointer;
   box-shadow: 0 0 3px #000;
   font-size: 1.1rem;
+  transition: all 0.2s ease-in-out;
+}
+.button:hover {
+  transform: scale(1.1);
+}
+
+.levelButton {
+  height: 17%;
+  font-size: 1.4rem;
+}
+
+.levelContainer {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .startBtn, .restartBtn {
-  width: 30%;
   height: 8%;
-  background-color: #C84B31;
-  display: grid;
-  place-items: center;
-  color: white;
-  border-radius: 10px;
 }
 
 .navButtons {
