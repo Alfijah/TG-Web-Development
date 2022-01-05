@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+:root {
+    background-color:#97fcff ;
+}
+* {
+ box-sizing: border-box;
+}
+
+body {
+ font-family: "Helvetica", Arial, sans-serif;
+ color: rgb(0, 0, 0);
+ font-family: 'Indie Flower', cursive;
+ text-align: center;
+ align-items: center;
+}
+
+h1, h2, p, button {
+   font-family: 'Indie Flower', cursive;
+}
+
+h2 {
+ font-size: 4rem;
+ margin-bottom: 2rem;
+}
+
+.answers > p {
+ z-index: 100;
+ display: flex;
+}
+
+.container {
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+.container-all {
+   background-color: blue;
+   display: flex;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   padding: 50px;
+}
+
+.btn-reset,
+.btn-redirect,
+.start-quiz-btn {
+   background-color: rgb(14, 91, 114);
+   display: flex;
+   justify-content: center;
+   font-size: 2em;
+   color: #000;
+   margin: 20px 0;
+   padding: 1.5em 1em;
+   border: none;
+}
+.btn-reset:hover,
+.btn-redirect:hover,.start-quiz-btn:hover{
+   cursor: pointer;
+   transition: ease 7ms;
+   background-color: rgb(24, 157, 198);
+}
+.btn-next, .btn-prev {
+   background:rgb(18, 160, 162);
+   padding: 1.2em 1em;
+   border: none;
+   margin: 7px 10px;
+   font-size: 1.8em;
+}
+
+.btn-next:hover, .btn-prev:hover{
+   cursor: pointer;
+   background-color: rgb(31, 203, 143);
+   transition: ease 7ms;
+}
+
+.container-quiz {
+   width: 600px;
+   height: 100%;
+   /* min-width: 30em;
+   min-height: 50em; */
+   background-color:rgb(18, 126, 128);
+   padding: 20px;
+   text-align: center;
+}
+
+p.container-all {
+   font-size: 2em;
+   text-align: left;
+}
+
+.print-question{
+   background-color: white;
+   width: 100%;
+   height: 5em;
+   text-align: center;
+   border-radius: 5px;
+   font-size: 2em;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.answers {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   height: 7em;
+   background-color: white;
+   color: black;
+   font-size: 1.1em;
+   margin: 20px 0;
+   position: relative;
+   z-index: 1;
+   /* justify-content: space-around;
+   align-content: center;
+   flex-wrap: wrap;
+   flex-direction: row;*/
+   align-items: center; 
+   cursor: pointer;
+}
+
+/* achtergrond links op oneven.*/
+.answers:nth-child(even)::after{
+   content: "";
+   width: 8em;
+   height: 8em;
+   border-radius: 0 50% 50% 0;
+   background-color:rgb(18, 126, 128);
+   /* border:rgb(18, 126, 128) solid 15px; */
+   text-align: center;   
+   position: absolute; 
+   left: 0;
+   top: 0;
+   /* clip-path: circle(50%); */
+   z-index:2;
+}
+
+/*bolletje links op even*/
+.answers:nth-child(even)::before{
+   content: "";
+   width: 6em;
+   height: 6em;
+   border-radius: 50%;
+   background-color: rgb(255, 255, 255);
+   border: rgb(18, 126, 128) solid 15px;
+   text-align: center;
+   position: absolute;
+   margin: 0;
+   left: 0;
+   top: 0;
+   /* clip-path: circle(50%); */
+   z-index: 3;
+} 
+
+
+/* achtergrond rechts*/
+.answers:nth-child(odd)::before{
+   content: "";
+   width: 8em;
+   height: 8em;
+   border-radius: 50% 0 0 50%;
+   background-color:rgb(18, 126, 128);
+   text-align: center;
+   position: absolute;  
+   right:0;
+   bottom:0;
+   z-index: -2;    
+   /* clip-path: circle(50%); */
+}
+
+/* bolletje rechts*/
+.answers:nth-child(odd)::after{
+   content: "";
+   width: 6em;
+   height: 6em;
+   border-radius: 50%;
+   background-color:rgb(255, 255, 255);
+   border: rgb(18, 126, 128) solid 15px;
+   text-align: center;
+   position: absolute;  
+   right:0;
+   bottom:0;
+   z-index: 3;
+   clip-path: circle(50%);
+}
+
+.show-score{
+   font-size: 3em;
+}
+/* .wrapper-answers:nth-child(odd)::before{
+   content: "";
+   border-radius: 50%;
+   background-color: transparent;
+   border: 5px solid;
+   position: absolute;
+} */
+
+.hide {
+   display: none;
+}

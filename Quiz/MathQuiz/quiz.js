@@ -4,29 +4,23 @@ let allSelectedAnswers = [];
 let correctSelectedAnswers = [];
 
 //CREATE THE QUIZ BLUEPRINT
-let mathContent = {
-    level: {
-        0: {
-            operator: ['+', '-'],
-            numberOne: Math.floor(Math.random() * 100),
-            numberTwo: Math.floor(Math.random() * 100),
-            question: `What is ${numberOne} ${operator[i]} ${numberTwo}?`
-        },
-        1: {
-            operator: '*',
-            numberOne: Math.floor(Math.random() * 20),
-            numberTwo: Math.floor(Math.random() * 10)
-        },
-        2: {
-            operator: ['*', '/'],
-            numberOne: Math.floor(Math.random() * 100),
-            numberTwo: Math.floor(Math.random() * 100)
-        }
+let mathContent = [
+    {
+        operator: ['+', '-'],
+        numberOne: Math.floor(Math.random() * 100),
+        numberTwo: Math.floor(Math.random() * 100),
+    },
+    {
+        operator: '*',
+        numberOne: Math.floor(Math.random() * 20),
+        numberTwo: Math.floor(Math.random() * 10)
+    }, {
+        operator: ['*', '+'],
+        numberOne: Math.floor(Math.random() * 20),
+        numberTwo: Math.floor(Math.random() * 100)
     }
-}
+];
 
-const math = new mathContent();
-console.log(mathContent.level[0].question)
 
 class Level {
     constructor() {
@@ -109,6 +103,8 @@ class ResultPage {
 }
 
 const newLevel = new Level();
+
+
 
 function createStartButton() {
     generalContainer.innerHTML = "";
