@@ -3,42 +3,49 @@ let pageCounter = 1;
 let allSelectedAnswers = [];
 let correctSelectedAnswers = [];
 
-const question = [
-    '70 - 14 equals?', '80 - 15 equals?', '59 - 80 equals?', '-32 + 15 equals?', '-17 - 29 equals?', '97 + -32 equals?'
+//CREATE THE QUIZ BLUEPRINT
+let mathContent = [
+    {
+        operator: ['+', '-'],
+        numberOne: Math.floor(Math.random() * 100),
+        numberTwo: Math.floor(Math.random() * 100),
+    },
+    {
+        operator: '*',
+        numberOne: Math.floor(Math.random() * 20),
+        numberTwo: Math.floor(Math.random() * 10)
+    }, {
+        operator: ['*', '+'],
+        numberOne: Math.floor(Math.random() * 20),
+        numberTwo: Math.floor(Math.random() * 100)
+    }
 ];
 
-const answers = [
-    {
-        eachPage: ['56', '66', '54', '57', '-56'],
-        userAnswer: null,
-        correctAnswer: '56',
-    },
-    {
-        eachPage: ['95', '-65', '65', '55', '64'],
-        userAnswer: null,
-        correctAnswer: '65',
-    },
-    {
-        eachPage: ['21', '139', '-21', '22', '-23'],
-        userAnswer: null,
-        correctAnswer: '-21',
-    },
-    {
-        eachPage: ['47', '-47', '-17', '17', '7'],
-        userAnswer: null,
-        correctAnswer: '-17',
-    },
-    {
-        eachPage: ['12', '22', '46', '-46', '-12'],
-        userAnswer: null,
-        correctAnswer: '-46',
-    },
-    {
-        eachPage: ['-129', '129', '65', '-65', '55'],
-        userAnswer: null,
-        correctAnswer: '65',
-    },
-];
+
+class Level {
+    constructor() {
+        this.levelContainer = document.createElement('div');
+        this.easyButton = document.createElement('div');
+        this.mediumButton = document.createElement('div');
+        this.hardButton = document.createElement('div');
+
+        this.levelContainer.classList.add('levelContainer');
+        this.easyButton.classList.add('easyButton', 'levelButton', 'button');
+        this.mediumButton.classList.add('mediumButton', 'levelButton', 'button');
+        this.hardButton.classList.add('hardButton', 'levelButton', 'button');
+
+        this.easyButton.innerText = 'Easy';
+        this.mediumButton.innerText = 'Medium';
+        this.hardButton.innerText = 'Hard';
+
+        generalContainer.appendChild(this.levelContainer);
+        this.levelContainer.append(this.easyButton, this.mediumButton, this.hardButton);
+
+        this.easyButton.onclick = createStartButton;
+        this.mediumButton.onclick = createStartButton;
+        this.hardButton.onclick = createStartButton;
+    }
+}
 
 class Page {
     constructor(page) {
@@ -95,14 +102,20 @@ class ResultPage {
     }
 }
 
-//CREATE THE STARTBUTTON
-const startBtn = document.createElement('div');
-startBtn.classList.add('startBtn', 'button');
-generalContainer.appendChild(startBtn).innerText = 'Start!';
-startBtn.onclick = startQuiz;
+const newLevel = new Level();
+
+
+
+function createStartButton() {
+    generalContainer.innerHTML = "";
+    const startBtn = document.createElement('div');
+    startBtn.classList.add('startBtn', 'button');
+    generalContainer.appendChild(startBtn).innerText = 'Start!';
+    startBtn.onclick = startQuiz;
+}
 
 function startQuiz() {
-    generalContainer.removeChild(startBtn);
+    generalContainer.innerHTML = "";
     new Page(pageCounter);
     createNavButtons();
 }
@@ -130,7 +143,6 @@ function goToPreviousPage() {
     generalContainer.innerHTML = "";
     new Page(pageCounter);
     createNavButtons();
-    checkIfUserHasAnswered();
 }
 
 function goToNextPage() {
@@ -143,7 +155,6 @@ function goToNextPage() {
     }
     new Page(pageCounter);
     createNavButtons();
-    checkIfUserHasAnswered();
 }
 
 function clickAnyAnswer() {
@@ -151,13 +162,12 @@ function clickAnyAnswer() {
     answerBox.childNodes.forEach((node) => {
         const answerOnClick = node.childNodes[1].textContent;
 
-        node.onclick = function checkIfAnswerCorrect(event) {
-            const userClick = event.target.textContent;
-            answers[pageCounter - 1].userAnswer = userClick;
-
-            if (answers[pageCounter - 1].correctAnswer === answerOnClick) {
+        node.onclick = function checkIfAnswerCorrect() {
+            if (correctAnswer[pageCounter - 1] === answerOnClick) {
                 correctSelectedAnswers.push(answerOnClick.value);
                 allSelectedAnswers.push(answerOnClick.value);
+                console.log('correct', correctSelectedAnswers.length);
+                console.log('all', allSelectedAnswers.length);
                 showCorrectAnswer();
                 disableClickOnAnswer();
 
@@ -167,6 +177,7 @@ function clickAnyAnswer() {
                 node.childNodes[0].style.borderColor = '#D0312D';
                 node.childNodes[1].style.borderColor = '#D0312D';
                 allSelectedAnswers.push(answerOnClick.value);
+                console.log('all2', allSelectedAnswers.length);
                 showCorrectAnswer();
                 disableClickOnAnswer();
             }
@@ -176,8 +187,7 @@ function clickAnyAnswer() {
 
 function showCorrectAnswer() {
     const answerBox = document.querySelector('.answerBox');
-    let correct = answers[pageCounter - 1].correctAnswer;
-
+    let correct = correctAnswer[pageCounter - 1];
     answerBox.childNodes.forEach((node) => {
         let answer = node.textContent.substring(1);
         if (answer === correct) {
@@ -196,43 +206,10 @@ function disableClickOnAnswer() {
     });
 }
 
-function checkIfUserHasAnswered() {
-    const currentUserAnswer = answers[pageCounter - 1].userAnswer;
-    const correctAnswer = answers[pageCounter - 1].correctAnswer;
-
-    if (currentUserAnswer !== null) {
-        const allAnswers = document.querySelectorAll('.eachAnswer');
-        allAnswers.forEach((answer) => {
-            if (answer.childNodes[1].textContent === correctAnswer) {
-                answer.childNodes[0].style.backgroundColor = '#34BE82';
-                answer.childNodes[1].style.backgroundColor = '#34BE82';
-                answer.childNodes[0].style.borderColor = '#34BE82';
-                answer.childNodes[1].style.borderColor = '#34BE82';
-            }
-        })
-        disableClickOnAnswer()
-    }
-
-    if (currentUserAnswer !== null && currentUserAnswer !== correctAnswer) {
-        const allAnswers = document.querySelectorAll('.eachAnswer');
-
-        allAnswers.forEach((answer) => {
-            if (answer.childNodes[1].textContent === currentUserAnswer) {
-                answer.childNodes[0].style.backgroundColor = '#D0312D';
-                answer.childNodes[1].style.backgroundColor = '#D0312D';
-                answer.childNodes[0].style.borderColor = '#D0312D';
-                answer.childNodes[1].style.borderColor = '#D0312D';
-            }
-        })
-        disableClickOnAnswer()
-    }
-}
-
 function getRestarted() {
     generalContainer.innerHTML = "";
     startBtn.classList.add('startBtn', 'button');
     generalContainer.appendChild(startBtn).innerText = 'Start!';
     pageCounter = 1;
-    allSelectedAnswers = [];
     correctSelectedAnswers = [];
 }
