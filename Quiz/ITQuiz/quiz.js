@@ -3,7 +3,6 @@ let pageCounter = 1;
 let allSelectedAnswers = [];
 let correctSelectedAnswers = [];
 
-//CREATE THE QUIZ BLUEPRINT
 const question = [
     'What does HTML stand for?', "What is a computer's main circuit board called?",
     'What does I.T. stand for?', 'How do you pronounce PNG?', 'Firefox and Opera are types of what?',
@@ -11,16 +10,36 @@ const question = [
 ];
 
 const answers = [
-    { eachPage: ['Hyper Text Markup Language', 'How To Make Lumpia', 'Hyper Text Management Laguage', 'Hyper Things Managing Language', 'Hyper Things Making Lumpia'] },
-    { eachPage: ['Surfboard', 'Ironing Board', 'Motherboard', 'Fatherboard', 'Blackboard'] },
-    { eachPage: ['Internet Technology', 'Information Technology', 'Irritating Tuxedos', "Impossible Torpedoes", 'Ivanka Trump'] },
-    { eachPage: ['Pea-en-gee', 'Ping', 'Pung', 'Pang', 'Portable Graphics Format'] },
-    { eachPage: ['Pokemon', 'Chilli', 'Anti-virus software', 'Browser', 'Marvel Heroes'] },
-    { eachPage: ['Vodka', 'Water', 'Jealousy', 'Communism', 'Nested Dolls'] }
-];
-
-const correctAnswer = [
-    'Hyper Text Markup Language', 'Motherboard', 'Information Technology', 'Pea-en-gee', 'Browser', 'Water'
+    {
+        eachPage: ['Hyper Text Markup Language', 'How To Make Lumpia', 'Hyper Text Management Laguage', 'Hyper Things Managing Language', 'Hyper Things Making Lumpia'],
+        userAnswer: null,
+        correctAnswer: 'Hyper Text Markup Language',
+    },
+    {
+        eachPage: ['Surfboard', 'Ironing Board', 'Motherboard', 'Fatherboard', 'Blackboard'],
+        userAnswer: null,
+        correctAnswer: 'Motherboard',
+    },
+    {
+        eachPage: ['Internet Technology', 'Information Technology', 'Irritating Tuxedos', 'Impossible Torpedoes', 'Ivanka Trump'],
+        userAnswer: null,
+        correctAnswer: 'Information Technology',
+    },
+    {
+        eachPage: ['Pea-en-gee', 'Ping', 'Pung', 'Pang', 'Portable Graphics Format'],
+        userAnswer: null,
+        correctAnswer: 'Pea-en-gee',
+    },
+    {
+        eachPage: ['Pokemon', 'Chilli', 'Anti-virus software', 'Browser', 'Marvel Heroes'],
+        userAnswer: null,
+        correctAnswer: 'Browser',
+    },
+    {
+        eachPage: ['Vodka', 'Water', 'Jealousy', 'Communism', 'Nested Dolls'],
+        userAnswer: null,
+        correctAnswer: 'Water',
+    },
 ];
 
 class Page {
@@ -113,6 +132,7 @@ function goToPreviousPage() {
     generalContainer.innerHTML = "";
     new Page(pageCounter);
     createNavButtons();
+    checkIfUserHasAnswered();
 }
 
 function goToNextPage() {
@@ -125,6 +145,7 @@ function goToNextPage() {
     }
     new Page(pageCounter);
     createNavButtons();
+    checkIfUserHasAnswered();
 }
 
 function clickAnyAnswer() {
@@ -132,8 +153,17 @@ function clickAnyAnswer() {
     answerBox.childNodes.forEach((node) => {
         const answerOnClick = node.childNodes[1].textContent;
 
-        node.onclick = function checkIfAnswerCorrect() {
-            if (correctAnswer[pageCounter - 1] === answerOnClick) {
+        node.onclick = function checkIfAnswerCorrect(event) {
+            console.log('USER CLICK', event.target.textContent);
+            console.log('ANSWERS', answers[pageCounter - 1]);
+
+            const userClick = event.target.textContent;
+            console.log('ANSWERS BEFORE CLICK EVENT', answers[pageCounter - 1]);
+
+            answers[pageCounter - 1].userAnswer = userClick;
+            console.log('ANSWERS AFTER CLICK EVENT', answers[pageCounter - 1]);
+
+            if (answers[pageCounter - 1].correctAnswer === answerOnClick) {
                 correctSelectedAnswers.push(answerOnClick.value);
                 allSelectedAnswers.push(answerOnClick.value);
                 console.log('correct', correctSelectedAnswers.length);
@@ -157,7 +187,8 @@ function clickAnyAnswer() {
 
 function showCorrectAnswer() {
     const answerBox = document.querySelector('.answerBox');
-    let correct = correctAnswer[pageCounter - 1];
+    let correct = answers[pageCounter - 1].correctAnswer;
+
     answerBox.childNodes.forEach((node) => {
         let answer = node.textContent.substring(1);
         if (answer === correct) {
@@ -174,6 +205,38 @@ function disableClickOnAnswer() {
     answerBox.childNodes.forEach((node) => {
         node.onclick = null;
     });
+}
+
+function checkIfUserHasAnswered() {
+    const currentUserAnswer = answers[pageCounter - 1].userAnswer;
+    const correctAnswer = answers[pageCounter - 1].correctAnswer;
+
+    if (currentUserAnswer !== null) {
+        const allAnswers = document.querySelectorAll('.eachAnswer');
+        allAnswers.forEach((answer) => {
+            if (answer.childNodes[1].textContent === correctAnswer) {
+                answer.childNodes[0].style.backgroundColor = '#34BE82';
+                answer.childNodes[1].style.backgroundColor = '#34BE82';
+                answer.childNodes[0].style.borderColor = '#34BE82';
+                answer.childNodes[1].style.borderColor = '#34BE82';
+            }
+        })
+        disableClickOnAnswer()
+    }
+
+    if (currentUserAnswer !== null && currentUserAnswer !== correctAnswer) {
+        const allAnswers = document.querySelectorAll('.eachAnswer');
+
+        allAnswers.forEach((answer) => {
+            if (answer.childNodes[1].textContent === currentUserAnswer) {
+                answer.childNodes[0].style.backgroundColor = '#D0312D';
+                answer.childNodes[1].style.backgroundColor = '#D0312D';
+                answer.childNodes[0].style.borderColor = '#D0312D';
+                answer.childNodes[1].style.borderColor = '#D0312D';
+            }
+        })
+        disableClickOnAnswer()
+    }
 }
 
 function getRestarted() {
