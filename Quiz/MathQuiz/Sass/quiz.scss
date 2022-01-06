@@ -54,7 +54,7 @@
         @extend %standard-grid-use;
         @extend %border-style;
         border-radius: 15px;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         margin-bottom: 9px;
         padding: 2px 20px;
         margin-top: -20px;
@@ -75,7 +75,7 @@
 .eachAnswer {
     height: 25%;
     @extend %standard-flexbox-use;
-    font-size: 1rem;
+    font-size: 1.2rem;
     cursor: pointer;
     position: relative;
 
