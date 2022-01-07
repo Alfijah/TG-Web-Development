@@ -39,7 +39,7 @@ body, .eachAnswer, .quizContainer {
 }
 .quizContainer .pageNumber {
   color: black;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-top: -35px;
 }
 .quizContainer .questionBox {
@@ -64,7 +64,7 @@ body, .eachAnswer, .quizContainer {
 
 .eachAnswer {
   height: 25%;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   cursor: pointer;
   position: relative;
 }
@@ -97,6 +97,7 @@ body, .eachAnswer, .quizContainer {
 
 .correct {
   background-color: #34BE82;
+  border-color: #34BE82;
 }
 
 .result {
@@ -177,7 +178,7 @@ body {
 }
 .quizContainer .pageNumber {
   color: black;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-top: -35px;
 }
 .quizContainer .questionBox {
@@ -202,7 +203,7 @@ body {
 
 .eachAnswer {
   height: 25%;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   cursor: pointer;
   position: relative;
 }
@@ -235,6 +236,7 @@ body {
 
 .correct {
   background-color: #34BE82;
+  border-color: #34BE82;
 }
 
 .result {
@@ -326,7 +328,7 @@ body {
 }
 .quizContainer .pageNumber {
   color: black;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-top: -35px;
 }
 .quizContainer .questionBox {
@@ -351,7 +353,7 @@ body {
 
 .eachAnswer {
   height: 25%;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   cursor: pointer;
   position: relative;
 }
@@ -384,6 +386,7 @@ body {
 
 .correct {
   background-color: #34BE82;
+  border-color: #34BE82;
 }
 
 .result {
@@ -439,7 +442,7 @@ body {
 }
 .quizContainer .pageNumber {
   color: black;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-top: -35px;
 }
 .quizContainer .questionBox {
@@ -464,7 +467,7 @@ body {
 
 .eachAnswer {
   height: 25%;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   cursor: pointer;
   position: relative;
 }
@@ -497,6 +500,7 @@ body {
 
 .correct {
   background-color: #34BE82;
+  border-color: #34BE82;
 }
 
 .result {

@@ -158,6 +158,8 @@ function clickAnyAnswer() {
             if (answers[pageCounter - 1].correctAnswer === answerOnClick) {
                 correctSelectedAnswers.push(answerOnClick.value);
                 allSelectedAnswers.push(answerOnClick.value);
+                console.log('correct', correctSelectedAnswers.length)
+                console.log('all', allSelectedAnswers.length)
                 showCorrectAnswer();
                 disableClickOnAnswer();
 
@@ -167,6 +169,7 @@ function clickAnyAnswer() {
                 node.childNodes[0].style.borderColor = '#D0312D';
                 node.childNodes[1].style.borderColor = '#D0312D';
                 allSelectedAnswers.push(answerOnClick.value);
+                console.log('all2', allSelectedAnswers.length)
                 showCorrectAnswer();
                 disableClickOnAnswer();
             }
@@ -175,16 +178,33 @@ function clickAnyAnswer() {
 }
 
 function showCorrectAnswer() {
-    const answerBox = document.querySelector('.answerBox');
-    let correct = answers[pageCounter - 1].correctAnswer;
+    // const answerBox = document.querySelector('.answerBox');
+    // let correct = answers[pageCounter - 1].correctAnswer;
 
-    answerBox.childNodes.forEach((node) => {
+    // answerBox.childNodes.forEach((node) => {
+    //     let answer = node.textContent.substring(1);
+    //     if (answer === correct) {
+    //         node.childNodes[0].style.backgroundColor = '#34BE82';
+    //         node.childNodes[1].style.backgroundColor = '#34BE82';
+    //         node.childNodes[0].style.borderColor = '#34BE82';
+    //         node.childNodes[1].style.borderColor = '#34BE82';
+    //     }
+    // })
+
+    const allAnswers = document.querySelectorAll('.eachAnswer');
+    console.log('allAnswers', allAnswers)
+
+    let correct = answers[pageCounter - 1].correctAnswer;
+    console.log('correctAnswer', correct)
+
+    allAnswers.forEach((node) => {
+        console.log('node', node)
         let answer = node.textContent.substring(1);
         if (answer === correct) {
-            node.childNodes[0].style.backgroundColor = '#34BE82';
-            node.childNodes[1].style.backgroundColor = '#34BE82';
-            node.childNodes[0].style.borderColor = '#34BE82';
-            node.childNodes[1].style.borderColor = '#34BE82';
+            node.childNodes.forEach((element) => {
+                console.log('element', element);
+                element.classList.add('correct');
+            })
         }
     })
 }
@@ -209,8 +229,8 @@ function checkIfUserHasAnswered() {
                 answer.childNodes[0].style.borderColor = '#34BE82';
                 answer.childNodes[1].style.borderColor = '#34BE82';
             }
+            disableClickOnAnswer();
         })
-        disableClickOnAnswer()
     }
 
     if (currentUserAnswer !== null && currentUserAnswer !== correctAnswer) {
@@ -223,8 +243,21 @@ function checkIfUserHasAnswered() {
                 answer.childNodes[0].style.borderColor = '#D0312D';
                 answer.childNodes[1].style.borderColor = '#D0312D';
             }
+            disableClickOnAnswer();
         })
-        disableClickOnAnswer()
+    }
+}
+
+function resetUserAnswer() {
+    // for (let answerIndex in answers[answerIndex].userAnswer) {
+    //     userAnswer = null;
+    // }
+    const currentUserAnswer = answers[pageCounter - 1].userAnswer;
+    if (currentUserAnswer !== null && pageCounter === question.length + 1) {
+        const allAnswers = document.querySelectorAll('.eachAnswer');
+        allAnswers.forEach((answer) => {
+            currentUserAnswer = null;
+        })
     }
 }
 
@@ -235,4 +268,5 @@ function getRestarted() {
     pageCounter = 1;
     allSelectedAnswers = [];
     correctSelectedAnswers = [];
+    resetUserAnswer();
 }
