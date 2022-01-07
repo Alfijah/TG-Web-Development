@@ -4,7 +4,8 @@ let allSelectedAnswers = [];
 let correctSelectedAnswers = [];
 
 const question = [
-    '70 - 14 equals?', '80 - 15 equals?', '59 - 80 equals?', '-32 + 15 equals?', '-17 - 29 equals?', '97 + -32 equals?'
+    '70 - 14 equals?', '80 - 15 equals?', '59 - 80 equals?',
+    '-32 + 15 equals?', '-17 - 29 equals?', '97 + -32 equals?'
 ];
 
 const answers = [
@@ -178,35 +179,35 @@ function clickAnyAnswer() {
 }
 
 function showCorrectAnswer() {
-    // const answerBox = document.querySelector('.answerBox');
-    // let correct = answers[pageCounter - 1].correctAnswer;
-
-    // answerBox.childNodes.forEach((node) => {
-    //     let answer = node.textContent.substring(1);
-    //     if (answer === correct) {
-    //         node.childNodes[0].style.backgroundColor = '#34BE82';
-    //         node.childNodes[1].style.backgroundColor = '#34BE82';
-    //         node.childNodes[0].style.borderColor = '#34BE82';
-    //         node.childNodes[1].style.borderColor = '#34BE82';
-    //     }
-    // })
-
-    const allAnswers = document.querySelectorAll('.eachAnswer');
-    console.log('allAnswers', allAnswers)
-
+    const answerBox = document.querySelector('.answerBox');
     let correct = answers[pageCounter - 1].correctAnswer;
-    console.log('correctAnswer', correct)
 
-    allAnswers.forEach((node) => {
-        console.log('node', node)
+    answerBox.childNodes.forEach((node) => {
         let answer = node.textContent.substring(1);
         if (answer === correct) {
-            node.childNodes.forEach((element) => {
-                console.log('element', element);
-                element.classList.add('correct');
-            })
+            node.childNodes[0].style.backgroundColor = '#34BE82';
+            node.childNodes[1].style.backgroundColor = '#34BE82';
+            node.childNodes[0].style.borderColor = '#34BE82';
+            node.childNodes[1].style.borderColor = '#34BE82';
         }
     })
+
+    // const allAnswers = document.querySelectorAll('.eachAnswer');
+    // console.log('allAnswers', allAnswers)
+
+    // let correct = answers[pageCounter - 1].correctAnswer;
+    // console.log('correctAnswer', correct)
+
+    // allAnswers.forEach((node) => {
+    //     console.log('node', node)
+    //     let answer = node.textContent.substring(1);
+    //     if (answer === correct) {
+    //         node.childNodes.forEach((element) => {
+    //             console.log('element', element);
+    //             element.classList.add('correct');
+    //         })
+    //     }
+    // })
 }
 
 function disableClickOnAnswer() {
