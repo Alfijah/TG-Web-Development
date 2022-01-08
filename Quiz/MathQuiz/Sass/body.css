@@ -1,4 +1,4 @@
-body, .eachAnswer, .quizContainer {
+body, .result, .eachAnswer, .quizContainer {
   display: flex;
   justify-content: center;
   align-items: center;

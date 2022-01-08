@@ -1,4 +1,4 @@
-body, .eachAnswer, .quizContainer {
+body, .result, .eachAnswer, .quizContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -137,7 +137,7 @@ body {
   align-items: center;
 }
 
-.quizContainer, .eachAnswer, body {
+.quizContainer, .eachAnswer, .result, body {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -287,7 +287,7 @@ body {
   border-radius: 10px;
 }
 
-.quizContainer, .eachAnswer, body {
+.quizContainer, .eachAnswer, .result, body {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -401,7 +401,7 @@ body {
   box-shadow: 0 0 3px #000;
 }
 
-.quizContainer, .eachAnswer, body {
+.quizContainer, .eachAnswer, .result, body {
   display: flex;
   justify-content: center;
   align-items: center;

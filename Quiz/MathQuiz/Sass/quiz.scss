@@ -122,6 +122,7 @@
 }
 
 .result {
+    @extend %standard-flexbox-use;
     font-size: 1.9rem;
     background-color: white;
     color: black;

@@ -45,6 +45,7 @@ const answers = [
 
 class Page {
     constructor(page) {
+        this.counter = page;
         this.quizContainer = document.createElement('div');
         this.quizTitle = document.createElement('div');
         this.pageNumber = document.createElement('div');
@@ -226,7 +227,12 @@ function checkIfUserHasAnswered() {
 }
 
 function resetUserAnswer() {
+
     console.log("RESET")
+    console.log(newPage1.counter)
+    newPage1.answerBox;
+    console.log(newPage2)
+    console.log(newPage3)
 
     const currentUserAnswer = answers[pageCounter - 1].userAnswer;
     if (currentUserAnswer !== null && pageCounter === question.length + 1) {
