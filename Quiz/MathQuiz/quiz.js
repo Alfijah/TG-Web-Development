@@ -96,7 +96,7 @@ class ResultPage {
         generalContainer.appendChild(result).innerText = `Your score is: ${correctSelectedAnswers.length} out of ${question.length}!`;
         generalContainer.appendChild(restartBtn).innerText = 'Restart';
 
-        restartBtn.onclick = getRestarted;
+        restartBtn.onclick = restartQuiz;
     }
 }
 
@@ -244,7 +244,7 @@ function resetUserAnswer() {
     }
 }
 
-function getRestarted() {
+function restartQuiz() {
     generalContainer.innerHTML = "";
     startBtn.classList.add('startBtn', 'button');
     generalContainer.appendChild(startBtn).innerText = 'Start!';
