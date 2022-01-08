@@ -3,16 +3,14 @@ let pageCounter = 1;
 let allSelectedAnswers = [];
 let correctSelectedAnswers = [];
 let allAnswers;
-let newPage1;
-let newPage2;
-let newPage3;
+let quizPage;
 
 const question = [
     '70 - 14 equals?', '80 - 15 equals?', '59 - 80 equals?',
     '-32 + 15 equals?', '-17 - 29 equals?', '97 + -32 equals?'
 ];
 
-const answers = [
+let answers = [
     {
         eachPage: ['56', '66', '54', '57', '-56'],
         userAnswer: null,
@@ -109,7 +107,7 @@ startBtn.onclick = startQuiz;
 
 function startQuiz() {
     generalContainer.removeChild(startBtn);
-    newPage1 = new Page(pageCounter);
+    quizPage = new Page(pageCounter);
     createNavButtons();
 }
 
@@ -134,9 +132,9 @@ function goToPreviousPage() {
     if (pageCounter === 1) return;
     pageCounter--;
     generalContainer.innerHTML = "";
-    newPage2 = new Page(pageCounter);
+    quizPage = new Page(pageCounter);
     createNavButtons();
-    showClickedAnswers();
+    rememberClickedAnswers();
 }
 
 function goToNextPage() {
@@ -147,9 +145,9 @@ function goToNextPage() {
         new ResultPage();
         return;
     }
-    newPage3 = new Page(pageCounter);
+    quizPage = new Page(pageCounter);
     createNavButtons();
-    showClickedAnswers();
+    rememberClickedAnswers();
 }
 
 function showCorrectAnswer() {
@@ -193,15 +191,15 @@ function clickAnyAnswer() {
         answer.onclick = function (event) {
             const userClick = event.target.textContent;
             answers[pageCounter - 1].userAnswer = userClick;
-
+    
             if (answers[pageCounter - 1].correctAnswer === answerOnClick) {
-                correctSelectedAnswers.push(answerOnClick.value);
-                allSelectedAnswers.push(answerOnClick.value);
+                correctSelectedAnswers.push(answerOnClick);
+                allSelectedAnswers.push(answerOnClick);
                 showCorrectAnswer();
                 disableClickOnAnswer();
 
             } else {
-                allSelectedAnswers.push(answerOnClick.value);
+                allSelectedAnswers.push(answerOnClick);
                 showCorrectAnswer();
                 showWrongAnswer();
                 disableClickOnAnswer();
@@ -210,7 +208,7 @@ function clickAnyAnswer() {
     });
 }
 
-function showClickedAnswers() {
+function rememberClickedAnswers() {
     const currentUserAnswer = answers[pageCounter - 1].userAnswer;
     const correctAnswer = answers[pageCounter - 1].correctAnswer;
 
@@ -226,19 +224,9 @@ function showClickedAnswers() {
 }
 
 function resetUserAnswer() {
-
-    console.log("RESET")
-    console.log(newPage1.counter)
-    newPage1.answerBox;
-    console.log(newPage2)
-    console.log(newPage3)
-
-    const currentUserAnswer = answers[pageCounter - 1].userAnswer;
-    if (currentUserAnswer !== null && pageCounter === question.length + 1) {
-        allAnswers.forEach((answer) => {
-            currentUserAnswer = null;
-        })
-    }
+   answers.forEach((answer) => {
+       answer.userAnswer = null;
+   })
 }
 
 function restartQuiz() {
