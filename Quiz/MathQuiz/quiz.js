@@ -2,7 +2,9 @@ const generalContainer = document.querySelector('.generalContainer');
 let pageCounter = 1;
 let allSelectedAnswers = [];
 let correctSelectedAnswers = [];
-
+let newPage1;
+let newPage2;
+let newPage3;
 const question = [
     '70 - 14 equals?', '80 - 15 equals?', '59 - 80 equals?',
     '-32 + 15 equals?', '-17 - 29 equals?', '97 + -32 equals?'
@@ -104,7 +106,7 @@ startBtn.onclick = startQuiz;
 
 function startQuiz() {
     generalContainer.removeChild(startBtn);
-    new Page(pageCounter);
+    newPage1 = new Page(pageCounter);
     createNavButtons();
 }
 
@@ -129,7 +131,7 @@ function goToPreviousPage() {
     if (pageCounter === 1) return;
     pageCounter--;
     generalContainer.innerHTML = "";
-    new Page(pageCounter);
+    newPage2 = new Page(pageCounter);
     createNavButtons();
     checkIfUserHasAnswered();
 }
@@ -142,36 +144,31 @@ function goToNextPage() {
         new ResultPage();
         return;
     }
-    new Page(pageCounter);
+    newPage3 = new Page(pageCounter);
     createNavButtons();
     checkIfUserHasAnswered();
 }
 
 function clickAnyAnswer() {
-    const answerBox = document.querySelector('.answerBox');
-    answerBox.childNodes.forEach((node) => {
-        const answerOnClick = node.childNodes[1].textContent;
+    const allAnswers = document.querySelectorAll('.eachAnswer');
 
-        node.onclick = function checkIfAnswerCorrect(event) {
+    allAnswers.forEach((answer) => {
+        const answerOnClick = answer.childNodes[1].textContent;
+
+        answer.onclick = function checkIfAnswerCorrect(event) {
             const userClick = event.target.textContent;
             answers[pageCounter - 1].userAnswer = userClick;
 
             if (answers[pageCounter - 1].correctAnswer === answerOnClick) {
                 correctSelectedAnswers.push(answerOnClick.value);
                 allSelectedAnswers.push(answerOnClick.value);
-                console.log('correct', correctSelectedAnswers.length)
-                console.log('all', allSelectedAnswers.length)
                 showCorrectAnswer();
                 disableClickOnAnswer();
 
             } else {
-                node.childNodes[0].style.backgroundColor = '#D0312D';
-                node.childNodes[1].style.backgroundColor = '#D0312D';
-                node.childNodes[0].style.borderColor = '#D0312D';
-                node.childNodes[1].style.borderColor = '#D0312D';
                 allSelectedAnswers.push(answerOnClick.value);
-                console.log('all2', allSelectedAnswers.length)
                 showCorrectAnswer();
+                showWrongClickedAnswer();
                 disableClickOnAnswer();
             }
         }
@@ -179,42 +176,38 @@ function clickAnyAnswer() {
 }
 
 function showCorrectAnswer() {
-    const answerBox = document.querySelector('.answerBox');
-    let correct = answers[pageCounter - 1].correctAnswer;
+    const correctAnswer = answers[pageCounter - 1].correctAnswer;
+    const allAnswers = document.querySelectorAll('.eachAnswer');
 
-    answerBox.childNodes.forEach((node) => {
-        let answer = node.textContent.substring(1);
-        if (answer === correct) {
-            node.childNodes[0].style.backgroundColor = '#34BE82';
-            node.childNodes[1].style.backgroundColor = '#34BE82';
-            node.childNodes[0].style.borderColor = '#34BE82';
-            node.childNodes[1].style.borderColor = '#34BE82';
+    allAnswers.forEach((answer) => {
+        if (answer.childNodes[1].textContent === correctAnswer) {
+            answer.childNodes[0].style.backgroundColor = '#34BE82';
+            answer.childNodes[1].style.backgroundColor = '#34BE82';
+            answer.childNodes[0].style.borderColor = '#34BE82';
+            answer.childNodes[1].style.borderColor = '#34BE82';
         }
     })
+}
 
-    // const allAnswers = document.querySelectorAll('.eachAnswer');
-    // console.log('allAnswers', allAnswers)
+function showWrongClickedAnswer() {
+    const currentUserAnswer = answers[pageCounter - 1].userAnswer;
+    const allAnswers = document.querySelectorAll('.eachAnswer');
 
-    // let correct = answers[pageCounter - 1].correctAnswer;
-    // console.log('correctAnswer', correct)
-
-    // allAnswers.forEach((node) => {
-    //     console.log('node', node)
-    //     let answer = node.textContent.substring(1);
-    //     if (answer === correct) {
-    //         node.childNodes.forEach((element) => {
-    //             console.log('element', element);
-    //             element.classList.add('correct');
-    //         })
-    //     }
-    // })
+    allAnswers.forEach((answer) => {
+        if (answer.childNodes[1].textContent === currentUserAnswer) {
+            answer.childNodes[0].style.backgroundColor = '#D0312D';
+            answer.childNodes[1].style.backgroundColor = '#D0312D';
+            answer.childNodes[0].style.borderColor = '#D0312D';
+            answer.childNodes[1].style.borderColor = '#D0312D';
+        }
+    })
 }
 
 function disableClickOnAnswer() {
-    const answerBox = document.querySelector('.answerBox');
-    answerBox.childNodes.forEach((node) => {
-        node.onclick = null;
-    });
+    const allAnswers = document.querySelectorAll('.eachAnswer');
+    allAnswers.forEach((answer) => {
+        answer.onclick = null;
+    })
 }
 
 function checkIfUserHasAnswered() {
@@ -222,37 +215,19 @@ function checkIfUserHasAnswered() {
     const correctAnswer = answers[pageCounter - 1].correctAnswer;
 
     if (currentUserAnswer !== null) {
-        const allAnswers = document.querySelectorAll('.eachAnswer');
-        allAnswers.forEach((answer) => {
-            if (answer.childNodes[1].textContent === correctAnswer) {
-                answer.childNodes[0].style.backgroundColor = '#34BE82';
-                answer.childNodes[1].style.backgroundColor = '#34BE82';
-                answer.childNodes[0].style.borderColor = '#34BE82';
-                answer.childNodes[1].style.borderColor = '#34BE82';
-            }
-            disableClickOnAnswer();
-        })
+        showCorrectAnswer();
+        disableClickOnAnswer();
     }
 
     if (currentUserAnswer !== null && currentUserAnswer !== correctAnswer) {
-        const allAnswers = document.querySelectorAll('.eachAnswer');
-
-        allAnswers.forEach((answer) => {
-            if (answer.childNodes[1].textContent === currentUserAnswer) {
-                answer.childNodes[0].style.backgroundColor = '#D0312D';
-                answer.childNodes[1].style.backgroundColor = '#D0312D';
-                answer.childNodes[0].style.borderColor = '#D0312D';
-                answer.childNodes[1].style.borderColor = '#D0312D';
-            }
-            disableClickOnAnswer();
-        })
+        showWrongClickedAnswer();
+        disableClickOnAnswer();
     }
 }
 
 function resetUserAnswer() {
-    // for (let answerIndex in answers[answerIndex].userAnswer) {
-    //     userAnswer = null;
-    // }
+    console.log("RESET")
+
     const currentUserAnswer = answers[pageCounter - 1].userAnswer;
     if (currentUserAnswer !== null && pageCounter === question.length + 1) {
         const allAnswers = document.querySelectorAll('.eachAnswer');
