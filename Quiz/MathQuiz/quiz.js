@@ -2,6 +2,7 @@ const generalContainer = document.querySelector('.generalContainer');
 let pageCounter = 1;
 let allSelectedAnswers = [];
 let correctSelectedAnswers = [];
+let allAnswers;
 let newPage1;
 let newPage2;
 let newPage3;
@@ -153,7 +154,6 @@ function goToNextPage() {
 
 function showCorrectAnswer() {
     const correctAnswer = answers[pageCounter - 1].correctAnswer;
-    const allAnswers = document.querySelectorAll('.eachAnswer');
 
     allAnswers.forEach((answer) => {
         if (answer.childNodes[1].textContent === correctAnswer) {
@@ -167,7 +167,6 @@ function showCorrectAnswer() {
 
 function showWrongAnswer() {
     const currentUserAnswer = answers[pageCounter - 1].userAnswer;
-    const allAnswers = document.querySelectorAll('.eachAnswer');
 
     allAnswers.forEach((answer) => {
         if (answer.childNodes[1].textContent === currentUserAnswer) {
@@ -180,14 +179,13 @@ function showWrongAnswer() {
 }
 
 function disableClickOnAnswer() {
-    const allAnswers = document.querySelectorAll('.eachAnswer');
     allAnswers.forEach((answer) => {
         answer.onclick = null;
     })
 }
 
 function clickAnyAnswer() {
-    const allAnswers = document.querySelectorAll('.eachAnswer');
+    allAnswers = document.querySelectorAll('.eachAnswer');
 
     allAnswers.forEach((answer) => {
         const answerOnClick = answer.childNodes[1].textContent;
@@ -237,7 +235,6 @@ function resetUserAnswer() {
 
     const currentUserAnswer = answers[pageCounter - 1].userAnswer;
     if (currentUserAnswer !== null && pageCounter === question.length + 1) {
-        const allAnswers = document.querySelectorAll('.eachAnswer');
         allAnswers.forEach((answer) => {
             currentUserAnswer = null;
         })
