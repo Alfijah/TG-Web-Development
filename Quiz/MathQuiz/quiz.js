@@ -134,7 +134,7 @@ function goToPreviousPage() {
     generalContainer.innerHTML = "";
     newPage2 = new Page(pageCounter);
     createNavButtons();
-    checkIfUserHasAnswered();
+    showClickedAnswers();
 }
 
 function goToNextPage() {
@@ -147,33 +147,7 @@ function goToNextPage() {
     }
     newPage3 = new Page(pageCounter);
     createNavButtons();
-    checkIfUserHasAnswered();
-}
-
-function clickAnyAnswer() {
-    const allAnswers = document.querySelectorAll('.eachAnswer');
-
-    allAnswers.forEach((answer) => {
-        const answerOnClick = answer.childNodes[1].textContent;
-
-        answer.onclick = function checkIfAnswerCorrect(event) {
-            const userClick = event.target.textContent;
-            answers[pageCounter - 1].userAnswer = userClick;
-
-            if (answers[pageCounter - 1].correctAnswer === answerOnClick) {
-                correctSelectedAnswers.push(answerOnClick.value);
-                allSelectedAnswers.push(answerOnClick.value);
-                showCorrectAnswer();
-                disableClickOnAnswer();
-
-            } else {
-                allSelectedAnswers.push(answerOnClick.value);
-                showCorrectAnswer();
-                showWrongClickedAnswer();
-                disableClickOnAnswer();
-            }
-        }
-    });
+    showClickedAnswers();
 }
 
 function showCorrectAnswer() {
@@ -190,7 +164,7 @@ function showCorrectAnswer() {
     })
 }
 
-function showWrongClickedAnswer() {
+function showWrongAnswer() {
     const currentUserAnswer = answers[pageCounter - 1].userAnswer;
     const allAnswers = document.querySelectorAll('.eachAnswer');
 
@@ -211,7 +185,33 @@ function disableClickOnAnswer() {
     })
 }
 
-function checkIfUserHasAnswered() {
+function clickAnyAnswer() {
+    const allAnswers = document.querySelectorAll('.eachAnswer');
+
+    allAnswers.forEach((answer) => {
+        const answerOnClick = answer.childNodes[1].textContent;
+
+        answer.onclick = function (event) {
+            const userClick = event.target.textContent;
+            answers[pageCounter - 1].userAnswer = userClick;
+
+            if (answers[pageCounter - 1].correctAnswer === answerOnClick) {
+                correctSelectedAnswers.push(answerOnClick.value);
+                allSelectedAnswers.push(answerOnClick.value);
+                showCorrectAnswer();
+                disableClickOnAnswer();
+
+            } else {
+                allSelectedAnswers.push(answerOnClick.value);
+                showCorrectAnswer();
+                showWrongAnswer();
+                disableClickOnAnswer();
+            }
+        }
+    });
+}
+
+function showClickedAnswers() {
     const currentUserAnswer = answers[pageCounter - 1].userAnswer;
     const correctAnswer = answers[pageCounter - 1].correctAnswer;
 
@@ -221,7 +221,7 @@ function checkIfUserHasAnswered() {
     }
 
     if (currentUserAnswer !== null && currentUserAnswer !== correctAnswer) {
-        showWrongClickedAnswer();
+        showWrongAnswer();
         disableClickOnAnswer();
     }
 }
