@@ -5,6 +5,7 @@ let correctSelectedAnswers = [];
 let newPage1;
 let newPage2;
 let newPage3;
+
 const question = [
     '70 - 14 equals?', '80 - 15 equals?', '59 - 80 equals?',
     '-32 + 15 equals?', '-17 - 29 equals?', '97 + -32 equals?'
@@ -65,7 +66,7 @@ class Page {
         generalContainer.appendChild(this.quizContainer);
         this.quizContainer.append(this.quizTitle, this.pageNumber, this.questionBox, this.answerBox);
 
-        for (let i = 1; i < question.length; i++) {
+        for (let i = 1; i < answers[page - 1].eachPage.length + 1; i++) {
             this.eachAnswer = document.createElement('div');
             this.answerNumber = document.createElement('div');
             this.answerText = document.createElement('div');
