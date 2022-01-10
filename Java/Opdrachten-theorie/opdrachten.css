@@ -29,7 +29,7 @@ body {
     border-radius: 10px;
     gap: 20px;
     padding: 30px 0;
-    font-family: 'inter', 'sans-serif';
+    font-family: 'roboto';
 }
 
 .logo {
@@ -71,6 +71,11 @@ li {
     padding-left: 25px;
 }
 
-p {
-    font-size: 0.95rem;
+.number-bullets {
+    padding-left: 25px;
+    list-style-type: decimal;
+}
+
+p, li {
+    font-size: 0.9rem;
 }
