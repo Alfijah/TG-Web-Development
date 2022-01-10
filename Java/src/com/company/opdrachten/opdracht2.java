@@ -1,4 +1,4 @@
 package com.company.opdrachten;
 
-public class opdracht1 {
+public class opdracht2 {
 }

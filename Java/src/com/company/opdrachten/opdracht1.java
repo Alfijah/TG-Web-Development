@@ -1,2 +1,4 @@
-package com.company.opdrachten;public class opdracht1 {
+package com.company.opdrachten;
+
+public class opdracht1 {
 }
