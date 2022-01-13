@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class ArraysEnForloops {
-
     public static void Cars() {
         String[] eastcars = {"Kia", "Honda"};
         String[] cars = {"Kia", "Volkswagen", "Renault", "BMW"};
