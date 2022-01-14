@@ -1,11 +1,10 @@
 package com.company.Loops;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Bear extends Animal {
-
     String type;
+    int weight;
 
     public Bear(String name, int age, String typeBear) {
         super(name, age);
@@ -13,9 +12,27 @@ public class Bear extends Animal {
         System.out.println("The bear's name is " + name + ", he is " + age + " years old and he's of type " + typeBear + ".");
     }
 
+    public Bear(String name, int age, int weight) {
+        super(name, age);
+        this.weight = weight;
+    }
+
    public void showType() {
         System.out.println("Type from Bear class: " + this.type);
         System.out.println("Type from Animal class: " + Animal.type);
+    }
+
+    public void feed() {
+        super.feed();
+        System.out.println("The bear ate the vet!");
+    }
+
+    public void feed(String food) {
+        System.out.println("The " + type + " loves " + food + ".");
+    }
+
+    public void visitVet() {
+        super.visitVet();
     }
 
     public static void main(String[] args) {
@@ -33,5 +50,16 @@ public class Bear extends Animal {
 //        String[] allAnimals = new String[] {animal.type, brownBear.type, polarBear.type};
         System.out.println(Arrays.toString(allBears));
         System.out.println(Arrays.toString(allAnimals));
+
+        for (Bear bear : allBears) {
+            brownBear.feed();
+            polarBear.feed();
+        }
+
+        for (Animal creature : allAnimals) {
+            animal.feed();
+        }
+
+        brownBear.feed("salmon");
     }
 }
