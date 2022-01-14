@@ -8,7 +8,7 @@ public class Animal {
     public Animal(String name, int age) {
         animalName = name;
         animalAge = age;
-        System.out.println("The bear's name is " + name + ", he is " + age + " years old.");
+        //System.out.println("The bear's name is " + name + ", he is " + age + " years old.");
     }
 
     public static void feed() {
