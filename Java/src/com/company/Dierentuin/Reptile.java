@@ -1,2 +1,4 @@
-package com.company.Dierentuin;public class Reptile {
+package com.company.Dierentuin;
+
+public class Reptile extends Animal{
 }
