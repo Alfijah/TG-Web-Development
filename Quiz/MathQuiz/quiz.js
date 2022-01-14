@@ -5,6 +5,16 @@ let correctSelectedAnswers = [];
 let allAnswers;
 let quizPage;
 
+class Quiz {
+
+    constructor(question, questionAnswers, correctAnswerIndex) {
+        this.question = question;
+        this.questionAnswers = questionAnswers;
+        this.userAnswer = null;
+        this.correctAnswerIndex = correctAnswerIndex;
+    }
+}
+
 const question = [
     '70 - 14 equals?', '80 - 15 equals?', '59 - 80 equals?',
     '-32 + 15 equals?', '-17 - 29 equals?', '97 + -32 equals?'
@@ -44,8 +54,9 @@ let answers = [
 ];
 
 class Page {
-    constructor(page) {
-        this.counter = page;
+    constructor(quizes, pageCounter) {
+        this.quizes = quizes;
+        this.counter = pageCounter;
         this.quizContainer = document.createElement('div');
         this.quizTitle = document.createElement('div');
         this.pageNumber = document.createElement('div');
@@ -107,7 +118,22 @@ startBtn.onclick = startQuiz;
 
 function startQuiz() {
     generalContainer.removeChild(startBtn);
-    quizPage = new Page(pageCounter);
+    let quizesOnPageOne = [
+        new Quiz('70 - 14 equals?', ['56', '66', '54', '57', '-56'], 0),
+        new Quiz('70 - 14 equals?', ['56', '66', '54', '57', '-56'], 0),
+        new Quiz('70 - 14 equals?', ['56', '66', '54', '57', '-56'], 0),
+        new Quiz('70 - 14 equals?', ['56', '66', '54', '57', '-56'], 0),
+        new Quiz('70 - 14 equals?', ['56', '66', '54', '57', '-56'], 0),
+        new Quiz('70 - 14 equals?', ['56', '66', '54', '57', '-56'], 0),
+        new Quiz('70 - 14 equals?', ['56', '66', '54', '57', '-56'], 0),
+    ]
+    quizPage = new Page(quizesOnPageOne, pageCounter);
+
+    let quizesOnPageTwo = [
+        new Quiz('70 - 14 equals?', ['56', '66', '54', '57', '-56'], 0),
+        new Quiz('70 - 14 equals?', ['56', '66', '54', '57', '-56'], 0)
+    ]
+    new Page(quizesOnPageTwo, 2);
     createNavButtons();
 }
 
@@ -194,16 +220,13 @@ function clickAnyAnswer() {
     
             if (answers[pageCounter - 1].correctAnswer === answerOnClick) {
                 correctSelectedAnswers.push(answerOnClick);
-                allSelectedAnswers.push(answerOnClick);
-                showCorrectAnswer();
-                disableClickOnAnswer();
-
-            } else {
-                allSelectedAnswers.push(answerOnClick);
-                showCorrectAnswer();
+            } else {           
                 showWrongAnswer();
-                disableClickOnAnswer();
             }
+
+            allSelectedAnswers.push(answerOnClick);
+            showCorrectAnswer();
+            disableClickOnAnswer();
         }
     });
 }
