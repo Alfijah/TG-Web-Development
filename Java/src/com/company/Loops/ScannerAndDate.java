@@ -1,25 +1,26 @@
 package com.company.Loops;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Scanner;
 
 public class ScannerAndDate {
     String username;
-    int userAge;
+    static String userAge;
 
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
-        Date today = new Date();
-
+        LocalDate today = LocalDate.now();
         ScannerAndDate personalData = new ScannerAndDate();
 
         System.out.println("Enter your name:");
         personalData.username = userInput.nextLine();
 
-        System.out.println("Enter your date of birth: ");
-        personalData.userAge = userInput.nextInt();
+        System.out.println("Enter your date of birth in the following format yyyy-mm-dd: ");
+        personalData.userAge = userInput.nextLine();
+        LocalDate birthDate = LocalDate.parse(userAge);
+        int calculateAge = Period.between(birthDate, today).getYears();
 
-        System.out.println(today);
-        System.out.println("Your name is " + personalData.username + " and your age is ");
+        System.out.println("Your name is " + personalData.username + " and your age is "+ calculateAge + "!");
     }
 }
