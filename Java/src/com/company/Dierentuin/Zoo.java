@@ -1,8 +1,13 @@
 package com.company.Dierentuin;
 
-public class Zoo {
-    public void add() {
-        //voegt dier toe aan de dierentuin
+public class Zoo extends Animal {
+
+    public Zoo(String name, String species) {
+        super(name, species);
+    }
+
+    public static void add() {
+
     }
 
     public void remove() {
