@@ -1,31 +1,16 @@
 package com.company.School;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public abstract class Student {
     private String name;
+    private String[] subjects;
     private int[] grades;
-    private String[] subject;
+    private String remarks;
+    private String schoolYear;
 
-    public String[] getSubjects() {
-        return subjects;
-    }
-    
-    public Student(String name, String remark) {
+    public Student(){}
+
+    public Student(String name) {
         this.name = name;
-        System.out.println("Student " + name + ": " + remark + ".");
-    }
-
-    public Student(String schoolYear) {
-        System.out.println("Students from the "+ schoolYear + " are following the classes: " +
-                Arrays.toString(subjects) + ".");
-    }
-
-    public Student(String name, int[] grades) {
-        this.name = name;
-        this.grades = grades;
-        System.out.println("The Student " + name + " has the following grades: " + Arrays.toString(grades) + ".");
     }
 
     public abstract String passYear();
@@ -34,9 +19,39 @@ public abstract class Student {
         return name;
     }
 
+    public String[] getSubjects() {
+        return subjects;
+    }
+
+    public int[] getGrades() {
+        return grades;
+    }
+
+    public String getRemarks() {
+        return remarks;
+    }
+
+    public String getSchoolYear() {
+        return schoolYear;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
 
+    public void setSubjects(String[] subjects) {
+        this.subjects = subjects;
+    }
 
+    public void setGrades(int[] grades) {
+        this.grades = grades;
+    }
+
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
+    }
+
+    public void UpdateSubjects(int index, String subjectName) {
+        subjects[index] = subjectName;
+    }
 }

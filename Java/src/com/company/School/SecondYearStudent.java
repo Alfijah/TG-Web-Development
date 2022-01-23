@@ -1,41 +1,50 @@
-//package com.company.School;
-//
-//public class SecondYearStudent extends Student{
-//    private String name;
-//    private int[] grades;
-//    private String[] subjects = new String[]{"English", "Dutch", "MathII", "Calculus", "Geography"};
-//    private String remark;
-//    private String schoolYear = "second year";
-//
-//    public SecondYearStudent(String name, String schoolYear, String remark) {
-//        super(name, schoolYear, remark);
-//    }
-//
-//    public SecondYearStudent(String schoolYear, String[] subjects) {
-//        super(schoolYear, subjects);
-//    }
-//
-//    public SecondYearStudent(String name, int[] grades) {
-//        super(name, grades);
-//    }
-//
-//    @Override
-//    public String passYear() {
-//        for (int grade : grades) {
-//            if (grade == 4) {
-//                return "Unfortunately, you have not passed this year.";
-//            }
-//        }
-//        return "Congratulations, you have passed this year!";
-//    }
-//
-//    @Override
-//    public String year() {
-//        return this.schoolYear;
-//    }
-//
-//    @Override
-//    public String[] subjects() {
-//        return new String[0];
-//    }
-//}
+package com.company.School;
+
+public class SecondYearStudent extends Student{
+    private String[] subjects = new String[]{"English", "Dutch", "MathII", "Calculus", "Geography"};
+    private int[] grades;
+    private String schoolYear = "second year";
+
+    public SecondYearStudent() {}
+
+    public SecondYearStudent(String name) {
+    super(name);
+    }
+
+    @Override
+    public String passYear() {
+        for (int grade : grades) {
+            if (grade == 4) {
+                return "Unfortunately, you have not passed this year.";
+            }
+        }
+        return "Congratulations, you have passed this year!";
+    }
+
+    @Override
+    public String[] getSubjects() {
+        return subjects;
+    }
+
+    @Override
+    public int[] getGrades() {
+        return grades;
+    }
+
+    @Override
+    public String getSchoolYear() {
+        return schoolYear;
+    }
+
+    @Override
+    public void setSubjects(String... subjects) {
+        this.subjects = subjects;
+    }
+
+    @Override
+    public void setGrades(int... grades) {
+        this.grades = grades;
+    }
+}
+
+

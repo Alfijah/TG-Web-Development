@@ -1,43 +1,80 @@
 package com.company.School;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class School {
+    Student firstYearStudent, secondYearStudent, thirdYearStudent, fourthYearStudent;
 
-    ArrayList<String> remarks = new ArrayList<String>();
+    public School() {}
 
-    public static ArrayList<String> arrayList() {
-//        FirstYearStudent firstYearStudent = new FirstYearStudent();
-        ArrayList<String> students = new ArrayList<String>();
-        ArrayList<String> schoolYears = new ArrayList<String>();
+    public void registerStudent(Student student) {
+        System.out.println(student.getName() + " has been registered.");
+    }
+
+    public void getStudentGrades(Student student) {
+        System.out.println(student.getName() + " has the following grades: " +
+                Arrays.toString(student.getGrades()) + ".");
+    }
+
+    public void getStudentRemarks(Student student) {
+        System.out.println(student.getName() + ": " + student.getRemarks());
+    }
+
+    public void getEachYearsSubjects(Student student) {
+        System.out.println("Student from the " + student.getSchoolYear() + " has the following subjects: " +
+                Arrays.toString(student.getSubjects())+ ".");
+    }
+
+    public void changeSubjectsList() {
+        firstYearStudent.UpdateSubjects(1, "Surinaams");
+    }
+
+    public void changeGradesList() {
+
+    }
+
+    public ArrayList<String> studentsDataList() {
         ArrayList<String> school = new ArrayList<String>();
-        students.add("henk");
-        schoolYears.add("groep1");
+        ArrayList<String> students = new ArrayList<String>();
+        firstYearStudent = new FirstYearStudent();
+        students.add("Alfjah");
         school.addAll(students);
-        school.addAll(schoolYears);
-        return school;
+        return students;
     }
 
     public static void main(String[] args) {
-        arrayList();
-//        FirstYear firstYearStudents = new FirstYear();
-//        System.out.println(firstYearStudents.passYear());
-//        System.out.println(Arrays.toString(firstYearStudents.subjects));
-//        System.out.println(Arrays.toString(firstYearStudents.averageGrades));
-//        System.out.println(Arrays.toString(firstYearStudents.averageGrades));
-//
-//        System.out.println(Arrays.toString(new String[]{firstYearStudents.studentWithRemarks
-//                ("Brian", firstYearStudents.schoolYear, "late for school")}));
-//
-//        System.out.println(Arrays.toString(firstYearStudents.getName()));
+        School school = new School();
+        school.studentsDataList();
+        FirstYearStudent firstYearStudent = new FirstYearStudent("Olivia");
+        SecondYearStudent secondYearStudent = new SecondYearStudent("Mateo");
+        ThirdYearStudent thirdYearStudent = new ThirdYearStudent("Ava");
+        FourthYearStudent fourthYearStudent = new FourthYearStudent("Lucas");
+
+        firstYearStudent.setGrades(8, 7, 9, 5, 6);
+        secondYearStudent.setGrades(6, 7, 8, 7, 7);
+        thirdYearStudent.setGrades(8, 7, 8, 8, 6);
+        fourthYearStudent.setGrades(6, 7, 6, 9, 8);
+
+        school.registerStudent(firstYearStudent);
+        school.registerStudent(secondYearStudent);
+        school.registerStudent(thirdYearStudent);
+        school.registerStudent(fourthYearStudent);
+
+        school.getEachYearsSubjects(firstYearStudent);
+        school.getEachYearsSubjects(secondYearStudent);
+        school.getEachYearsSubjects(thirdYearStudent);
+        school.getEachYearsSubjects(fourthYearStudent);
+
+        school.getStudentGrades(firstYearStudent);
+        school.getStudentGrades(secondYearStudent);
+        school.getStudentGrades(thirdYearStudent);
+        school.getStudentGrades(fourthYearStudent);
+
+        firstYearStudent.setRemarks("Too late for school.");
+
+        school.getStudentRemarks(firstYearStudent);
+
+        System.out.println(school.studentsDataList());
     }
-    //    int[] averageGrades = {8, 7, 9, 5, 6};
-    //    int[] averageGrades = {6, 7, 8, 7, 7};
-//    int[] averageGrades = {8, 7, 8, 8, 6};
-//    int[] averageGrades = {6, 7, 6, 9, 8};
-    //Olivia, Ava, Asher, Mateo
-
-
 }

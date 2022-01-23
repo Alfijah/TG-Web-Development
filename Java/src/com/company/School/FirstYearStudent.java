@@ -1,27 +1,14 @@
 package com.company.School;
 
-import java.util.Collections;
-
 public class FirstYearStudent extends Student {
-    private String name;
-    private int[] grades;
     private String[] subjects = new String[]{"English", "Dutch", "Math", "Biology", "Geography"};
+    private int[] grades;
+    private String schoolYear = "first year";
 
-    public String[] subjects() {
-        return subjects;
-    }
+    public FirstYearStudent() {}
 
-    public FirstYearStudent(String name, String remark) {
-        super(name, remark);
-    }
-
-    public FirstYearStudent(String schoolYear, String[] subjects) {
-        super(schoolYear);
-        this.subjects = subjects;
-    }
-
-    public FirstYearStudent(String name, int[] grades) {
-        super(name, grades);
+    public FirstYearStudent(String name) {
+        super(name);
     }
 
     @Override
@@ -32,5 +19,35 @@ public class FirstYearStudent extends Student {
             }
         }
         return "Congratulations, you have passed this year!";
+    }
+
+    @Override
+    public String[] getSubjects() {
+        return subjects;
+    }
+
+    @Override
+    public int[] getGrades() {
+        return grades;
+    }
+
+    @Override
+    public String getSchoolYear() {
+        return schoolYear;
+    }
+
+    @Override
+    public void setSubjects(String... subjects) {
+        this.subjects = subjects;
+    }
+
+    @Override
+    public void setGrades(int... grades) {
+        this.grades = grades;
+    }
+
+    @Override
+    public void UpdateSubjects(int index, String subjectName) {
+
     }
 }
