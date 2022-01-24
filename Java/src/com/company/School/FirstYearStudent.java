@@ -37,8 +37,9 @@ public class FirstYearStudent extends Student {
     }
 
     @Override
-    public void setSubjects(String... subjects) {
-        this.subjects = subjects;
+    public String[] setSubjects(int index, String subjectName) {
+        this.subjects[index] = subjectName;
+        return subjects;
     }
 
     @Override
@@ -47,7 +48,8 @@ public class FirstYearStudent extends Student {
     }
 
     @Override
-    public void UpdateSubjects(int index, String subjectName) {
+    public String[] updateSubjects(int index, String subjectName) {
 
+        return new String[5];
     }
 }

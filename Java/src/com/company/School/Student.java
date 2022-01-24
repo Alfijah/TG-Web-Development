@@ -39,8 +39,9 @@ public abstract class Student {
         this.name = name;
     }
 
-    public void setSubjects(String[] subjects) {
-        this.subjects = subjects;
+    public String[] setSubjects(int index, String subjectName) {
+        this.subjects[index] = subjectName;
+        return subjects;
     }
 
     public void setGrades(int[] grades) {
@@ -51,7 +52,8 @@ public abstract class Student {
         this.remarks = remarks;
     }
 
-    public void UpdateSubjects(int index, String subjectName) {
+    public String[] updateSubjects(int index, String subjectName) {
         subjects[index] = subjectName;
+        return new String[5];
     }
 }

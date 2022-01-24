@@ -1,2 +1,6 @@
-package com.company.School;public class HonorStudent {
+package com.company.School;
+
+interface HonorStudent {
+    public void removeFromProgram();
+    public void checkForNotes();
 }
