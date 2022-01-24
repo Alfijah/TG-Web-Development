@@ -1,2 +1,4 @@
-package com.company.School;public class FourYearHonor {
+package com.company.School;
+
+public class FourYearHonor {
 }

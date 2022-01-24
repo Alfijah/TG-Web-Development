@@ -1,12 +1,14 @@
 package com.company.School;
 
+import java.util.ArrayList;
+
 public class FirstYearStudent extends Student {
-    private String[] subjects = new String[]{"English", "Dutch", "Math", "Biology", "Geography"};
+    public String[] subjects = new String[]{"English", "Dutch", "Math", "Biology", "Geography"};
     private int[] grades;
+    private ArrayList<String> remarksList = new ArrayList<>();
     private String schoolYear = "first year";
 
-    public FirstYearStudent() {}
-
+    public FirstYearStudent(){}
     public FirstYearStudent(String name) {
         super(name);
     }
@@ -32,6 +34,11 @@ public class FirstYearStudent extends Student {
     }
 
     @Override
+    public ArrayList<String> getRemarksList() {
+        return remarksList;
+    }
+
+    @Override
     public String getSchoolYear() {
         return schoolYear;
     }
@@ -49,7 +56,12 @@ public class FirstYearStudent extends Student {
 
     @Override
     public String[] updateSubjects(int index, String subjectName) {
+       subjects[index] = subjectName;
+        return subjects;
+    }
 
-        return new String[5];
+    @Override
+    public void setRemarksList(String remarks) {
+        this.remarksList.add(remarks);
     }
 }

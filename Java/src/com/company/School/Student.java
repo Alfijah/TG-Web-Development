@@ -1,14 +1,15 @@
 package com.company.School;
 
+import java.util.ArrayList;
+
 public abstract class Student {
     private String name;
     private String[] subjects;
     private int[] grades;
-    private String remarks;
+    private ArrayList<String> remarksList;
     private String schoolYear;
 
     public Student(){}
-
     public Student(String name) {
         this.name = name;
     }
@@ -27,8 +28,8 @@ public abstract class Student {
         return grades;
     }
 
-    public String getRemarks() {
-        return remarks;
+    public ArrayList<String> getRemarksList() {
+        return remarksList;
     }
 
     public String getSchoolYear() {
@@ -48,12 +49,12 @@ public abstract class Student {
         this.grades = grades;
     }
 
-    public void setRemarks(String remarks) {
-        this.remarks = remarks;
+    public void setRemarksList(String remarks) {
+        this.remarksList.add(remarks);
     }
 
     public String[] updateSubjects(int index, String subjectName) {
         subjects[index] = subjectName;
-        return new String[5];
+        return subjects;
     }
 }
