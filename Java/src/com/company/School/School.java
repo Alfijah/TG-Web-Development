@@ -5,6 +5,7 @@ import java.util.Arrays;
 
 public class School {
     Student firstYearStudent, secondYearStudent, thirdYearStudent, fourthYearStudent;
+    ArrayList<HonorStudent> honorStudents;
     public School() {}
 
     public void registerStudent(Student student) {
@@ -70,6 +71,20 @@ public class School {
         System.out.println(Arrays.toString(school.updateSubjectsList()));
 
         firstYearStudent.setRemarksList("Late for school");
+        firstYearStudent.setRemarksList("Did not make homework");
         System.out.println(school.getStudentRemarks(firstYearStudent));
+        System.out.println(firstYearStudent.remarksList.size());
+
+        FirstYearStudent potentialHonorStudent = new FirstYearHonor();
+        potentialHonorStudent.setName("Olivia");
+        FirstYearHonor honorStudent = (FirstYearHonor) potentialHonorStudent;
+        school.honorStudents.add(honorStudent);
+        System.out.println(school.getStudentRemarks(firstYearStudent));
+
+        FirstYearHonor fyh = new FirstYearHonor();
+        fyh.setName("Olivia");
+        fyh.removeFromProgram();
+
+
     }
 }
