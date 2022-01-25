@@ -1,6 +1,7 @@
 package com.company.School;
 
 interface HonorStudent {
-    public void removeFromProgram();
+    void removeFromProgram(String studentName);
+
     public void checkForNotes();
 }

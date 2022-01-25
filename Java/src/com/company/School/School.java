@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class School {
     Student firstYearStudent, secondYearStudent, thirdYearStudent, fourthYearStudent;
-    ArrayList<HonorStudent> honorStudents;
+
     public School() {}
 
     public void registerStudent(Student student) {
@@ -73,18 +73,23 @@ public class School {
         firstYearStudent.setRemarksList("Late for school");
         firstYearStudent.setRemarksList("Did not make homework");
         System.out.println(school.getStudentRemarks(firstYearStudent));
-        System.out.println(firstYearStudent.remarksList.size());
+        System.out.println(firstYearStudent.getRemarksList().size());
 
-        FirstYearStudent potentialHonorStudent = new FirstYearHonor();
-        potentialHonorStudent.setName("Olivia");
-        FirstYearHonor honorStudent = (FirstYearHonor) potentialHonorStudent;
-        school.honorStudents.add(honorStudent);
-        System.out.println(school.getStudentRemarks(firstYearStudent));
+//        FirstYearStudent firstPotentialHonorStudent = new FirstYearHonor();
+//        firstPotentialHonorStudent.setName("Olivia");
+//        FirstYearHonor honorStudent = (FirstYearHonor) firstPotentialHonorStudent;
+//        FirstYearHonor.firstHonorStudent.add(honorStudent);
+//        System.out.println(school.firstHonorStudent.size());
 
-        FirstYearHonor fyh = new FirstYearHonor();
-        fyh.setName("Olivia");
-        fyh.removeFromProgram();
 
+        FirstYearHonor firstPotentialHonorStudent = new FirstYearHonor();
+        firstPotentialHonorStudent.addToProgram("Olivia");
+        System.out.println(firstPotentialHonorStudent.getFirstHonorStudent());
+        firstPotentialHonorStudent.checkForNotes();
+        System.out.println();
+
+        firstPotentialHonorStudent.removeFromProgram("Olivia");
+        System.out.println(firstPotentialHonorStudent.getFirstHonorStudent());
 
     }
 }
