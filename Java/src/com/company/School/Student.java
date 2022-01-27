@@ -9,9 +9,10 @@ public abstract class Student {
     private ArrayList<String> remarksList;
     private String schoolYear;
 
-    public Student(){}
-    public Student(String name) {
+    public Student(String name, String[] subjects) {
         this.name = name;
+        this.subjects = subjects;
+        remarksList = new ArrayList<String>();
     }
 
     public abstract String passYear();
@@ -40,12 +41,7 @@ public abstract class Student {
         this.name = name;
     }
 
-    public String[] setSubjects(int index, String subjectName) {
-        this.subjects[index] = subjectName;
-        return subjects;
-    }
-
-    public void setGrades(int[] grades) {
+    public void setGrades(int... grades) {
         this.grades = grades;
     }
 
