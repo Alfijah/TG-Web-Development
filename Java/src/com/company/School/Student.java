@@ -15,7 +15,14 @@ public abstract class Student {
         remarksList = new ArrayList<String>();
     }
 
-    public abstract String passYear();
+    public String passYear() {
+        for (int grade : getGrades()) {
+            if (grade == 4) {
+                return "Unfortunately, you have not passed this year.";
+            }
+        }
+        return "Congratulations, you have passed this year!";
+    }
 
     public String getName() {
         return name;
