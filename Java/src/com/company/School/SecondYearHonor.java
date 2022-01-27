@@ -3,19 +3,19 @@ package com.company.School;
 import java.util.ArrayList;
 
 public class SecondYearHonor extends SecondYearStudent implements HonorStudent{
-    private ArrayList<String> firstHonorStudent = new ArrayList<>();
+    private ArrayList<String> secondHonorStudent = new ArrayList<>();
 
     public SecondYearHonor(String name) {
         super(name);
     }
 
     public void addToProgram(String studentName) {
-        firstHonorStudent.add(studentName);
+        secondHonorStudent.add(studentName);
     }
 
     @Override
     public void removeFromProgram(String studentName) {
-        firstHonorStudent.remove(studentName);
+        secondHonorStudent.remove(studentName);
     }
 
     @Override
@@ -25,7 +25,7 @@ public class SecondYearHonor extends SecondYearStudent implements HonorStudent{
         }
     }
 
-    public ArrayList<String> getFirstHonorStudent() {
-        return firstHonorStudent;
+    public ArrayList<String> getSecondHonorStudent() {
+        return secondHonorStudent;
     }
 }

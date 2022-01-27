@@ -75,13 +75,6 @@ public class School {
         System.out.println(school.getStudentRemarks(firstYearStudent));
         System.out.println(firstYearStudent.getRemarksList().size());
 
-//        FirstYearStudent firstPotentialHonorStudent = new FirstYearHonor();
-//        firstPotentialHonorStudent.setName("Olivia");
-//        FirstYearHonor honorStudent = (FirstYearHonor) firstPotentialHonorStudent;
-//        FirstYearHonor.firstHonorStudent.add(honorStudent);
-//        System.out.println(school.firstHonorStudent.size());
-
-
         FirstYearHonor firstPotentialHonorStudent = new FirstYearHonor();
         firstPotentialHonorStudent.addToProgram("Olivia");
         System.out.println(firstPotentialHonorStudent.getFirstHonorStudent());
