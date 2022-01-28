@@ -1,7 +1,7 @@
 package com.company.School;
 
 public class FirstYearStudent extends Student {
-    private String schoolYear = "first year";
+    private static final String schoolYear = "first year";
 
     public FirstYearStudent(){}
 

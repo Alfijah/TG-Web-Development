@@ -14,7 +14,7 @@ public abstract class Student {
     public Student(String name, String[] subjects) {
         this.name = name;
         this.subjects = subjects;
-        remarksList = new ArrayList<String>();
+        this.remarksList = new ArrayList<String>();
     }
 
     public String passYear() {
