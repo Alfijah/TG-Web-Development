@@ -9,6 +9,8 @@ public abstract class Student {
     private ArrayList<String> remarksList;
     private String schoolYear;
 
+    public Student(){}
+
     public Student(String name, String[] subjects) {
         this.name = name;
         this.subjects = subjects;
