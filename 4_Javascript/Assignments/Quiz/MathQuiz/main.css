@@ -553,7 +553,6 @@ body {
     max-width: 70%;
     max-height: 900px;
   }
-
   .eachAnswer:nth-child(odd)::before, .eachAnswer:nth-child(even)::before {
     content: "";
     position: absolute;
@@ -563,7 +562,6 @@ body {
     background-color: white;
     z-index: 0;
   }
-
   .eachAnswer:nth-child(odd)::before {
     left: 9px;
   }
@@ -576,7 +574,6 @@ body {
     max-width: 60%;
     max-height: 900px;
   }
-
   .eachAnswer:nth-child(odd)::before, .eachAnswer:nth-child(even)::before {
     content: "";
     position: absolute;
@@ -586,7 +583,6 @@ body {
     background-color: white;
     z-index: 0;
   }
-
   .eachAnswer:nth-child(odd)::before {
     left: 4px;
   }
@@ -599,7 +595,6 @@ body {
     max-width: 60%;
     max-height: 900px;
   }
-
   .eachAnswer:nth-child(odd)::before, .eachAnswer:nth-child(even)::before {
     content: "";
     position: absolute;
@@ -609,7 +604,6 @@ body {
     background-color: white;
     z-index: 0;
   }
-
   .eachAnswer:nth-child(odd)::before {
     left: 9px;
   }
@@ -622,7 +616,6 @@ body {
     max-width: 60%;
     max-height: 900px;
   }
-
   .eachAnswer:nth-child(odd)::before, .eachAnswer:nth-child(even)::before {
     content: "";
     position: absolute;
@@ -632,7 +625,6 @@ body {
     background-color: white;
     z-index: 0;
   }
-
   .eachAnswer:nth-child(odd)::before {
     left: 13px;
   }
@@ -645,7 +637,6 @@ body {
     max-width: 60%;
     max-height: 900px;
   }
-
   .eachAnswer:nth-child(odd)::before, .eachAnswer:nth-child(even)::before {
     content: "";
     position: absolute;
@@ -655,7 +646,6 @@ body {
     background-color: white;
     z-index: 0;
   }
-
   .eachAnswer:nth-child(odd)::before {
     left: 17px;
   }
@@ -668,7 +658,6 @@ body {
     max-width: 60%;
     max-height: 900px;
   }
-
   .eachAnswer:nth-child(odd)::before, .eachAnswer:nth-child(even)::before {
     content: "";
     position: absolute;
@@ -678,7 +667,6 @@ body {
     background-color: white;
     z-index: 0;
   }
-
   .eachAnswer:nth-child(odd)::before {
     left: 21px;
   }
@@ -691,7 +679,6 @@ body {
     max-width: 60%;
     max-height: 900px;
   }
-
   .eachAnswer:nth-child(odd)::before, .eachAnswer:nth-child(even)::before {
     content: "";
     position: absolute;
@@ -701,7 +688,6 @@ body {
     background-color: white;
     z-index: 0;
   }
-
   .eachAnswer:nth-child(odd)::before {
     left: 22px;
   }
@@ -714,7 +700,6 @@ body {
     max-width: 60%;
     max-height: 900px;
   }
-
   .eachAnswer:nth-child(odd)::before, .eachAnswer:nth-child(even)::before {
     content: "";
     position: absolute;
@@ -724,7 +709,6 @@ body {
     background-color: white;
     z-index: 0;
   }
-
   .eachAnswer:nth-child(odd)::before {
     left: 42px;
   }

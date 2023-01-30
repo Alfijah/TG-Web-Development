@@ -238,7 +238,7 @@ h3 {
   height: 2.4em;
 }
 .table tbody tr {
-  border-bottom: 1px solid #ffc1694b;
+  border-bottom: 1px solid rgba(255, 193, 105, 0.2941176471);
   font-size: 1rem;
 }
 .table tbody tr .table-title {
@@ -251,7 +251,7 @@ h3 {
   border-bottom: none;
 }
 .table tbody tr:nth-of-type(5), .table tbody tr:nth-of-type(7), .table tbody tr:nth-of-type(9) {
-  border-bottom: 3px solid #ffc169b2;
+  border-bottom: 3px solid rgba(255, 193, 105, 0.6980392157);
 }
 
 .thead {
@@ -310,7 +310,7 @@ h3 {
   border: none;
   height: 35px;
   cursor: pointer;
-  background-color: #a45d5dbd;
+  background-color: rgba(164, 93, 93, 0.7411764706);
   color: #EFEFEF;
   font-size: 1.2em;
   margin-top: 10px;
@@ -425,16 +425,13 @@ nav a:hover {
   .nav-toggle-label {
     display: none;
   }
-
   header {
     display: grid;
     grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
   }
-
   .logo {
     grid-column: 2/3;
   }
-
   nav {
     all: unset;
     grid-column: 3/4;
@@ -459,7 +456,6 @@ nav a:hover {
     margin-top: 20px;
     grid-column: 1/4;
   }
-
   html h2 {
     font-size: 2em;
   }
@@ -472,7 +468,6 @@ nav a:hover {
   html .table tbody {
     font-size: xx-small;
   }
-
   .section1 {
     height: 370px;
   }
@@ -480,18 +475,15 @@ nav a:hover {
     width: 60%;
     padding-top: 50px;
   }
-
   .subsection2 {
     width: 100%;
   }
   .subsection2 img {
     width: 30%;
   }
-
   .text2 h2 {
     padding-top: 3rem;
   }
-
   .personal-data {
     width: 55%;
     justify-content: flex-end;
@@ -499,28 +491,24 @@ nav a:hover {
   .personal-data .text2 {
     width: 90%;
   }
-
   .skill-category {
     width: 85%;
   }
   .skill-category h3 {
     font-size: 100%;
   }
-
   .matrix {
     font-size: 70%;
   }
   .matrix span {
     font-size: 70%;
   }
-
   .table {
     width: 70%;
   }
   .table th, .table td {
     font-size: 90%;
   }
-
   .contact-form {
     width: 35%;
     justify-content: flex-start;
@@ -533,14 +521,12 @@ nav a:hover {
   body p, body li {
     font-size: 1.1em;
   }
-
   .section1 {
     height: 450px;
   }
   .section1 .intro-head {
     width: 90%;
   }
-
   .subsection2 {
     display: flex;
     flex-direction: column-reverse;
@@ -552,7 +538,6 @@ nav a:hover {
   .subsection2 img {
     width: 60%;
   }
-
   .personal-data {
     width: 85%;
   }
@@ -566,7 +551,6 @@ nav a:hover {
   .personal-data .text2 p {
     margin-top: -15px;
   }
-
   .skill-category {
     flex-direction: column;
     align-items: center;
@@ -587,7 +571,6 @@ nav a:hover {
     border-top: 1px solid rgba(255, 255, 255, 0.425);
     padding-top: 20px;
   }
-
   .matrix .matrix-title {
     font-size: 1.2em;
   }
@@ -595,7 +578,6 @@ nav a:hover {
     font-size: 0.8em;
     margin: 0 5%;
   }
-
   .table {
     width: 85%;
   }
@@ -608,7 +590,6 @@ nav a:hover {
   .table tbody tr .table-title {
     font-size: 1.1em;
   }
-
   .subsection4 {
     flex-direction: column;
   }

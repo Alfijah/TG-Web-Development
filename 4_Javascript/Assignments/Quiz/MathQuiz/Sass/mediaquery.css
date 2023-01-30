@@ -150,7 +150,6 @@
     max-width: 70%;
     max-height: 900px;
   }
-
   .eachAnswer:nth-child(odd)::before, .eachAnswer:nth-child(even)::before {
     content: "";
     position: absolute;
@@ -160,7 +159,6 @@
     background-color: white;
     z-index: 0;
   }
-
   .eachAnswer:nth-child(odd)::before {
     left: 9px;
   }
@@ -173,7 +171,6 @@
     max-width: 60%;
     max-height: 900px;
   }
-
   .eachAnswer:nth-child(odd)::before, .eachAnswer:nth-child(even)::before {
     content: "";
     position: absolute;
@@ -183,7 +180,6 @@
     background-color: white;
     z-index: 0;
   }
-
   .eachAnswer:nth-child(odd)::before {
     left: 4px;
   }
@@ -196,7 +192,6 @@
     max-width: 60%;
     max-height: 900px;
   }
-
   .eachAnswer:nth-child(odd)::before, .eachAnswer:nth-child(even)::before {
     content: "";
     position: absolute;
@@ -206,7 +201,6 @@
     background-color: white;
     z-index: 0;
   }
-
   .eachAnswer:nth-child(odd)::before {
     left: 9px;
   }
@@ -219,7 +213,6 @@
     max-width: 60%;
     max-height: 900px;
   }
-
   .eachAnswer:nth-child(odd)::before, .eachAnswer:nth-child(even)::before {
     content: "";
     position: absolute;
@@ -229,7 +222,6 @@
     background-color: white;
     z-index: 0;
   }
-
   .eachAnswer:nth-child(odd)::before {
     left: 13px;
   }
@@ -242,7 +234,6 @@
     max-width: 60%;
     max-height: 900px;
   }
-
   .eachAnswer:nth-child(odd)::before, .eachAnswer:nth-child(even)::before {
     content: "";
     position: absolute;
@@ -252,7 +243,6 @@
     background-color: white;
     z-index: 0;
   }
-
   .eachAnswer:nth-child(odd)::before {
     left: 17px;
   }
@@ -265,7 +255,6 @@
     max-width: 60%;
     max-height: 900px;
   }
-
   .eachAnswer:nth-child(odd)::before, .eachAnswer:nth-child(even)::before {
     content: "";
     position: absolute;
@@ -275,7 +264,6 @@
     background-color: white;
     z-index: 0;
   }
-
   .eachAnswer:nth-child(odd)::before {
     left: 21px;
   }
@@ -288,7 +276,6 @@
     max-width: 60%;
     max-height: 900px;
   }
-
   .eachAnswer:nth-child(odd)::before, .eachAnswer:nth-child(even)::before {
     content: "";
     position: absolute;
@@ -298,7 +285,6 @@
     background-color: white;
     z-index: 0;
   }
-
   .eachAnswer:nth-child(odd)::before {
     left: 22px;
   }
@@ -311,7 +297,6 @@
     max-width: 60%;
     max-height: 900px;
   }
-
   .eachAnswer:nth-child(odd)::before, .eachAnswer:nth-child(even)::before {
     content: "";
     position: absolute;
@@ -321,7 +306,6 @@
     background-color: white;
     z-index: 0;
   }
-
   .eachAnswer:nth-child(odd)::before {
     left: 42px;
   }
